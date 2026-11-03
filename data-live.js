@@ -1,5 +1,5 @@
 window.LIVE_DATA = {
- "aktualizace": "2026-11-03T10:03:32.455Z",
+ "aktualizace": "2026-11-03T10:06:46.494Z",
  "zpravy": [
   {
    "bank": "rb",
@@ -37,20 +37,6 @@ window.LIVE_DATA = {
    "date": "2026-11-02T12:48:08.000Z"
   },
   {
-   "bank": "ucb",
-   "title": "Sleva na energie až 16 200 Kč. UniCredit a innogy odmění část společných klientů",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcXIyZFJ3THFxMWRyckZpN2tnT0dMR2tyY0Y2aV9PVHpKTW9IaGw3SnpDaTJBRnBhUlpSZmNoR3ZTV3EtTkYwTVNVR2xqNDJIWXRHRlVIQlZ5X1Z6aV8yVHBNNDBOOTdRWGlGVTRBbmxtZkMzZlNnMlg0RFBtaElCSjVscXJXUzd6SE1JVHdXNERZSkVjZ1M4Ykk3cUNIZmEwVVJ6TTVWQVpBMzMxUVJoNHU4UG1HdWV3SkNGZg?oc=5",
-   "source": "Penize.cz",
-   "date": "2026-11-02T10:30:00.000Z"
-  },
-  {
-   "bank": "ucb",
-   "title": "Až 16 200 korun zpět na účet. Innogy a UniCredit Bank spustily nový bonusový program",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNeV9IdVMwNms1RHo2STFzV29rNVJqcHNJX1RnQ3p4NnBObVhMNndXRUJKY3JONkV2aHQ5VVFaS09sZ3VvMVZzaHlDVmpOdExXSXlvMm9hTFl0Q1hENlZSeFFHUDJtbkNFNlREYVBSZkhOYU5XeVVKaHc5ZFlCX0lPTEdEOWpWdTFDX2hpWUUxdV8xUVBXRTJ2R3VvX1pEVEctUjFhRG0zcXRFLUdqMjR6NFROQ3lHSXF2UzVfcS1RbldqVjROMGZSakxNczlMdw?oc=5",
-   "source": "E15.cz",
-   "date": "2026-11-02T09:48:00.000Z"
-  },
-  {
    "bank": "rb",
    "title": "Raiffeisenbank vrací polovinu za Netflix i Spotify, Mikov zlevňuje nože až o 84 %",
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYU1YeS1FLUVQNjV4WWs4M3BtTU5RZTlBUEQwM0lnVEdWYmZiVGJYNnlyMFMya20xeHdaY1hyT2N3NDJBenFJSmZJR2N5aDBpVkkwaEIyVVlHOUh0VXBaQnRNbk1FOFh2VFZKZ0NvemlpZW1zaFhGQjFnZFQ3R0xGQWd2STZ6TUhpalpxU09PZjItdDlJeWNmYWJMcFRrSDJQRGxteFBlMjJ0eXM?oc=5",
@@ -70,13 +56,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVDdiTFpBc1JCM2pyVUtUdTBINzRaTGhRTUFyV1EtZDF1VEVsY2M4d0VTaHhvcEZVMURCbmFfZHNWQVhORW93MFFrWlFnSk5LSEpfZW84NW5YMjMwUnE0MFYzTURWX05NY1M5ZVFsQTRwSldGVXQ3MWJPZjJ4ajZaWnZuZmhTcmhjSDZVZ0UyQUxhZDV0MWhTUlFaZ2J1T1J0WGtiMkZxR3JfZ0o5TEdWVHJWNGFOd3VuR3NVZS14NlpYNDdhUHRMUzgwd01BQUFEOG1iemo1YnRDNTNZMTZlcGo0UElRQQ?oc=5",
    "source": "Aktuálně.cz",
    "date": "2026-10-30T09:13:00.000Z"
-  },
-  {
-   "bank": "cs",
-   "title": "Banka jako majitel domova důchodců? Česká spořitelna investuje 11 miliard do chybějících lůžek",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPVDRtTU9Cckp0b2xhVWROc1ZsSU9RaTVhbnlGTkkyU2l4R0FpNTNjTnJhVC1id3g5TzNlbDJ4dGhUVlBhLWwzQmZhb0NRZjdFR0hzWkZNZ1o2MnVfNDVoOWdEVmYteGJObVd5Slh0NGttelV3YzRHN2NuY3UzME9QdDJmcndXUy0xU1VidXhtT2xsb0hKTm1SaUpUd0RXd0hZR2JiVXhVdHZEY1NwYW4tc2lYNjZKeFpjUk9JbGhFYVE1MGlZQUIxLU80RWRBVndETVZ6dnRkeGd3LUFfb1cxbldia1hWNm1qLWloMC1R?oc=5",
-   "source": "E15.cz",
-   "date": "2026-10-30T08:37:51.000Z"
   },
   {
    "bank": "cs",
@@ -119,6 +98,20 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdE8xMVc4RnBIRkZFOW9ZQk9yTVlVVFhWN21DRnZxSUtkeHZWTHk2REZpdERmLWFHRExHRkpESEswYTdTRnVtN05NdHBqVkNOY0NkVnBYMUNlVHlxSm9HUGNLLURVQ0VPSDhtQmgyS3VadUNyYUVwWHF1RFFvMVNPNU05SjFVN1BLRGlPUWRab21tNlkwaUQwblNqb0lvSXhacHEteTJ1dGN1UGNsTnZpdEdvaTBsSm81b0lsVkRvV3I?oc=5",
    "source": "Měšec.cz",
    "date": "2026-10-29T23:00:15.000Z"
+  },
+  {
+   "bank": "kb",
+   "title": "Komerční banka stihla za první tři letošní čtvrtletí poskytnout o polovinu víc hypoték než vloni",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPN2hVWmhPelBnSmstVGlBMmg2UDlWbXNTeDFKUC03WU1lbWJmRGp0Q2tjdmtmSE9qNm5ERkNkTFRHbVFmUWFoRF80czU3dGc0VXBFZHo1dlkzbkJfbHVQSzFYT2tyVFZqLXY3bWZreWdENVQxVlJGN0Y1QWIxdHpWbm9pUU92OTRNVm1EVHJWN3RfallLOG1xYW1QX1hIekdzbUY3V0dLSUZJWGVmYnBMQkI2LUZGODVPTWNsX29EdXJyM3g3VUE?oc=5",
+   "source": "Euro.cz",
+   "date": "2026-10-29T18:40:22.000Z"
+  },
+  {
+   "bank": "cs",
+   "title": "Banka jako majitel domova důchodců? Česká spořitelna investuje 11 miliard do chybějících lůžek",
+   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOcjUyZ1luRHBPemZfN0RfRmpFbzAxSF9ZQlVmYWw3X3JTOF91TVBZYjFwc1Bvb3dPZXdDenJESXV2MWJaUVplY0MzdmM0emFYdW1BLWEtVndtZzhUMERRY1djaU1UdnVtSmVoSGNqOTk2N2xXMnhKNlpRMjFqdmRqbGxBQ1Z0UjNrbko5NlpQb0dCWlZ0azRvNFJ6T21EN0drRDhCT2NlY1EyWHJLdFZYTXhrc3FHNTJsdzMzX1oxcUUxVU9feW4yX3c0aXBiOXFMMGswX2R5cElLT3JIaVBJZjljdklPbDhiQ1VyU0p3?oc=5",
+   "source": "E15.cz",
+   "date": "2026-10-29T10:31:18.000Z"
   },
   {
    "bank": "csob",
@@ -170,13 +163,6 @@ window.LIVE_DATA = {
    "date": "2026-10-29T07:00:00.000Z"
   },
   {
-   "bank": "rb",
-   "title": "Exkluzivní rozhovor s analytikem Alešem Michlem z Raiffeisenbank",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPY1lkaHpfM1FqaVVtS1RxUkhhTWROdDZLeWt4NnhuVXFNLXNTQnJXWVZ5NnRKLVY1ZHpaS1kwLUZEN3ViMmE3eTJqdWNPeGt0QlRyN2VMUi0xd2xUdnNDTWpEZTRGZTdlT1FlSjdYdzJrZ2NGNURxeGcxVEZVVnhlUDBiYUZwTjFSUm9yLXJOUV9YVEFQd2VETVJ4Z1V5azNvUjBKcTBKZG5JR3c?oc=5",
-   "source": "ČT24",
-   "date": "2026-10-29T07:00:00.000Z"
-  },
-  {
    "bank": "moneta",
    "title": "Hlavní ekonom Moneta Money Bank Petr Gapko o maloobchodních tržbách",
    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQX0g4SFRYVHA5RklyUVVkRlBaekliR3dWT0QzTmYxNWF4dHlCc1R6ZUJnTXMtQ2xyTjB3bS01NGdxUUVjeWZHMWxHQUZ4MU42MzB4aTRyMm0teEhIaEplYkZFNFJDYWkxd0ctM29GcEZmckZuTVRJQ0RFVEVPbmxDdmxLYXBYbHdHcVhPaVlJZGRGemJyWXRjZDRGWnkzSDdBZzd3cThnMmJoMi00WnJn?oc=5",
@@ -224,13 +210,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRXhfT29uTDQyNU82WG92UF9rQWpKNUtkTTFiYTU1VE1jUFhBbEFzN0gtaXNoaVd3ZGhJTU1vWWlyNW9nbWIzNWdMbmw5NFc4SXp3ZkVyUHdWX3drSXZHYlhWbElwcGp5MldWVkJkb0N0eWJIYmVYdnlsbk9UMW8tcGoyOFZtQXM2cWI3ZkJxV0JaQUhERzZHamxXdDRCNldvY00xemU0amh4TG9MeFUybDRFbHRMSmkyOTNNZklJbmVtalpkWlg1bTh5TWhrZHdCbG0zaEdGRWUxdw?oc=5",
    "source": "E15.cz",
    "date": "2026-10-27T07:44:00.000Z"
-  },
-  {
-   "bank": "kb",
-   "title": "Firemní výsledky pro tento týden: Gen Digital, Komerční banka, CTP, Erste Group Bank, Alphabet",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSlRfRjJLamlSSWNNZVI1MUlVWVVORU1tY0JjYmM3UlZINHZSejBUWXc0ajFyQnRLcmlYQ2I5LTZ4eUFCOEFMYTVTWl9zdm9rdU1lSVlDZTJycVNaS1c3OGdPWWkyRW11M0JmemRxd3BndkpMYnVKYURuTFN2ZkRvR2tfT0ZSeUQtaVAxbzFFcFRZM2k0WHg4Zzc5T24xLTM0RUtwMEhHYTBobnBXaktYeC0xa2FNalR0QUFRRFM5Qmw5YkhhTkE5U1JKUHlpcndMcTlLQVV1Y0lRcGRX?oc=5",
-   "source": "Fio",
-   "date": "2026-10-26T10:12:00.000Z"
   },
   {
    "bank": "kb",
@@ -374,9 +353,9 @@ window.LIVE_DATA = {
   },
   {
    "bank": "moneta",
-   "title": "Očekávané výsledky světových firem v týdnu od 19. října: Netflix, Tesla, Meta, SAP, MONETA Money Bank",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdkFtWnNDV2hZZ0JWVlJPUWpMbE90ZDJPaF9La2RBcGtmaW1Iem1BMV9QbnVvNk85VF85QU1TUVV6bzJnVUs4TnMtVlQzMnJ1TEs3WHpCUTVxQWdoRVR3QzhoWmZtSklZZ21tbVl3VE05Um9pZ3NpcVR3WEk3LWhWWVlES29BOGRCU2plTTVWZ1ZEendDZ0VndVRSMWVpd05fZVlJ?oc=5",
-   "source": "Investiční web",
+   "title": "Firemní výsledky na tento týden: Moneta Money Bank, SpaceX, Meta Platforms, Tesla, Netflix, IBM",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQemt4N3ZCUzVnQlB2S0RUeU5UV3dheEhucjduVkZUSzJVaFF0X0l6ZTRsQTZ3ZElISC1fN1RiaFJlLXBHU1VnaVNIWnM0N3U3WjQzRTFuZzBVdktRVlBTZGJ4bzdOZ0dGanJXX09nVXZSVWpMV0VCVHJBQ2RraGlzYnRYSjlqaWJHSE0zRFdqa3JxV1dyeElaTlNza2x1NC1YcDlabnYzNW5oZnYtcXhYc3hhVDBtSnd0SUFHVWRMVXN1WU1HZkxCRmhuM1hNUzQ5N280Mi04LTFzT2t1UEE?oc=5",
+   "source": "Fio",
    "date": "2026-10-19T07:00:00.000Z"
   },
   {
@@ -408,17 +387,17 @@ window.LIVE_DATA = {
    "date": "2026-10-17T07:00:00.000Z"
   },
   {
+   "bank": "rb",
+   "title": "Raiffeisenbank končí s kartami Mastercard. Změna čeká i Exkluzivní účet",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNblNJc2FtbXNSeGFweGItekVnYm4xR18tQWtvOTQ2b2hoZ29feTlWWGhtUG04dGRjSXUxMkdOa1RjcmhmOFJFSjV4MzA4eWU0SE84SzQ4anBRRzRuSFRlN0RWZ0pWaWNDOWw2WklBZmN3SkJrdFBmcEZ4dldGNG5vMkdac193bFVOQy10N0l2QUxyZDQtMVB5bXFtZDdYRnQxeWx2UWVNcG9fc1hVeGtYSzRR?oc=5",
+   "source": "Seznam – najdu tam, co neznám",
+   "date": "2026-10-16T16:49:25.000Z"
+  },
+  {
    "bank": "ucb",
    "title": "Italská UniCredit získala souhlas ECB k ovládnutí Commerzbank",
    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaUliX3E0RzRoLWkwV0lnbXNQV0V2QjFZb1RuM3dHQWZ6SlFKSkFnU0t6cUlnbEhWbDFWX0paU1lKUWNjYVVlVURCMmd3N1BCVHBPSkxMTThkUDBaYlZ1SzdLNUN3d1dfRmxZa2hOZEpMNUZ6OGVQU1UtT3owaE81RU51REZzX0dVYjRIRDNSUVFfajlsLS03OElQRDdhMW4wbmE2c0ZDSWxqZnZwQmZqWUEwU2hqUkdBanVlM09RR3RiTGlSQ1pOU3RpTEVEeHBMUjE4?oc=5",
    "source": "iDNES.cz",
-   "date": "2026-10-16T07:00:00.000Z"
-  },
-  {
-   "bank": "rb",
-   "title": "Raiffeisenbank končí s kartami Mastercard. Změna čeká i Exkluzivní účet",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQblhLMTdwTFpnTTZiMHZTTnhwZFlfNVE1a1lSWWxBSVpNdFl3Z0FpSWN6VHZOUXh6VWx1YjAzMDVJQkZNVWFqOVdXNXRDdXJiOVhhNjJoQktndE1PcXE3OFhBS2Vsb0VxOXl3T3dMcDNtTjNRTmcwSk1nbDlJbmNONzlwX0ExZTFZUjlwRUVJdEFXWENJbVJuSGpTRWp6blV0eHp1eDJXT1kyWnpEN2Rqaw?oc=5",
-   "source": "Penize.cz",
    "date": "2026-10-16T07:00:00.000Z"
   },
   {
@@ -560,6 +539,27 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUnp4NEplSnlleWRQN1loNE1RNi1OQnFEZnRJeDBfOTNIQ0c1LVNOM0pUM2hQMFJaVTg1SzVUeXMxcktHdjdXMFBORURqSFZ1eGFpQks2ODJfSUJIeUxHalpibXl2NVRCS1JtZ3hxekVaMC0tbHhRZmFCTkUwZmZGRThpV19mVEZzSnlaS2xaOXcwcG0wbFhvQmtrODM0ZjBtc0NkUC05X05CbTJwcDdCcUxNZEs0UDZzT01XQmx0aTNoZVFTdlp3SE1OMThmdmN5?oc=5",
    "source": "E15.cz",
    "date": "2026-10-06T07:00:00.000Z"
+  },
+  {
+   "bank": "fio",
+   "title": "Online, zdarma a bez rodičů. Fio banka uvolnila pravidla pro účty od 15 let",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX1VIb0dNUVQwRkhsbkJ2SmNOeXBjeGItNG1RQXdRUVg2ZFZDX05kdGdqZTJtVk43NV9Ob0d4ZzJVWFFiamU1dlhyeW9yR0JXY3RhUjdaVHc2SjhuNERaOE56XzNrSTVlWS1EbGpaMXVZOUx0czk1ZkhzVDMtQ0E1RTBzYXQzQkx3VUd4RlpLWFJ4TWc5OWNRMDZDaDRvYkl5MFVvdmZaelpWV3F0UjhkYXZpNG9BbGJzZk40RTZn?oc=5",
+   "source": "E15.cz",
+   "date": "2026-10-06T07:00:00.000Z"
+  },
+  {
+   "bank": "csob",
+   "title": "Vlastní design platební karty se vrací. ČSOB nabídne fotku i vlastní nápis",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMTNucDhfM25GdTZDSU5PdWF0amZ5dWFnV04yMDg4N01ENW03MVVFZUpvd0xqVmxGc1FhSG9ud0RlcV9iaTBQS3JMQ21WNnhqT1VBQ3FwbXV2YU5jUlo4M1N6WE44UXZnYjhKMGVKb1VaclVGWDQzUVN1LWY3RDlJVGV6V3FWd2M3YTlldEU4ODFDMjhldjRzSmNmaFhZN1JvU2h6aWIwWFE?oc=5",
+   "source": "Měšec.cz",
+   "date": "2026-10-05T07:00:00.000Z"
+  },
+  {
+   "bank": "ucb",
+   "title": "UniCredit může prodat část ruských aktiv. Podepsaným dekretem jí to umožnil Putin",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUk1udHVoZXM3dkFQOThXSjFIcEV0Mkc4SGJRaFE1Y1lWNjlSd1ZaYnpIRjZ6QUtDUk5kby0yQnFhc3BIalRwVERJLW9sY0lfNkg0N3BoN05ra195T2Vudng1ZkoyMEh1Y1ZVTVAwb3Fkdl9iSXpMbUltQk42clpHcTU0YXVjYU93bGJMSDdJc1hIUUU0OUY0LUEwdU50NVE5QWNRVjFDd0NaYnVVaVhHNXlZZkREeGlKRng0dDVRc245a1FrdlZ2emd3?oc=5",
+   "source": "iROZHLAS",
+   "date": "2026-10-05T07:00:00.000Z"
   }
  ],
  "aplikace": {
@@ -708,11 +708,9 @@ window.LIVE_DATA = {
    "predstavenstvo": [
     "Attila Sánta",
     "Daniela Pešková",
-    "Jan Bojko",
     "Karel Mourek",
     "Martin Kobza",
     "Norbert Hovančák",
-    "Štefan Elek",
     "Tomáš Salomon"
    ],
    "dozorci_rada": [
@@ -870,6 +868,24 @@ window.LIVE_DATA = {
   }
  },
  "zmeny_vedeni": [
+  {
+   "bank": "cs",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Jan Bojko",
+   "datum": "2026-11-03",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782",
+   "rozdil": true
+  },
+  {
+   "bank": "cs",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Štefan Elek",
+   "datum": "2026-11-03",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782",
+   "rozdil": true
+  },
   {
    "bank": "kb",
    "typ": "odesel",
@@ -1084,22 +1100,6 @@ window.LIVE_DATA = {
    "organ": "dozorčí rady",
    "jmeno": "Ondřej Kudrna",
    "datum": "2025-12-18",
-   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
-  },
-  {
-   "bank": "kb",
-   "typ": "odesel",
-   "organ": "představenstva",
-   "jmeno": "Anne Laure Veronique De Kouchkovsky",
-   "datum": "2025-11-05",
-   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
-  },
-  {
-   "bank": "kb",
-   "typ": "prisel",
-   "organ": "představenstva",
-   "jmeno": "Anne Laure Véronique De Kouchkovsky",
-   "datum": "2025-11-05",
    "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
   }
  ]
