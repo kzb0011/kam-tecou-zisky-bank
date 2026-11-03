@@ -28,4 +28,25 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
 6. ✅ Testy, commit, push, ruční spuštění GitHub Action a ověření zeleného běhu.
    - Testy prošly (data, zakázané řetězce, jednotkové testy, prohlížeč 1280/390 px). Denní úloha proběhla zeleně (stav: zprávy 7/7, aplikace 7/7, repo ✓, hot 7/7, vedení 7/7).
    - Opraveno po prvním ostrém běhu: prokuristé se nepočítají do představenstva (ČS měla 8 místo 6); jména se porovnávají bez diakritiky (falešná změna u KB). Dvě falešné změny vzniklé při opravě (ČS, prokuristé) ručně odstraněny z data-live.js.
-7. ⬜ Shrnutí: co funguje, co ne, co je potřeba.
+7. ✅ Shrnutí: co funguje, co ne, co je potřeba.
+
+## Shrnutí (3. 11. 2026)
+
+**Funguje**
+- Denní úloha (zelená): zprávy, hodnocení aplikací, repo sazba, vedení všech 7 bank z obchodního rejstříku (ARES), změny ve vedení za poslední rok (27 změn), filtrované titulky (vedení, propouštění, pokuty, ČNB).
+- Web: „Hot news“ pod hlavními kartami (14 dní, hlavní zpráva větší), v detailu banky aktuální představenstvo z rejstříku a změny ve vedení u odměn. Karta šéfů ukazuje 5 jmen se štítkem „odhad“.
+- Kontroly kvality po každém pushi zelené.
+
+**Nefunguje / omezení**
+- GitHub Pages nejsou zapnuté, web zatím není veřejně dostupný.
+- Hot titulků je málo (dnes 3), protože se berou jen titulky, které jmenují banku i klíčové slovo. Raději méně, ale k věci.
+- Datum změny ve vedení je datum zápisu do rejstříku. Skutečný odchod/příchod může být o dny až týdny dřív.
+- ČNB ARAD čeká na klíč, historické dividendy 2016–2022 na výroční zprávy (krok 1).
+
+**Nesoulad dat (nic jsem neměnil, čísla v odměnách se počítají za rok 2025)**
+- `board.clenu` v data.js vs. dnešní rejstřík: KB 8 vs. 5 (v říjnu 2026 odešli 2 členové), UniCredit 8 vs. 9, Fio 7 vs. 8 (Jan Ullmann od 9/2026). Ostatní sedí. Počet v data.js se používá pro odměnu na člena za 2025, proto zůstává.
+
+**Potřebuji**
+1. Zapnout GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`.
+2. Klíč `CNB_ARAD_KEY` do Settings → Secrets and variables → Actions.
+3. Výroční zprávy (PDF) jako přílohy do chatu, pokud se má pokračovat v kroku 1.
