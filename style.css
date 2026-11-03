@@ -264,3 +264,14 @@ a.name:hover { color: var(--home); }
 .card.hot .hot-lead:hover { text-decoration: underline; }
 .card.hot .hot-meta { display: block; margin: 6px 0 4px; }
 .card.hot .news { border-top: 1px solid var(--line); margin-top: 8px; }
+/* TOP 5 bank podle zisku v kartě na přehledu */
+.top5 { display: flex; flex-direction: column; margin-top: 6px; border-top: 1px solid var(--line); }
+.t5 { display: grid; grid-template-columns: 16px 8px 1fr auto auto; align-items: center; gap: 8px; padding: 4px 0; color: inherit; text-decoration: none; font-size: .86rem; border-bottom: 1px solid var(--line); }
+.t5:last-child { border-bottom: 0; }
+.t5:hover b { text-decoration: underline; }
+.t5 .rk { font: 600 .75rem var(--font-data); color: var(--muted); }
+.t5 i { width: 8px; height: 8px; border-radius: 2px; }
+.t5 .v { font-family: var(--font-data); text-align: right; }
+.t5 .v small { color: var(--muted); margin-left: 3px; font-size: .72rem; }
+.t5 .delta { font-size: .68rem; padding: 1px 6px; min-width: 64px; text-align: center; }
+@media (max-width: 600px) { .kpi .waffle { grid-template-columns: repeat(auto-fill, 5px); gap: 2px; } .kpi .waffle i { width: 5px; height: 5px; } }

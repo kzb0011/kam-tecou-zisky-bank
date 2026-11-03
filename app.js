@@ -389,7 +389,8 @@
       const banks = BANK_ORDER(), known = sum(banks.map((x) => x.zisk["2025"]));
       c1 = `<div class="kpi"><div class="kh">Čistý zisk 2025 · všechny banky</div><div class="kv">${mld(s.zisk["2025"])}<small>mld. Kč</small></div>${delta(s.zisk["2025"], s.zisk["2024"])}
         ${waffle(banks.map((x) => ({ k: x.zkratka, v: x.zisk["2025"], c: colorFor(x) })), s.zisk["2025"])}
-        <div class="kf"><span><i style="background:var(--abroad)"></i>zahraniční vlastník</span><span><i style="background:var(--home)"></i>český</span><span><i class="rest"></i>ostatní banky</span> · 1 tečka = 1 mld.</div></div>`;
+        <div class="kf"><span><i style="background:var(--abroad)"></i>zahraniční vlastník</span><span><i style="background:var(--home)"></i>český</span><span><i class="rest"></i>ostatní banky</span> · 1 tečka = 1 mld.</div>
+        <div class="top5">${banks.slice().sort((a, c) => c.zisk["2025"] - a.zisk["2025"]).slice(0, 5).map((x, k) => { const d = (x.zisk["2025"] / x.zisk["2024"] - 1) * 100; return `<a class="t5" href="#${x.id}"><span class="rk">${k + 1}</span><i style="background:${colorFor(x)}"></i><b>${esc(x.zkratka)}</b><span class="v">${mld(x.zisk["2025"], 1)}<small>mld.</small></span><span class="delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${f1.format(Math.abs(d))} %</span></a>`; }).join("")}</div></div>`;
       const pay = banks.map((x) => { const v = sum(payouts(x).filter((p) => String(p.vyplaceno) === "2025").map((p) => p.mld)); return { x, v, ab: abroadOf(x, v) }; }).filter((r) => r.v > 0);
       const tot = sum(pay.map((r) => r.v)), ab = sum(pay.map((r) => r.ab || 0));
       c2 = `<div class="kpi"><div class="kh">Dividendy vyplacené v roce 2025</div><div class="kv out">${mld(tot, 1)}<small>mld. Kč</small></div><span class="dim">z toho do zahraničí nejméně <b style="color:var(--abroad)">${mld(ab, 1)} mld.</b></span>

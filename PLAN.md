@@ -25,6 +25,8 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Hotovo: hlavní zpráva větším písmem, pod ní až 4 další, okno 14 dní (detail banky dál ukazuje 30 dní zpráv a rok změn v rejstříku).
 5b. ✅ Karta „Nejlépe placení šéfové bank“: 5 šéfů místo 3, u odhadů viditelný štítek „odhad“, na mobilu nezvětšit víc než ostatní.
    - Hotovo: kompaktní řádky, štítek „odhad“ u banky. Na 390 px má karta 294 px, ostatní karty 206–495 px (nejvyšší je index férovosti), takže řadu nenatahuje.
+5c. ✅ Karta „Čistý zisk 2025 · všechny banky“: pod tečkovou mřížkou TOP 5 bank podle zisku 2025 (pořadí, zkratka, mld. Kč, ▲/▼ % proti 2024, barva jako v mřížce, klik otevře detail). Data jen z data.js.
+   - Na mobilu menší tečky mřížky. Výška karty na 390 px: 363 px, nejvyšší karta v řadě (index férovosti) 495 px.
 6. ✅ Testy, commit, push, ruční spuštění GitHub Action a ověření zeleného běhu.
    - Testy prošly (data, zakázané řetězce, jednotkové testy, prohlížeč 1280/390 px). Denní úloha proběhla zeleně (stav: zprávy 7/7, aplikace 7/7, repo ✓, hot 7/7, vedení 7/7).
    - Opraveno po prvním ostrém běhu: prokuristé se nepočítají do představenstva (ČS měla 8 místo 6); jména se porovnávají bez diakritiky (falešná změna u KB). Dvě falešné změny vzniklé při opravě (ČS, prokuristé) ručně odstraněny z data-live.js.
