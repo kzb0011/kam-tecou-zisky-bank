@@ -6,3 +6,7 @@ Thumbs.db
 .forbidden
 test-results/
 playwright-report/
+
+# podklady (výroční zprávy apod.) se do repozitáře nenahrávají
+podklady/
+*.pdf

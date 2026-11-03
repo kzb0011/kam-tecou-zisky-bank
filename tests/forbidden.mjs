@@ -43,6 +43,9 @@ for (const c of log.split("\n").filter(Boolean)) {
   for (const w of [...BASE, ...own]) if (low.includes(w.toLowerCase())) hits.push(`git: zpráva commitu obsahuje „${w}“`);
 }
 
+// PDF a podklady do repozitáře nepatří
+for (const f of sh("git ls-files").split("\n").filter(Boolean)) if (/\.pdf$/i.test(f) || f.startsWith("podklady/")) hits.push(`${f}: soubor nemá být v repozitáři`);
+
 const uniq = [...new Set(hits)];
 if (uniq.length) { console.error(uniq.join("\n") + `\n✗ ${uniq.length} nálezů`); process.exit(1); }
 console.log(`✓ ${files.length} souborů a historie gitu bez zakázaných řetězců`);
