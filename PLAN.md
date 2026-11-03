@@ -40,7 +40,7 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
 - Kontroly kvality po každém pushi zelené.
 
 **Nefunguje / omezení**
-- GitHub Pages nejsou zapnuté, web zatím není veřejně dostupný.
+- (vyřešeno) GitHub Pages jsou zapnuté, web běží na https://kzb0011.github.io/kam-tecou-zisky-bank/.
 - Hot titulků je málo (dnes 3), protože se berou jen titulky, které jmenují banku i klíčové slovo. Raději méně, ale k věci.
 - Datum změny ve vedení je datum zápisu do rejstříku. Skutečný odchod/příchod může být o dny až týdny dřív.
 - ČNB ARAD čeká na klíč, historické dividendy 2016–2022 na výroční zprávy (krok 1).
@@ -49,6 +49,5 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
 - `board.clenu` v data.js vs. dnešní rejstřík: KB 8 vs. 5 (v říjnu 2026 odešli 2 členové), UniCredit 8 vs. 9, Fio 7 vs. 8 (Jan Ullmann od 9/2026). Ostatní sedí. Počet v data.js se používá pro odměnu na člena za 2025, proto zůstává.
 
 **Potřebuji**
-1. Zapnout GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`.
-2. Klíč `CNB_ARAD_KEY` do Settings → Secrets and variables → Actions.
-3. Výroční zprávy (PDF) jako přílohy do chatu, pokud se má pokračovat v kroku 1.
+1. Klíč `CNB_ARAD_KEY` do Settings → Secrets and variables → Actions.
+2. Výroční zprávy (PDF) jako přílohy do chatu, pokud se má pokračovat v kroku 1.
