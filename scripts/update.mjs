@@ -2,6 +2,7 @@
 // Spouští GitHub Actions (viz .github/workflows/update.yml). Bez závislostí, Node 20+.
 // Když některý zdroj selže, zůstanou v data-live.js jeho poslední platná data a skript nespadne.
 import { readFile, writeFile } from "node:fs/promises";
+import { loadVedeni } from "./vedeni.mjs";
 
 // trackId: když je vyplněné, aplikace se načte přímo (iTunes lookup) a hledání se nepoužije.
 // Párování se kontroluje v logu běhu („app …“). Při chybném párování sem doplň správné trackId.
@@ -130,8 +131,10 @@ async function main() {
     out.repo = r; okRepo = true;
     console.log(`repo: ${r.rate} % od ${r.date}`);
   } catch (e) { console.warn(`repo: CHYBA ${e.message}, ponechána stará hodnota`); }
-  out.stav = { zpravy: `${okNews}/${BANKS.length}`, aplikace: `${okApps}/${BANKS.length}`, repo: okRepo };
-  if (!okNews && !okApps && !okRepo) { console.warn("Všechny zdroje selhaly, data-live.js zůstává beze změny."); return; }
+  const V = await loadVedeni(old.vedeni || {}, old.zmeny_vedeni || [], now);
+  out.vedeni = V.vedeni; out.zmeny_vedeni = V.zmeny;
+  out.stav = { zpravy: `${okNews}/${BANKS.length}`, aplikace: `${okApps}/${BANKS.length}`, repo: okRepo, vedeni: `${V.ok}/7` };
+  if (!okNews && !okApps && !okRepo && !V.ok) { console.warn("Všechny zdroje selhaly, data-live.js zůstává beze změny."); return; }
   await writeFile(OUT, "window.LIVE_DATA = " + JSON.stringify(out, null, 1) + ";\n");
   console.log(`hotovo: zprávy ${out.zpravy.length}, aplikace ${Object.keys(out.aplikace).length}, repo ${out.repo ? out.repo.rate : "–"}`);
 }

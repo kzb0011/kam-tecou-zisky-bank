@@ -3,8 +3,8 @@
   "private": true,
   "description": "Statický web, package.json slouží jen pro testy (web žádný build nepotřebuje).",
   "scripts": {
-    "test": "node tests/validate-data.mjs && node tests/forbidden.mjs && node --test tests/update.test.mjs tests/arad.test.mjs && node tests/qa.mjs",
-    "test:fast": "node tests/validate-data.mjs && node tests/forbidden.mjs && node --test tests/update.test.mjs tests/arad.test.mjs",
+    "test": "node tests/validate-data.mjs && node tests/forbidden.mjs && node --test tests/update.test.mjs tests/arad.test.mjs tests/vedeni.test.mjs && node tests/qa.mjs",
+    "test:fast": "node tests/validate-data.mjs && node tests/forbidden.mjs && node --test tests/update.test.mjs tests/arad.test.mjs tests/vedeni.test.mjs",
     "update": "node scripts/update.mjs",
     "rates": "node scripts/arad.mjs",
     "og": "node scripts/og-image.mjs"
