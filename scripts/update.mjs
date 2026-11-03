@@ -5,17 +5,18 @@ import { readFile, writeFile } from "node:fs/promises";
 
 // trackId: když je vyplněné, aplikace se načte přímo (iTunes lookup) a hledání se nepoužije.
 // Párování se kontroluje v logu běhu („app …“). Při chybném párování sem doplň správné trackId.
+// t: zpráva se bere, jen když titulek banku zmiňuje. Regexy se porovnávají s textem bez diakritiky a malými písmeny.
 export const BANKS = [
-  { id: "cs", q: '"Česká spořitelna"', app: { term: "George Česko", seller: /spořitelna|erste/i, trackId: null } },
-  { id: "csob", q: '"ČSOB" banka', app: { term: "ČSOB Smart", seller: /obchodn|ČSOB|CSOB/i, trackId: null } },
-  { id: "kb", q: '"Komerční banka"', app: { term: "KB+ Komerční banka", seller: /komer/i, trackId: null } },
-  { id: "ucb", q: '"UniCredit Bank" Česko', app: { term: "UniCredit Smart Banking", seller: /unicredit/i, trackId: null } },
-  { id: "rb", q: '"Raiffeisenbank" Česko', app: { term: "Raiffeisenbank", seller: /raiffeisen/i, trackId: null } },
-  { id: "moneta", q: '"Moneta Money Bank"', app: { term: "Smart Banka MONETA", seller: /moneta/i, trackId: null } },
-  { id: "fio", q: '"Fio banka"', app: { term: "Fio Smartbanking", seller: /fio/i, trackId: null } },
+  { id: "cs", q: '"Česká spořitelna"', t: /\bsporitel|\bcs\b|george/, app: { term: "George Česko", seller: /sporitelna|erste/, trackId: null } },
+  { id: "csob", q: '"ČSOB" banka', t: /\bcsob/, app: { term: "ČSOB Smart", seller: /obchodni banka|csob/, trackId: 1528483245 } },
+  { id: "kb", q: '"Komerční banka"', t: /komercni bank|\bkb\b/, app: { term: "KB+ Komerční banka", seller: /komercni/, trackId: 1585485232 } },
+  { id: "ucb", q: '"UniCredit Bank" Česko', t: /unicredit/, app: { term: "UniCredit Smart Banking", seller: /unicredit/, trackId: 468057018 } },
+  { id: "rb", q: '"Raiffeisenbank" Česko', t: /raiffeisen/, app: { term: "Raiffeisenbank", seller: /raiffeisen/, trackId: 538751727 } },
+  { id: "moneta", q: '"Moneta Money Bank"', t: /\bmonet[ayeuo]\b/, app: { term: "Smart Banka MONETA", seller: /moneta/, trackId: 1122443334 } },
+  { id: "fio", q: '"Fio banka"', t: /\bfio\b/, app: { term: "Fio Smartbanking", seller: /\bfio\b/, trackId: 1451236597 } },
 ];
 // vedlejší aplikace (klíče, firemní, pojišťovny…) se nepárují
-const SIDE_APP = /klíč|klic|\bkey\b|token|business|podnik|firm|pojiš|leasing|stavební|penzi|invest|trader|wallet|pay\b/i;
+const SIDE_APP = /klic|\bkey\b|token|business|podnik|firm|pojis|leasing|stavebni|penzi|invest|trader|wallet|pay\b/i;
 const OUT = new URL("../data-live.js", import.meta.url);
 const UA = { "user-agent": "Mozilla/5.0 (compatible; kzb-data/1.0)" };
 const DAY = 864e5;
@@ -23,6 +24,7 @@ const NEWS_DAYS = 30, NEWS_PER_BANK = 15, NEWS_MAX = 80, HIST_DAYS = 90;
 
 const decode = (s) => s.replace(/<!\[CDATA\[(.*?)\]\]>/gs, "$1").replace(/<[^>]+>/g, "").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;|&#39;/g, "'").replace(/&amp;/g, "&").trim();
 const tag = (xml, t) => { const m = xml.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)); return m ? decode(m[1]) : ""; };
+export const plain = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 export const normTitle = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
 
 export function parseNews(xml, bankId, now = Date.now()) {
@@ -47,8 +49,17 @@ export function mergeNews(lists, now = Date.now()) {
   return out.slice(0, NEWS_MAX);
 }
 
+// zpráva musí banku zmínit v titulku; vyřadí rozcestníky rubrik („Banka | Médium …“) a vlastní zpravodajství banky
+export function relevant(n, bank) {
+  if (!bank || !bank.t) return true;
+  const t = plain(n.title);
+  if (/\s\|\s/.test(n.title)) return false;
+  if (bank.t.test(plain(n.source)) && !/\s/.test(n.source.trim())) return false;
+  return bank.t.test(t);
+}
+
 export function pickApp(results, seller) {
-  const c = (results || []).filter((r) => seller.test(r.sellerName || r.artistName || "") && !SIDE_APP.test(r.trackName || "") && r.userRatingCount > 0);
+  const c = (results || []).filter((r) => seller.test(plain(r.sellerName || r.artistName)) && !SIDE_APP.test(plain(r.trackName)) && r.userRatingCount > 0);
   c.sort((a, b) => b.userRatingCount - a.userRatingCount);
   return c[0] ? toApp(c[0]) : null;
 }
@@ -94,9 +105,9 @@ async function main() {
   for (const b of BANKS) {
     try {
       const xml = await get(`https://news.google.com/rss/search?q=${encodeURIComponent(b.q + " when:30d")}&hl=cs&gl=CZ&ceid=CZ:cs`);
-      const n = parseNews(xml, b.id).slice(0, NEWS_PER_BANK);
+      const all = parseNews(xml, b.id), n = all.filter((x) => relevant(x, b)).slice(0, NEWS_PER_BANK);
       lists.push(n); okNews++;
-      console.log(`news ${b.id}: ${n.length}`);
+      console.log(`news ${b.id}: ${n.length} (vyřazeno jako nesouvisející ${all.length - all.filter((x) => relevant(x, b)).length})`);
     } catch (e) {
       lists.push(oldNews.filter((x) => x.bank === b.id)); // výpadek: nech staré zprávy této banky
       console.warn(`news ${b.id}: CHYBA ${e.message}, ponechána stará data`);

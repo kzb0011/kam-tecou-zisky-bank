@@ -1,7 +1,8 @@
 // Testy parserů živých dat na vzorových vstupech. Spuštění: node --test tests/
 import test from "node:test";
 import assert from "node:assert/strict";
-import { parseNews, mergeNews, pickApp, parseRepo, addHistory } from "../scripts/update.mjs";
+import { parseNews, mergeNews, pickApp, parseRepo, addHistory, relevant, BANKS } from "../scripts/update.mjs";
+const awaitBanks = { BANKS };
 
 const NOW = Date.parse("2026-11-03T08:00:00Z");
 const rss = (items) => `<rss><channel>${items.map(([t, s, d, l]) => `<item><title>${t}</title><link>${l}</link><pubDate>${d}</pubDate><source url="https://x.cz">${s}</source></item>`).join("")}</channel></rss>`;
@@ -52,4 +53,23 @@ test("parseRepo: oba formáty, vezme poslední", () => {
   assert.deepEqual(parseRepo("VALID_FROM|CNB_REPO_RATE_IN_%\n20250509|3,50\n20240320|5,75\n"), { date: "2025-05-09", rate: 3.5 });
   assert.deepEqual(parseRepo("9.5.2025 3.50\n7. 8. 2026 3,75"), { date: "2026-08-07", rate: 3.75 });
   assert.equal(parseRepo("nic"), null);
+});
+
+test("pickApp: prodejce bez diakritiky", () => {
+  const { BANKS } = awaitBanks;
+  const cs = BANKS.find((b) => b.id === "cs");
+  const a = pickApp([{ trackName: "George Česko", sellerName: "Ceska sporitelna, a.s.", userRatingCount: 10, averageUserRating: 4.5, trackId: 9 }], cs.app.seller);
+  assert.equal(a.id, 9);
+});
+
+test("relevant: titulek musí banku zmínit, bez rozcestníků a vlastních zpráv banky", () => {
+  const { BANKS } = awaitBanks;
+  const b = (id) => BANKS.find((x) => x.id === id);
+  assert.equal(relevant({ title: "Česká spořitelna zvýšila zisk", source: "ČTK" }, b("cs")), true);
+  assert.equal(relevant({ title: "Česká spořitelna | iROZHLAS - spolehlivé zprávy", source: "iROZHLAS" }, b("cs")), false);
+  assert.equal(relevant({ title: "Primoco UAV reportovalo výsledky", source: "Fio" }, b("fio")), false);
+  assert.equal(relevant({ title: "Fio banka zdražuje", source: "Fio" }, b("fio")), false);
+  assert.equal(relevant({ title: "Fio banka zdražuje", source: "E15.cz" }, b("fio")), true);
+  assert.equal(relevant({ title: "ČSÚ zveřejní odhad HDP", source: "FXstreet.cz" }, b("rb")), false);
+  assert.equal(relevant({ title: "KB láká na 4,2 %", source: "E15.cz" }, b("kb")), true);
 });

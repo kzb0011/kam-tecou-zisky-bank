@@ -794,8 +794,8 @@
       <li><b>Mzdy v zahraničí</b>: národní statistické úřady. Česko a Polsko přepočteny průměrným kurzem 2025.</li>
     </ul></section>
     <section class="card"><h2>Automaticky aktualizovaná data</h2><ul class="meth">
-      <li><b>Zprávy o bankách</b>: každý den automatický výběr titulků z českých médií přes vyhledávání Google News (RSS) za posledních 30 dní, nejvýš 80 zpráv. Stejné titulky se slučují. Web zobrazuje jen titulek, médium a odkaz na původní článek. Výběr neprochází ruční kontrolou a nevyjadřuje názor webu.</li>
-      <li><b>Hodnocení aplikací</b>: průměrné hodnocení hlavní mobilní aplikace banky v českém App Store (veřejné rozhraní iTunes Search API), každý den. Aplikace se páruje podle prodejce, firemní a vedlejší aplikace (klíče, pojištění) se nepočítají. Trend je rozdíl proti nejstaršímu uloženému dni, nejvýš 90 dní zpět. Hodnocení v Google Play nemá veřejné rozhraní, proto chybí.</li>
+      <li><b>Zprávy o bankách</b>: každý den automatický výběr titulků z českých médií přes vyhledávání Google News (RSS) za posledních 30 dní, nejvýš 80 zpráv. Berou se jen titulky, které banku jmenují. Stejné titulky se slučují. Web zobrazuje jen titulek, médium a odkaz na původní článek. Výběr neprochází ruční kontrolou a nevyjadřuje názor webu.</li>
+      <li><b>Hodnocení aplikací</b>: průměrné hodnocení hlavní mobilní aplikace banky v českém App Store (veřejné rozhraní iTunes Search API), každý den. Aplikace je pevně určená (ověřeno podle prodejce), firemní a vedlejší aplikace (klíče, pojištění) se nepočítají. Trend je rozdíl proti nejstaršímu uloženému dni, nejvýš 90 dní zpět. Hodnocení v Google Play nemá veřejné rozhraní, proto chybí.</li>
       <li><b>Repo sazba ČNB</b>: denně z veřejného přehledu vývoje 2T repo sazby na webu ČNB.</li>
       <li><b>Úrokové sazby a index férovosti</b>: jednou měsíčně z databáze ČNB ARAD (úrokové sazby měnových finančních institucí, nové obchody domácností). Sazby konkrétních spořicích účtů se doplňují ručně ze srovnávače.</li>
       <li>Když některý zdroj nefunguje, zůstanou na webu poslední platná data s datem aktualizace.</li>
