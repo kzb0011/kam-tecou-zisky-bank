@@ -7,13 +7,13 @@ import { readFile, writeFile } from "node:fs/promises";
 // Párování se kontroluje v logu běhu („app …“). Při chybném párování sem doplň správné trackId.
 // t: zpráva se bere, jen když titulek banku zmiňuje. Regexy se porovnávají s textem bez diakritiky a malými písmeny.
 export const BANKS = [
-  { id: "cs", q: '"Česká spořitelna"', t: /\bsporitel|\bcs\b|george/, app: { term: "George Česko", seller: /sporitelna|erste/, trackId: null } },
+  { id: "cs", q: '"Česká spořitelna"', t: /\bsporitel|\bcs\b|george/, app: { term: "George Česko", seller: /sporitelna|erste/, trackId: 1163368801 } },
   { id: "csob", q: '"ČSOB" banka', t: /\bcsob/, app: { term: "ČSOB Smart", seller: /obchodni banka|csob/, trackId: 1528483245 } },
   { id: "kb", q: '"Komerční banka"', t: /komercni bank|\bkb\b/, app: { term: "KB+ Komerční banka", seller: /komercni/, trackId: 1585485232 } },
-  { id: "ucb", q: '"UniCredit Bank" Česko', t: /unicredit/, app: { term: "UniCredit Smart Banking", seller: /unicredit/, trackId: 468057018 } },
-  { id: "rb", q: '"Raiffeisenbank" Česko', t: /raiffeisen/, app: { term: "Raiffeisenbank", seller: /raiffeisen/, trackId: 538751727 } },
+  { id: "ucb", q: "UniCredit Bank OR UniCredit banka", t: /unicredit/, app: { term: "UniCredit Smart Banking", seller: /unicredit/, trackId: 468057018 } },
+  { id: "rb", q: "Raiffeisenbank", t: /raiffeisen/, app: { term: "Raiffeisenbank", seller: /raiffeisen/, trackId: 538751727 } },
   { id: "moneta", q: '"Moneta Money Bank"', t: /\bmonet[ayeuo]\b/, app: { term: "Smart Banka MONETA", seller: /moneta/, trackId: 1122443334 } },
-  { id: "fio", q: '"Fio banka"', t: /\bfio\b/, app: { term: "Fio Smartbanking", seller: /\bfio\b/, trackId: 1451236597 } },
+  { id: "fio", q: '"Fio banka" OR "Fio banky" OR "Fio bance"', t: /\bfio\b/, app: { term: "Fio Smartbanking", seller: /\bfio\b/, trackId: 1451236597 } },
 ];
 // vedlejší aplikace (klíče, firemní, pojišťovny…) se nepárují
 const SIDE_APP = /klic|\bkey\b|token|business|podnik|firm|pojis|leasing|stavebni|penzi|invest|trader|wallet|pay\b/i;
