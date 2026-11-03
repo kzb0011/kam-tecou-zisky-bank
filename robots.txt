@@ -3,4 +3,4 @@ Allow: /
 Disallow: /tests/
 Disallow: /scripts/
 
-Sitemap: https://bob00712.github.io/kam-tecou-zisky-bank/sitemap.xml
+Sitemap: https://kzb0011.github.io/kam-tecou-zisky-bank/sitemap.xml
