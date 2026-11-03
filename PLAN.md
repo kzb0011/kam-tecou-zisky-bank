@@ -32,6 +32,12 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Opraveno po prvním ostrém běhu: prokuristé se nepočítají do představenstva (ČS měla 8 místo 6); jména se porovnávají bez diakritiky (falešná změna u KB). Dvě falešné změny vzniklé při opravě (ČS, prokuristé) ručně odstraněny z data-live.js.
 7. ✅ Shrnutí: co funguje, co ne, co je potřeba.
 
+8. ⬜ Úpravu provést až v pátek 6. 11. 2026 ve 14 hodin. Homepage Hot news:
+   1. V horní řadě 4 karet nahradit kartu „Index férovosti vkladů“ kartou „Hot news“: nejnovějších 5 zpráv (změny ve vedení z rejstříku + filtrované titulky), u každé banka, datum a odkaz na zdroj; nejnovější větším písmem; když za 14 dní nic není: „Za posledních 14 dní žádné novinky.“; karta nesmí být vyšší než ostatní, dlouhé titulky zkrátit třemi tečkami.
+   2. Samostatnou sekci „Zprávy o bankách“ / široký pruh se zprávami z homepage odstranit.
+   3. Index férovosti a sazby z homepage pryč, nechat jen na stránce Férové sazby a tam nahoře uvést, ke kterému měsíci data jsou.
+   4. Testy desktop + mobil, commit, push.
+
 ## Shrnutí (3. 11. 2026)
 
 **Funguje**

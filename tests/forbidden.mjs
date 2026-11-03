@@ -17,7 +17,7 @@ const THIRD = [BASE[2], "fonts.gstatic", "cdnjs.", "jsdelivr", "unpkg.com", "goo
 const ctx = { window: {} };
 vm.runInNewContext(readFileSync(join(root, "data.js"), "utf8"), ctx);
 const KONTAKT = String(ctx.window.BANK_DATA.kontakt || "").toLowerCase();
-const OK_MAIL = new Set([KONTAKT, "41898282+github-actions[bot]@users.noreply.github.com"].filter(Boolean));
+const OK_MAIL = new Set([KONTAKT, "41898282+github-actions[bot]@users.noreply.github.com", "noreply@github.com"].filter(Boolean));
 const MAIL_RE = /[a-z0-9._%+\-[\]]+@[a-z0-9.-]+\.[a-z]{2,}/gi;
 
 const files = sh("git ls-files --cached --others --exclude-standard").split("\n").filter(Boolean)
@@ -35,7 +35,7 @@ for (const f of files) {
 // historie gitu: autoři, commiteři a zprávy commitů
 let log = "";
 try { log = sh("git log --all --format='%an <%ae>|%cn <%ce>|%B'"); } catch {}
-const okAuthor = (s) => /^(kzb0011|github-actions\[bot\]) <[^>]*@users\.noreply\.github\.com>$/.test(s);
+const okAuthor = (s) => /^(kzb0011|github-actions\[bot\]) <[^>]*@users\.noreply\.github\.com>$/.test(s) || s === "GitHub <noreply@github.com>"; // commity přes web GitHubu
 for (const c of log.split("\n").filter(Boolean)) {
   const [a, cm] = c.split("|");
   if (a && cm !== undefined && (!okAuthor(a) || !okAuthor(cm))) hits.push(`git: nepovolená identita ${a} / ${cm}`);
