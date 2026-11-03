@@ -869,24 +869,6 @@ window.LIVE_DATA = {
  },
  "zmeny_vedeni": [
   {
-   "bank": "cs",
-   "typ": "odesel",
-   "organ": "představenstva",
-   "jmeno": "Jan Bojko",
-   "datum": "2026-11-03",
-   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782",
-   "rozdil": true
-  },
-  {
-   "bank": "cs",
-   "typ": "odesel",
-   "organ": "představenstva",
-   "jmeno": "Štefan Elek",
-   "datum": "2026-11-03",
-   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782",
-   "rozdil": true
-  },
-  {
    "bank": "kb",
    "typ": "odesel",
    "organ": "představenstva",
