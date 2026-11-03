@@ -252,3 +252,15 @@ a.name:hover { color: var(--home); }
 .news a { color: var(--ink); text-decoration: none; font-weight: 500; line-height: 1.35; }
 .news a:hover { color: var(--home); }
 .card h3.sub-h { margin: 20px 0 2px; }
+/* kompaktní seznam (5 šéfů v kartě na přehledu) */
+.ceo-list.compact { gap: 2px; }
+.ceo-list.compact .ceo-row { padding: 4px 0; }
+.ceo-list.compact .ava { width: 26px; height: 26px; font-size: .66rem; }
+.ceo-list.compact .cn b { font-size: .86rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ceo-list.compact .cn .dim { font-size: .76rem; }
+.ceo-list.compact .cv { flex-direction: row; align-items: baseline; gap: 4px; font-size: .95rem; }
+/* hot news na přehledu */
+.card.hot .hot-lead { display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, 2.4vw, 1.5rem); line-height: 1.25; letter-spacing: -.01em; color: var(--ink); text-decoration: none; margin-top: 6px; text-wrap: balance; }
+.card.hot .hot-lead:hover { text-decoration: underline; }
+.card.hot .hot-meta { display: block; margin: 6px 0 4px; }
+.card.hot .news { border-top: 1px solid var(--line); margin-top: 8px; }

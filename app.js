@@ -318,8 +318,14 @@
     return `<ul class="news">${items.slice(0, n).map((x) => { const b = bankById[x.bank]; return `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${x.or ? '<span class="chip mix">Rejstřík</span> ' : ""}${esc(x.meta)}</span></li>`; }).join("")}</ul>`;
   }
   function hotCard() {
-    return `<section class="card"><div class="card-head"><h2>Hot news</h2><span class="dim">${liveStamp()}</span></div>${hotList(hotItems(), 8)}
-      <p class="note">Změny v představenstvech a dozorčích radách podle obchodního rejstříku (datum zápisu) a titulky z českých médií o odchodech z vedení, propouštění, pokutách a ČNB. Odkazy vedou na zdroj.</p></section>`;
+    const lim = Date.now() - 14 * 864e5;
+    const it = hotItems().filter((x) => new Date(x.date) >= lim);
+    const chips = (x) => { const b = bankById[x.bank]; return `${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${x.or ? '<span class="chip mix">Rejstřík</span> ' : ""}`; };
+    const body = !it.length ? `<p class="note">Za posledních 14 dní žádné změny ve vedení bank.</p>`
+      : `<a class="hot-lead" href="${esc(it[0].url)}" target="_blank" rel="noopener">${esc(it[0].title)}</a><span class="dim hot-meta">${chips(it[0])}${esc(it[0].meta)}</span>
+        ${it.length > 1 ? `<ul class="news">${it.slice(1, 5).map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${chips(x)}${esc(x.meta)}</span></li>`).join("")}</ul>` : ""}`;
+    return `<section class="card hot"><div class="card-head"><h2>Hot news</h2><span class="dim">${liveStamp()}</span></div>${body}
+      <p class="note">Posledních 14 dní: změny v představenstvech a dozorčích radách podle obchodního rejstříku (datum zápisu) a titulky z českých médií o odchodech z vedení, propouštění, pokutách a ČNB. Odkazy vedou na zdroj.</p></section>`;
   }
   function boardNow(b) {
     const v = (L.vedeni || {})[b.id];
@@ -388,9 +394,9 @@
       const tot = sum(pay.map((r) => r.v)), ab = sum(pay.map((r) => r.ab || 0));
       c2 = `<div class="kpi"><div class="kh">Dividendy vyplacené v roce 2025</div><div class="kv out">${mld(tot, 1)}<small>mld. Kč</small></div><span class="dim">z toho do zahraničí nejméně <b style="color:var(--abroad)">${mld(ab, 1)} mld.</b></span>
         ${mbars(pay.map((r) => ({ k: r.x.zkratka, v: r.v, c: colorFor(r.x) })))}</div>`;
-      const ranked = banks.filter((x) => x.board && x.board.ceo).map((x) => ({ x, mid: (x.board.ceo[0] + x.board.ceo[1]) / 2, tot: x.board.total ? x.board.total[0] : 0 })).sort((a, c) => c.mid - a.mid || c.tot - a.tot).slice(0, 3);
+      const ranked = banks.filter((x) => x.board && x.board.ceo).map((x) => ({ x, mid: (x.board.ceo[0] + x.board.ceo[1]) / 2, tot: x.board.total ? x.board.total[0] : 0 })).sort((a, c) => c.mid - a.mid || c.tot - a.tot).slice(0, 5);
       c3 = `<div class="kpi"><div class="kh">Nejlépe placení šéfové bank · ročně</div>
-        <div class="ceo-list">${ranked.map(({ x }, k) => `<a class="ceo-row" href="#${x.id}">${avatar(x)}<span class="cn"><b>${esc(x.sef.jmeno)}</b><span class="dim">${k + 1}. ${esc(x.zkratka)}</span></span><span class="cv">${range(x.board.ceo)}<small>mil. Kč</small>${x.board.typ === "odhad" ? '<span class="est">odhad</span>' : ""}</span></a>`).join("")}</div>
+        <div class="ceo-list compact">${ranked.map(({ x }, k) => `<a class="ceo-row" href="#${x.id}">${avatar(x)}<span class="cn"><b>${esc(x.sef.jmeno)}</b><span class="dim">${k + 1}. ${esc(x.zkratka)}${x.board.typ === "odhad" ? ' · <span class="est">odhad</span>' : ""}</span></span><span class="cv">${range(x.board.ceo)}<small>mil. Kč</small></span></a>`).join("")}</div>
         <a class="kf" href="#mzdy" style="text-decoration:none">Všichni šéfové a představenstva →</a></div>`;
       c4 = fairCard(null);
     } else {

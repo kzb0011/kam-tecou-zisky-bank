@@ -21,5 +21,9 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Homepage: karta „Hot news“ hned pod 4 hlavními kartami. Detail banky: v kartě „Odměny vedení“ aktuální představenstvo z rejstříku a „Změny ve vedení a zprávy“ (max. 6).
    - Rozhodnutí: texty změn jsou rodově neutrální („Nově v představenstvu: …“, „Už není v dozorčí radě: …“), aby se neodhadoval rod podle jména.
    - Metodika doplněna. Test v prohlížeči kontroluje i tyto karty (1280 a 390 px).
+5a. ✅ Homepage: „Hot news“ hned pod hlavními 4 kartami jako široká karta přes celou šířku. Nejnovější zpráva větším písmem, pod ní další 3–4 s datem a zdrojem. Jen posledních 14 dní. Když nic není: „Za posledních 14 dní žádné změny ve vedení bank.“
+   - Hotovo: hlavní zpráva větším písmem, pod ní až 4 další, okno 14 dní (detail banky dál ukazuje 30 dní zpráv a rok změn v rejstříku).
+5b. ✅ Karta „Nejlépe placení šéfové bank“: 5 šéfů místo 3, u odhadů viditelný štítek „odhad“, na mobilu nezvětšit víc než ostatní.
+   - Hotovo: kompaktní řádky, štítek „odhad“ u banky. Na 390 px má karta 294 px, ostatní karty 206–495 px (nejvyšší je index férovosti), takže řadu nenatahuje.
 6. ⬜ Testy, commit, push, ruční spuštění GitHub Action a ověření zeleného běhu.
 7. ⬜ Shrnutí: co funguje, co ne, co je potřeba.
