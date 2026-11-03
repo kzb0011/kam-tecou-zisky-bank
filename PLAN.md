@@ -14,7 +14,9 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Změny se berou z dat zápisu/výmazu v rejstříku za posledních 365 dní, navíc z rozdílu proti minulému dni. Přepis funkce téže osoby (např. na předsedu) se za změnu nepovažuje.
    - Rozhodnutí: datum u změny je datum zápisu do rejstříku (ne datum rozhodnutí banky), na webu se tak i popíše.
    - Při chybě u banky zůstanou její stará data. Jednotkové testy: `tests/vedeni.test.mjs`. Sonda z kroku 2 odstraněna.
-4. ⬜ Denní úloha: filtrované titulky z Google News RSS (odvolán, rezignace, odchází, nový člen představenstva, generální ředitel, propouštění, pokuta, ČNB).
+4. ✅ Denní úloha: filtrované titulky z Google News RSS (odvolán, rezignace, odchází, nový člen představenstva, generální ředitel, propouštění, pokuta, ČNB).
+   - V `scripts/update.mjs`: pro každou banku jeden dotaz „banka + (klíčová slova) za 30 dní“, výstup `LIVE_DATA.hot` (max. 40).
+   - Rozhodnutí: titulek musí jmenovat banku i obsahovat některé klíčové slovo (kontrola i na straně skriptu), aby se nebraly obecné zprávy o sazbách ČNB.
 5. ⬜ Homepage: sekce „Hot news“ pod hlavními kartami (max. 8, zdroj a datum). Detail banky: její zprávy u tabulky odměn vedení.
 6. ⬜ Testy, commit, push, ruční spuštění GitHub Action a ověření zeleného běhu.
 7. ⬜ Shrnutí: co funguje, co ne, co je potřeba.

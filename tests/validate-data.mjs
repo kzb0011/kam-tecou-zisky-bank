@@ -42,7 +42,7 @@ for (const r of D.sektor?.index?.rady || []) {
 for (const k of ["vklady", "uvery"]) for (const r of D.sektor?.sazby?.[k] || []) if (!num(r[1])) err.push(`sektor.sazby.${k}: ${r[0]} není číslo`);
 
 if (L && L.aktualizace) {
-  for (const z of L.zpravy || []) if (!z.title || !URL_RE.test(z.url || "") || isNaN(new Date(z.date))) err.push(`data-live: vadná zpráva ${JSON.stringify(z).slice(0, 80)}`);
+  for (const z of [...(L.zpravy || []), ...(L.hot || [])]) if (!z.title || !URL_RE.test(z.url || "") || isNaN(new Date(z.date))) err.push(`data-live: vadná zpráva ${JSON.stringify(z).slice(0, 80)}`);
   for (const e of L.zmeny_vedeni || []) if (!ids.has(e.bank) || !["prisel", "odesel"].includes(e.typ) || !e.jmeno || !/^\d{4}-\d{2}-\d{2}$/.test(e.datum) || !URL_RE.test(e.url || "")) err.push(`data-live: vadná změna vedení ${JSON.stringify(e).slice(0, 80)}`);
   for (const [id, v] of Object.entries(L.vedeni || {})) if (!ids.has(id) || !Array.isArray(v.predstavenstvo)) err.push(`data-live: vadné vedení ${id}`);
   for (const [id, a] of Object.entries(L.aplikace || {})) if (!ids.has(id) || !num(a.rating) || a.rating < 1 || a.rating > 5 || !num(a.count)) err.push(`data-live: vadná aplikace ${id}`);

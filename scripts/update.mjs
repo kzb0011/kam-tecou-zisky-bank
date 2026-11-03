@@ -21,7 +21,10 @@ const SIDE_APP = /klic|\bkey\b|token|business|podnik|firm|pojis|leasing|stavebni
 const OUT = new URL("../data-live.js", import.meta.url);
 const UA = { "user-agent": "Mozilla/5.0 (compatible; kzb-data/1.0)" };
 const DAY = 864e5;
-const NEWS_DAYS = 30, NEWS_PER_BANK = 15, NEWS_MAX = 80, HIST_DAYS = 90;
+const NEWS_DAYS = 30, NEWS_PER_BANK = 15, NEWS_MAX = 80, HIST_DAYS = 90, HOT_MAX = 40;
+// „Hot news“: titulky o vedení, propouštění, pokutách a ČNB (porovnává se text bez diakritiky)
+export const HOT_Q = '(odvolán OR rezignace OR odchází OR "člen představenstva" OR "generální ředitel" OR propouštění OR pokuta OR ČNB)';
+export const HOT_RE = /odvolan|odvola[lt]|rezign|odchaz|odejde|odesel|odesla|clen\w* predstavenstv|predsed\w* predstavenstv|generaln\w* reditel|sef\w* bank|propous|propust|pokut|\bcnb\b/;
 
 const decode = (s) => s.replace(/<!\[CDATA\[(.*?)\]\]>/gs, "$1").replace(/<[^>]+>/g, "").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;|&#39;/g, "'").replace(/&amp;/g, "&").trim();
 const tag = (xml, t) => { const m = xml.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)); return m ? decode(m[1]) : ""; };
@@ -58,6 +61,8 @@ export function relevant(n, bank) {
   if (bank.t.test(plain(n.source)) && !/\s/.test(n.source.trim())) return false;
   return bank.t.test(t);
 }
+
+export const isHot = (n, bank) => relevant(n, bank) && HOT_RE.test(plain(n.title));
 
 export function pickApp(results, seller) {
   const c = (results || []).filter((r) => seller.test(plain(r.sellerName || r.artistName)) && !SIDE_APP.test(plain(r.trackName)) && r.userRatingCount > 0);
@@ -101,8 +106,8 @@ async function main() {
   const now = new Date(), day = now.toISOString().slice(0, 10);
   const oldNews = old.zpravy || [];
   const out = { aktualizace: now.toISOString(), zpravy: [], aplikace: { ...(old.aplikace || {}) }, repo: old.repo || null, stav: {} };
-  const lists = [];
-  let okNews = 0, okApps = 0;
+  const lists = [], hotLists = [];
+  let okNews = 0, okApps = 0, okHot = 0;
   for (const b of BANKS) {
     try {
       const xml = await get(`https://news.google.com/rss/search?q=${encodeURIComponent(b.q + " when:30d")}&hl=cs&gl=CZ&ceid=CZ:cs`);
@@ -112,6 +117,15 @@ async function main() {
     } catch (e) {
       lists.push(oldNews.filter((x) => x.bank === b.id)); // výpadek: nech staré zprávy této banky
       console.warn(`news ${b.id}: CHYBA ${e.message}, ponechána stará data`);
+    }
+    try {
+      const xml = await get(`https://news.google.com/rss/search?q=${encodeURIComponent(b.q + " " + HOT_Q + " when:30d")}&hl=cs&gl=CZ&ceid=CZ:cs`);
+      const h = parseNews(xml, b.id).filter((x) => isHot(x, b));
+      hotLists.push(h); okHot++;
+      console.log(`hot ${b.id}: ${h.length}`);
+    } catch (e) {
+      hotLists.push((old.hot || []).filter((x) => x.bank === b.id));
+      console.warn(`hot ${b.id}: CHYBA ${e.message}, ponechána stará data`);
     }
     try {
       const a = b.app.trackId
@@ -124,6 +138,7 @@ async function main() {
     } catch (e) { console.warn(`app ${b.id}: CHYBA ${e.message}, ponechána stará data`); }
   }
   out.zpravy = mergeNews(lists, now.getTime());
+  out.hot = mergeNews(hotLists, now.getTime()).slice(0, HOT_MAX);
   let okRepo = false;
   try {
     const r = parseRepo(await get("https://www.cnb.cz/cs/casto-kladene-dotazy/.galleries/vyvoj_repo_historie.txt"));
@@ -133,8 +148,8 @@ async function main() {
   } catch (e) { console.warn(`repo: CHYBA ${e.message}, ponechána stará hodnota`); }
   const V = await loadVedeni(old.vedeni || {}, old.zmeny_vedeni || [], now);
   out.vedeni = V.vedeni; out.zmeny_vedeni = V.zmeny;
-  out.stav = { zpravy: `${okNews}/${BANKS.length}`, aplikace: `${okApps}/${BANKS.length}`, repo: okRepo, vedeni: `${V.ok}/7` };
-  if (!okNews && !okApps && !okRepo && !V.ok) { console.warn("Všechny zdroje selhaly, data-live.js zůstává beze změny."); return; }
+  out.stav = { zpravy: `${okNews}/${BANKS.length}`, aplikace: `${okApps}/${BANKS.length}`, repo: okRepo, hot: `${okHot}/${BANKS.length}`, vedeni: `${V.ok}/7` };
+  if (!okNews && !okApps && !okRepo && !okHot && !V.ok) { console.warn("Všechny zdroje selhaly, data-live.js zůstává beze změny."); return; }
   await writeFile(OUT, "window.LIVE_DATA = " + JSON.stringify(out, null, 1) + ";\n");
   console.log(`hotovo: zprávy ${out.zpravy.length}, aplikace ${Object.keys(out.aplikace).length}, repo ${out.repo ? out.repo.rate : "–"}`);
 }

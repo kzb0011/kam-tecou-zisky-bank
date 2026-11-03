@@ -73,3 +73,14 @@ test("relevant: titulek musí banku zmínit, bez rozcestníků a vlastních zpr�
   assert.equal(relevant({ title: "ČSÚ zveřejní odhad HDP", source: "FXstreet.cz" }, b("rb")), false);
   assert.equal(relevant({ title: "KB láká na 4,2 %", source: "E15.cz" }, b("kb")), true);
 });
+
+test("isHot: jen titulky o bance a vedení/propouštění/pokutách/ČNB", async () => {
+  const { isHot } = await import("../scripts/update.mjs");
+  const b = (id) => BANKS.find((x) => x.id === id);
+  assert.equal(isHot({ title: "Šéf Komerční banky odchází z funkce", source: "E15.cz" }, b("kb")), true);
+  assert.equal(isHot({ title: "ČNB uložila Fio bance pokutu", source: "ČTK" }, b("fio")), true);
+  assert.equal(isHot({ title: "Raiffeisenbank propouští stovky lidí", source: "HN" }, b("rb")), true);
+  assert.equal(isHot({ title: "Nový člen představenstva ČSOB", source: "HN" }, b("csob")), true);
+  assert.equal(isHot({ title: "KB láká na 4,2 %", source: "E15.cz" }, b("kb")), false);
+  assert.equal(isHot({ title: "ČNB zvýšila sazby", source: "ČTK" }, b("ucb")), false);
+});
