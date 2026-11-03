@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--HEAD-->
+<title>Kam tečou zisky bank</title>
+<meta name="description" content="Kolik vydělávají české banky, kolik pošlou do zahraničí, kolik zaplatí na daních a kolik berou jejich šéfové.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://bob00712.github.io/kam-tecou-zisky-bank/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Kam tečou zisky bank">
+<meta property="og:title" content="Kam tečou zisky bank">
+<meta property="og:description" content="Kolik vydělávají české banky, kolik pošlou do zahraničí, kolik zaplatí na daních a kolik berou jejich šéfové.">
+<meta property="og:url" content="https://bob00712.github.io/kam-tecou-zisky-bank/">
+<meta property="og:image" content="https://bob00712.github.io/kam-tecou-zisky-bank/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Přehled zisků českých bank za rok 2025">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bob00712.github.io/kam-tecou-zisky-bank/og.png">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+<!--/HEAD-->
+</head>
+<body>
+<!--BODY-->
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#prehled">Kam tečou zisky bank</a>
+    <nav class="nav" id="nav" aria-label="Sekce">
+      <a href="#prehled" data-view="prehled">Přehled</a>
+      <a href="#banky" data-view="banky">Banky</a>
+      <a href="#sazby" data-view="sazby">Férové sazby?</a>
+      <a href="#dane" data-view="dane">Daně a srovnání</a>
+      <a href="#dividendy" data-view="dividendy">Dividendy</a>
+      <a href="#mzdy" data-view="mzdy">Mzdy a odměny</a>
+      <a href="#propousteni" data-view="propousteni">Propouštění</a>
+      <a href="#metodika" data-view="metodika">Metodika</a>
+      <a href="#onas" data-view="onas">O projektu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer class="wrap foot">
+  <p>Nezávislý přehled z veřejných dat. Nejde o finanční poradenství. <a href="#onas">O projektu</a> · <a href="#metodika">Metodika</a> · <a href="#soukromi">Ochrana soukromí</a> · <a href="#podminky">Podmínky užití</a> · <a href="#" data-cookie-settings>Nastavení cookies</a></p>
+  <p>Data z výročních zpráv bank, ČNB, ČSÚ a zpráv ČTK. Prázdné pole znamená, že údaj nebyl dohledán. Dopočtené hodnoty jsou označené.</p>
+  <p id="upd"></p>
+</footer>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+
+<div class="cookies" id="cookies" role="dialog" aria-label="Cookies" hidden>
+  <p><b>Cookies.</b> Web nepoužívá sledovací ani reklamní cookies. Volitelné měření návštěvnosti spustíme jen s vaším souhlasem. <a href="#soukromi">Ochrana soukromí</a></p>
+  <div class="btns"><button type="button" data-c="necessary">Odmítnout</button><button type="button" class="primary" data-c="all">Přijmout</button></div>
+</div>
+
+<script src="data.js"></script>
+<script src="data-live.js"></script>
+<script src="app.js"></script>
+<!--/BODY-->
+</body>
+</html>

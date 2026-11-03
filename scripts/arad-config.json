@@ -1,0 +1,15 @@
+{
+  "_pozn": "Kódy ukazatelů ČNB ARAD (úrokové sazby MFI, nové obchody domácností, CZK). Vyplní se po prvním běhu s API klíčem, nebo se v ARAD uloží vlastní sestava a sem se zadá její selection_id.",
+  "selection_id": null,
+  "period_from": "20230101",
+  "zdroj": "https://www.cnb.cz/aradb/",
+  "indicators": {
+    "bezny": null,
+    "na_pozadani": null,
+    "terminovane": null,
+    "hypoteky": null,
+    "spotrebitelske": null,
+    "kontokorent": null,
+    "karty": null
+  }
+}

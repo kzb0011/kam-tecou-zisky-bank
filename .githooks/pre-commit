@@ -1,0 +1,5 @@
+#!/bin/sh
+# Kontrola před každým commitem. Zapnutí (jednou): git config core.hooksPath .githooks
+set -e
+npm run --silent test:fast
+if node -e "require('playwright')" 2>/dev/null; then node tests/qa.mjs; else echo "playwright není nainstalovaný, test v prohlížeči proběhne na GitHubu"; fi

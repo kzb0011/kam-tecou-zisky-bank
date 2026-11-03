@@ -1,0 +1,36 @@
+name: Měsíční aktualizace sazeb
+on:
+  schedule:
+    - cron: "41 6 3,10,20 * *"   # 3., 10. a 20. den v měsíci (ČNB zveřejňuje sazby zhruba na konci měsíce za předchozí měsíc)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: data-update
+jobs:
+  rates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Sazby z ČNB ARAD
+        env:
+          CNB_ARAD_KEY: ${{ secrets.CNB_ARAD_KEY }}
+        run: node scripts/arad.mjs
+      - name: Kontrola dat
+        run: node tests/validate-data.mjs
+      - name: Uložit změny
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Měsíční aktualizace sazeb (ČNB ARAD)"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git pull --rebase origin main || { git rebase --abort; echo "Konflikt, data se uloží při dalším běhu"; exit 1; }
+            sleep $((i * 3))
+          done
+          exit 1

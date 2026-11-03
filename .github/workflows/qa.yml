@@ -1,0 +1,28 @@
+name: Kontrola kvality
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["data-live.js"]
+  pull_request: {}
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Data, zakázané řetězce, jednotkové testy
+        env:
+          FORBIDDEN_NAMES: ${{ secrets.FORBIDDEN_NAMES }}
+        run: npm run test:fast
+      - name: Instalace prohlížeče
+        run: npm install --no-save --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Test v prohlížeči (1280 a 390 px)
+        run: node tests/qa.mjs
