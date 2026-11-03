@@ -35,7 +35,7 @@ for (const f of files) {
 // historie gitu: autoři, commiteři a zprávy commitů
 let log = "";
 try { log = sh("git log --all --format='%an <%ae>|%cn <%ce>|%B'"); } catch {}
-const okAuthor = (s) => /^(kzb|github-actions\[bot\]) <[^>]*@users\.noreply\.github\.com>$/.test(s);
+const okAuthor = (s) => /^(kzb0011|github-actions\[bot\]) <[^>]*@users\.noreply\.github\.com>$/.test(s);
 for (const c of log.split("\n").filter(Boolean)) {
   const [a, cm] = c.split("|");
   if (a && cm !== undefined && (!okAuthor(a) || !okAuthor(cm))) hits.push(`git: nepovolená identita ${a} / ${cm}`);
