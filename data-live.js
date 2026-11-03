@@ -1,5 +1,5 @@
 window.LIVE_DATA = {
- "aktualizace": "2026-11-03T09:53:02.268Z",
+ "aktualizace": "2026-11-03T10:03:32.455Z",
  "zpravy": [
   {
    "bank": "rb",
@@ -37,6 +37,20 @@ window.LIVE_DATA = {
    "date": "2026-11-02T12:48:08.000Z"
   },
   {
+   "bank": "ucb",
+   "title": "Sleva na energie až 16 200 Kč. UniCredit a innogy odmění část společných klientů",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcXIyZFJ3THFxMWRyckZpN2tnT0dMR2tyY0Y2aV9PVHpKTW9IaGw3SnpDaTJBRnBhUlpSZmNoR3ZTV3EtTkYwTVNVR2xqNDJIWXRHRlVIQlZ5X1Z6aV8yVHBNNDBOOTdRWGlGVTRBbmxtZkMzZlNnMlg0RFBtaElCSjVscXJXUzd6SE1JVHdXNERZSkVjZ1M4Ykk3cUNIZmEwVVJ6TTVWQVpBMzMxUVJoNHU4UG1HdWV3SkNGZg?oc=5",
+   "source": "Penize.cz",
+   "date": "2026-11-02T10:30:00.000Z"
+  },
+  {
+   "bank": "ucb",
+   "title": "Až 16 200 korun zpět na účet. Innogy a UniCredit Bank spustily nový bonusový program",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNeV9IdVMwNms1RHo2STFzV29rNVJqcHNJX1RnQ3p4NnBObVhMNndXRUJKY3JONkV2aHQ5VVFaS09sZ3VvMVZzaHlDVmpOdExXSXlvMm9hTFl0Q1hENlZSeFFHUDJtbkNFNlREYVBSZkhOYU5XeVVKaHc5ZFlCX0lPTEdEOWpWdTFDX2hpWUUxdV8xUVBXRTJ2R3VvX1pEVEctUjFhRG0zcXRFLUdqMjR6NFROQ3lHSXF2UzVfcS1RbldqVjROMGZSakxNczlMdw?oc=5",
+   "source": "E15.cz",
+   "date": "2026-11-02T09:48:00.000Z"
+  },
+  {
    "bank": "rb",
    "title": "Raiffeisenbank vrací polovinu za Netflix i Spotify, Mikov zlevňuje nože až o 84 %",
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPYU1YeS1FLUVQNjV4WWs4M3BtTU5RZTlBUEQwM0lnVEdWYmZiVGJYNnlyMFMya20xeHdaY1hyT2N3NDJBenFJSmZJR2N5aDBpVkkwaEIyVVlHOUh0VXBaQnRNbk1FOFh2VFZKZ0NvemlpZW1zaFhGQjFnZFQ3R0xGQWd2STZ6TUhpalpxU09PZjItdDlJeWNmYWJMcFRrSDJQRGxteFBlMjJ0eXM?oc=5",
@@ -56,6 +70,13 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVDdiTFpBc1JCM2pyVUtUdTBINzRaTGhRTUFyV1EtZDF1VEVsY2M4d0VTaHhvcEZVMURCbmFfZHNWQVhORW93MFFrWlFnSk5LSEpfZW84NW5YMjMwUnE0MFYzTURWX05NY1M5ZVFsQTRwSldGVXQ3MWJPZjJ4ajZaWnZuZmhTcmhjSDZVZ0UyQUxhZDV0MWhTUlFaZ2J1T1J0WGtiMkZxR3JfZ0o5TEdWVHJWNGFOd3VuR3NVZS14NlpYNDdhUHRMUzgwd01BQUFEOG1iemo1YnRDNTNZMTZlcGo0UElRQQ?oc=5",
    "source": "Aktuálně.cz",
    "date": "2026-10-30T09:13:00.000Z"
+  },
+  {
+   "bank": "cs",
+   "title": "Banka jako majitel domova důchodců? Česká spořitelna investuje 11 miliard do chybějících lůžek",
+   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPVDRtTU9Cckp0b2xhVWROc1ZsSU9RaTVhbnlGTkkyU2l4R0FpNTNjTnJhVC1id3g5TzNlbDJ4dGhUVlBhLWwzQmZhb0NRZjdFR0hzWkZNZ1o2MnVfNDVoOWdEVmYteGJObVd5Slh0NGttelV3YzRHN2NuY3UzME9QdDJmcndXUy0xU1VidXhtT2xsb0hKTm1SaUpUd0RXd0hZR2JiVXhVdHZEY1NwYW4tc2lYNjZKeFpjUk9JbGhFYVE1MGlZQUIxLU80RWRBVndETVZ6dnRkeGd3LUFfb1cxbldia1hWNm1qLWloMC1R?oc=5",
+   "source": "E15.cz",
+   "date": "2026-10-30T08:37:51.000Z"
   },
   {
    "bank": "cs",
@@ -80,13 +101,6 @@ window.LIVE_DATA = {
   },
   {
    "bank": "cs",
-   "title": "Česká spořitelna vydělala přes 22 miliard. Pomohly hypotéky a investice klientů",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPN2lWam1OazVnektPeFJZc3J6MkZFeER6N1BIY1pnWThoSk5RMTFXZWs3YnVvelkwemtESzF5cUtHRFlpVFpwZFJzVW5nUHFXSjJqaV9QeEV5M0cxS3pmTFB5RXNvdEIwWUoxTjJoeTFYWHFQZHJlWk4zOW9HRzQwOWs3OTZTVFFBSDJieFdsSGhxbjY2eGJNMmF1MW5NMnRaX3d1OTNRYUkyeGx0X0t3?oc=5",
-   "source": "Měšec.cz",
-   "date": "2026-10-30T07:08:36.000Z"
-  },
-  {
-   "bank": "cs",
    "title": "Česká spořitelna vykázala k 30. září 2026 neauditovaný konsolidovaný čistý zisk počítaný podle mezinárodních standardů pro finanční výkaznictví (IFRS) ve výši 22,2 mld. Kč. Provozní zisk dosáhl 28,2 mld. Kč",
    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVTAxN3VyTmRxc1ZTdGlMTG5ZeXU3VmhkUzFWdVFSd2F2SUx4UGFNY0lzaXdNcjA5ODhZRXRxX3VES2dXZnZJNzdvTl82SVRoZG1CZThEUFgzM2UxaGVvNXN1UmVGWjVUTnluQ1hxa1Q0X3JyU2pWXzRFUjVHNEtiQkwtcFhOQUNfdnNYbFEwTHRDTkJzcW9nNmtSQlpiNmpQQzdaYmdZZ1V4a0tZOTNvNGVYLWR2MmZmNnhPMV9VOFpfME0?oc=5",
    "source": "Zprávy Kurzy.cz",
@@ -107,18 +121,11 @@ window.LIVE_DATA = {
    "date": "2026-10-29T23:00:15.000Z"
   },
   {
-   "bank": "kb",
-   "title": "Komerční banka stihla za první tři letošní čtvrtletí poskytnout o polovinu víc hypoték než vloni",
-   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPN2hVWmhPelBnSmstVGlBMmg2UDlWbXNTeDFKUC03WU1lbWJmRGp0Q2tjdmtmSE9qNm5ERkNkTFRHbVFmUWFoRF80czU3dGc0VXBFZHo1dlkzbkJfbHVQSzFYT2tyVFZqLXY3bWZreWdENVQxVlJGN0Y1QWIxdHpWbm9pUU92OTRNVm1EVHJWN3RfallLOG1xYW1QX1hIekdzbUY3V0dLSUZJWGVmYnBMQkI2LUZGODVPTWNsX29EdXJyM3g3VUE?oc=5",
-   "source": "Euro.cz",
-   "date": "2026-10-29T18:40:22.000Z"
-  },
-  {
-   "bank": "cs",
-   "title": "Banka jako majitel domova důchodců? Česká spořitelna investuje 11 miliard do chybějících lůžek",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOcjUyZ1luRHBPemZfN0RfRmpFbzAxSF9ZQlVmYWw3X3JTOF91TVBZYjFwc1Bvb3dPZXdDenJESXV2MWJaUVplY0MzdmM0emFYdW1BLWEtVndtZzhUMERRY1djaU1UdnVtSmVoSGNqOTk2N2xXMnhKNlpRMjFqdmRqbGxBQ1Z0UjNrbko5NlpQb0dCWlZ0azRvNFJ6T21EN0drRDhCT2NlY1EyWHJLdFZYTXhrc3FHNTJsdzMzX1oxcUUxVU9feW4yX3c0aXBiOXFMMGswX2R5cElLT3JIaVBJZjljdklPbDhiQ1VyU0p3?oc=5",
-   "source": "E15.cz",
-   "date": "2026-10-29T10:31:18.000Z"
+   "bank": "csob",
+   "title": "ČSOB půjčila 76 miliard na projekty podporující přechod k nízkouhlíkové ekonomice, říká ředitelka pro udržitelnost",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOTFjVU1sLXV2YWQ4dXZIWjM4cG15Z3VPYnkzSmNwUjJQb0Q1X3dwNzc5UUloSFhEWU5rREx4bjRYSDJzRzNxbVBvc2xxRmt4YkwybFE5ZUNPbWxnOE1WQ0U2QUNaMFVYNDNEbXBnNm16bzJTVnFlNVgyc1pIVE1EY3REZkJpSldOYWZ4RnQ1OC1WVjVzS0dQT2VfUlpBdm10aWx5N0J4aTFxZlo4ZWlaQ0hCNFJDS25xX0Zkc3cyRkRMdFVzNDZyOTc0NHFOZkdMODJ3?oc=5",
+   "source": "Ekonews",
+   "date": "2026-10-29T10:06:04.000Z"
   },
   {
    "bank": "cs",
@@ -217,6 +224,13 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRXhfT29uTDQyNU82WG92UF9rQWpKNUtkTTFiYTU1VE1jUFhBbEFzN0gtaXNoaVd3ZGhJTU1vWWlyNW9nbWIzNWdMbmw5NFc4SXp3ZkVyUHdWX3drSXZHYlhWbElwcGp5MldWVkJkb0N0eWJIYmVYdnlsbk9UMW8tcGoyOFZtQXM2cWI3ZkJxV0JaQUhERzZHamxXdDRCNldvY00xemU0amh4TG9MeFUybDRFbHRMSmkyOTNNZklJbmVtalpkWlg1bTh5TWhrZHdCbG0zaEdGRWUxdw?oc=5",
    "source": "E15.cz",
    "date": "2026-10-27T07:44:00.000Z"
+  },
+  {
+   "bank": "kb",
+   "title": "Firemní výsledky pro tento týden: Gen Digital, Komerční banka, CTP, Erste Group Bank, Alphabet",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSlRfRjJLamlSSWNNZVI1MUlVWVVORU1tY0JjYmM3UlZINHZSejBUWXc0ajFyQnRLcmlYQ2I5LTZ4eUFCOEFMYTVTWl9zdm9rdU1lSVlDZTJycVNaS1c3OGdPWWkyRW11M0JmemRxd3BndkpMYnVKYURuTFN2ZkRvR2tfT0ZSeUQtaVAxbzFFcFRZM2k0WHg4Zzc5T24xLTM0RUtwMEhHYTBobnBXaktYeC0xa2FNalR0QUFRRFM5Qmw5YkhhTkE5U1JKUHlpcndMcTlLQVV1Y0lRcGRX?oc=5",
+   "source": "Fio",
+   "date": "2026-10-26T10:12:00.000Z"
   },
   {
    "bank": "kb",
@@ -329,6 +343,13 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOamhqNmVBUHJEb2kwQm5YSjMtNFNfcW1EVHR4R1NKQkwwR05VQXFqV2RxTWZHUlRNb25yZEQ1aEVqUVQ1SER0SGxOWnpSdmRERHcybHZ5X1lsZXU5TmIyZEJkRkNHS1pheHlmaVdPWWR2dTlVc2JuNVRhVWdsdEd2ZWJ5a2tVWmlBOUNDX1lZaEVGbkw1NTg5ZTNNcW5mUHFWWXlfMU9jVHExU1htRGY3N3ZvcXBmcUlXSEpQOFZzWnNRSklSOUxqZk9VWDZGeU41?oc=5",
    "source": "Tiscali.cz",
    "date": "2026-10-20T07:00:00.000Z"
+  },
+  {
+   "bank": "cs",
+   "title": "Česká spořitelna ve Znojmě vyhrála Bank Branch of the Year za třetí kvartál 2026",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNcW5pT0lfbm0wcXVNWHBET0JldHhXUjNDOEZ4V0FlbXBKY0tIbHJEQk1oOUxjZmUxc1hLQVI4a1JSc000dDdha1Azblg0d2pSYW5uRWlUTXlucFNMcXpBTDFhWkFpa0VYN1B1eTNjbUNpWnB2WmgxbFJPOVF6ZnJ4dVhpX3MxUHFnWkpxanVvN0w3MXJvR0wzVWNyQnI3cG1ISmpuWnFmSFpSQVl5TXdKZWpJM2x6enE2LVU5WWRQMHVaMHNVbGhzeWdYMTU0Wk0tTDcwQV9lV3RwQQ?oc=5",
+   "source": "Metro.cz",
+   "date": "2026-10-19T07:00:00.000Z"
   },
   {
    "bank": "csob",
@@ -539,27 +560,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUnp4NEplSnlleWRQN1loNE1RNi1OQnFEZnRJeDBfOTNIQ0c1LVNOM0pUM2hQMFJaVTg1SzVUeXMxcktHdjdXMFBORURqSFZ1eGFpQks2ODJfSUJIeUxHalpibXl2NVRCS1JtZ3hxekVaMC0tbHhRZmFCTkUwZmZGRThpV19mVEZzSnlaS2xaOXcwcG0wbFhvQmtrODM0ZjBtc0NkUC05X05CbTJwcDdCcUxNZEs0UDZzT01XQmx0aTNoZVFTdlp3SE1OMThmdmN5?oc=5",
    "source": "E15.cz",
    "date": "2026-10-06T07:00:00.000Z"
-  },
-  {
-   "bank": "fio",
-   "title": "Online, zdarma a bez rodičů. Fio banka uvolnila pravidla pro účty od 15 let",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX1VIb0dNUVQwRkhsbkJ2SmNOeXBjeGItNG1RQXdRUVg2ZFZDX05kdGdqZTJtVk43NV9Ob0d4ZzJVWFFiamU1dlhyeW9yR0JXY3RhUjdaVHc2SjhuNERaOE56XzNrSTVlWS1EbGpaMXVZOUx0czk1ZkhzVDMtQ0E1RTBzYXQzQkx3VUd4RlpLWFJ4TWc5OWNRMDZDaDRvYkl5MFVvdmZaelpWV3F0UjhkYXZpNG9BbGJzZk40RTZn?oc=5",
-   "source": "E15.cz",
-   "date": "2026-10-06T07:00:00.000Z"
-  },
-  {
-   "bank": "csob",
-   "title": "Vlastní design platební karty se vrací. ČSOB nabídne fotku i vlastní nápis",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMTNucDhfM25GdTZDSU5PdWF0amZ5dWFnV04yMDg4N01ENW03MVVFZUpvd0xqVmxGc1FhSG9ud0RlcV9iaTBQS3JMQ21WNnhqT1VBQ3FwbXV2YU5jUlo4M1N6WE44UXZnYjhKMGVKb1VaclVGWDQzUVN1LWY3RDlJVGV6V3FWd2M3YTlldEU4ODFDMjhldjRzSmNmaFhZN1JvU2h6aWIwWFE?oc=5",
-   "source": "Měšec.cz",
-   "date": "2026-10-05T07:00:00.000Z"
-  },
-  {
-   "bank": "ucb",
-   "title": "UniCredit může prodat část ruských aktiv. Podepsaným dekretem jí to umožnil Putin",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUk1udHVoZXM3dkFQOThXSjFIcEV0Mkc4SGJRaFE1Y1lWNjlSd1ZaYnpIRjZ6QUtDUk5kby0yQnFhc3BIalRwVERJLW9sY0lfNkg0N3BoN05ra195T2Vudng1ZkoyMEh1Y1ZVTVAwb3Fkdl9iSXpMbUltQk42clpHcTU0YXVjYU93bGJMSDdJc1hIUUU0OUY0LUEwdU50NVE5QWNRVjFDd0NaYnVVaVhHNXlZZkREeGlKRng0dDVRc245a1FrdlZ2emd3?oc=5",
-   "source": "iROZHLAS",
-   "date": "2026-10-05T07:00:00.000Z"
   }
  ],
  "aplikace": {
@@ -676,6 +676,431 @@ window.LIVE_DATA = {
  "stav": {
   "zpravy": "7/7",
   "aplikace": "7/7",
-  "repo": true
- }
+  "repo": true,
+  "hot": "7/7",
+  "vedeni": "7/7"
+ },
+ "hot": [
+  {
+   "bank": "moneta",
+   "title": "ČNB snižuje Monetě kapitálový požadavek SREP na 9,8 %",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBYQm5sbnRkSmx1aklTU0drYVZjWWRhMTNQSVhwZkZ2bFhKUFpMcTFaSTRWT0ZjaUgyb3BkMWlvZ3k3UzBOYzBjX3FrMUh0S1gzRk5GZUd4aU5QbnVJeUE?oc=5",
+   "source": "FXstreet.cz",
+   "date": "2026-10-22T15:11:00.000Z"
+  },
+  {
+   "bank": "moneta",
+   "title": "ČNB snížila Monetě kapitálový požadavek SREP o 20 bazických bodů",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLTd3Z0lSam00X19uNFc2RzZhRGxTNjdzZXdYT202S2kzVTN2S0V5RWZLbFlPejB6SzFmeWsweExvRDB6a2JZMy1oQkloOGFFUXM1b2RBOE5TVkd3Vy1UWjU0aV9vSG1VOGd1dFllSGVMeWF2WXNaM0Z5NFk3M3I5Z0k3dFBiM3Q3MHUxSTFvcjhJUXNTRGVvbGdfMTgxUWpLT0JNREJGb29QSy1GT2xv?oc=5",
+   "source": "Investiční web",
+   "date": "2026-10-22T07:00:00.000Z"
+  },
+  {
+   "bank": "csob",
+   "title": "Jediný trest za „Fialovu“ kampeličku: Třicetimilionová pokuta pro ČSOB",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcGhaQkhGaURER1BxOXgxWVo4WWNuMEFWUEJVQ1JfY1N5U2taclpyZ0VLYUZiOVhKa21VTkE1UjdMU3FGQWNXcFNLWUQzd2dOWTFoUWNWRnBqWjFKcXk5NXFEYnRfSXVEdFA1dUhZcGlrUm84ZDRjaEJtLW9DUGNsd1dRUmRfclc0dEdQNUhaOE9wUjIwYkhrT1pNV3B3Um1TRlg2Vmt6XzZpTzNBcTFNQzBKbUZuMGQ0N0tLWjRieXI?oc=5",
+   "source": "Seznam Zprávy",
+   "date": "2026-10-14T07:00:00.000Z"
+  }
+ ],
+ "vedeni": {
+  "cs": {
+   "predstavenstvo": [
+    "Attila Sánta",
+    "Daniela Pešková",
+    "Jan Bojko",
+    "Karel Mourek",
+    "Martin Kobza",
+    "Norbert Hovančák",
+    "Štefan Elek",
+    "Tomáš Salomon"
+   ],
+   "dozorci_rada": [
+    "Aleš Veverka",
+    "Gabriele Tauböck",
+    "Marta Vrbová",
+    "Maurizio Poletto",
+    "Paulina Maria Koch",
+    "Peter Bosek",
+    "Štefan Máj",
+    "Zlata Grőningerová",
+    "Zlata Kunešová"
+   ],
+   "aktualizace_or": "2026-08-20",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782"
+  },
+  "csob": {
+   "predstavenstvo": [
+    "Aleš Blažek",
+    "Guy Libot",
+    "Ján Lučan",
+    "Jiří Vévoda",
+    "Karin Van Hoecke",
+    "Marek Loula",
+    "Martin Jarolím"
+   ],
+   "dozorci_rada": [
+    "Franky Depickere",
+    "Graeme Lints Hutchison",
+    "Christine Van Rijsseghem",
+    "Josef Čada",
+    "Ladislava Spielbergerová",
+    "Zdeněk Tůma"
+   ],
+   "aktualizace_or": "2026-06-09",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=00001350"
+  },
+  "kb": {
+   "predstavenstvo": [
+    "Anne Laure Véronique De Kouchkovsky",
+    "Jan Juchelka",
+    "Jitka Haubová",
+    "Katarína Kurucová",
+    "Miroslav Hiršl"
+   ],
+   "dozorci_rada": [
+    "Alvaro Huete Gomez",
+    "Anne-Sophie Chauveau-Galas",
+    "Bruno Delas",
+    "Cecile Bartenieff",
+    "Hervé Audren De Kerdrel",
+    "Miroslav Hájek",
+    "Petr Dvořák",
+    "Petra Wendelová",
+    "Pierre Villeroy De Galhau",
+    "Sylva Kynychová"
+   ],
+   "aktualizace_or": "2026-10-16",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  "ucb": {
+   "predstavenstvo": [
+    "Dimitar Todorov",
+    "Jaroslav Habo",
+    "Jiří Flégl",
+    "Marco Iannaccone",
+    "Pavel Vinter",
+    "Štěpán Šiška",
+    "Tatjana Antolić Jasnić",
+    "Tomáš Drábek",
+    "Valentina Stranieri"
+   ],
+   "dozorci_rada": [
+    "Alan Grund",
+    "Eva Mikulková",
+    "Gunnar Jakobsson",
+    "Ivan Tardivo",
+    "Jakub Dusílek",
+    "Jana Szászová",
+    "Nevena Nikše",
+    "Raphael Barisaac"
+   ],
+   "aktualizace_or": "2026-10-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  "rb": {
+   "predstavenstvo": [
+    "František Ježek",
+    "Igor Vida",
+    "Martin Stotter",
+    "Miloš Matula",
+    "Sabine Abfalter",
+    "Tomáš Jelínek",
+    "Vladimír Kreidl",
+    "Vladimír Matouš"
+   ],
+   "dozorci_rada": [
+    "Andreas Gschwenter",
+    "Hannes Mösenbacher",
+    "Helena Horská",
+    "Martin Pochopin",
+    "Michael Höllerer",
+    "Michal Přádka",
+    "Ondřej Mrzena",
+    "Peter Harold",
+    "Rainer Rudolf Schnabl",
+    "Reinhard Schwendtbauer",
+    "Roman Ermantraut",
+    "Taťána Le Moigne"
+   ],
+   "aktualizace_or": "2026-09-05",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  "moneta": {
+   "predstavenstvo": [
+    "Andrew John Gerber",
+    "Carl Normann Vökt",
+    "Jan Friček",
+    "Jan Novotný",
+    "Klára Starková",
+    "Tomáš Spurný"
+   ],
+   "dozorci_rada": [
+    "Clare Ronald Clarke",
+    "Denis Arthur Hall",
+    "Gabriel Eichler",
+    "Kateřina Jirásková",
+    "Klára Escobar",
+    "Lucie Sehnalová",
+    "Miroslav Singer",
+    "Monika Kalivodová",
+    "Zuzana Prokopcová"
+   ],
+   "aktualizace_or": "2026-01-21",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=25672720"
+  },
+  "fio": {
+   "predstavenstvo": [
+    "Daniel Ditrich",
+    "Filip Novotný",
+    "Jakub Schmid",
+    "Jan Bláha",
+    "Jan Sochor",
+    "Jan Ullmann",
+    "Josef Valter",
+    "Roman Vítek"
+   ],
+   "dozorci_rada": [
+    "Marek Polka",
+    "Petr Marsa",
+    "Romuald Kopún"
+   ],
+   "aktualizace_or": "2026-09-16",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=61858374"
+  }
+ },
+ "zmeny_vedeni": [
+  {
+   "bank": "kb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Etienne Jean Loulergue",
+   "datum": "2026-10-14",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "kb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Margus Simson",
+   "datum": "2026-10-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "ucb",
+   "typ": "prisel",
+   "organ": "představenstva",
+   "jmeno": "Jiří Flégl",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "prisel",
+   "organ": "představenstva",
+   "jmeno": "Štěpán Šiška",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Livia Amidani Aliberti",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Gianfranco Bisagni",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Jakub Dusílek",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Gunnar Jakobsson",
+   "datum": "2026-09-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "fio",
+   "typ": "prisel",
+   "organ": "představenstva",
+   "jmeno": "Jan Ullmann",
+   "datum": "2026-09-11",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=61858374"
+  },
+  {
+   "bank": "rb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Andrii Stepanenko",
+   "datum": "2026-09-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "rb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Marie Valerie Brunner",
+   "datum": "2026-09-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "rb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Rainer Rudolf Schnabl",
+   "datum": "2026-09-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "rb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Roman Ermantraut",
+   "datum": "2026-09-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "cs",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Stefan Dörfler",
+   "datum": "2026-08-19",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782"
+  },
+  {
+   "bank": "cs",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Paulina Maria Koch",
+   "datum": "2026-08-19",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782"
+  },
+  {
+   "bank": "cs",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Gabriele Tauböck",
+   "datum": "2026-08-19",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782"
+  },
+  {
+   "bank": "rb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Johann Strobl",
+   "datum": "2026-05-12",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "rb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Michael Höllerer",
+   "datum": "2026-05-12",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "ucb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Jakub Dusílek",
+   "datum": "2026-05-12",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "ucb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Slavomír Beňa",
+   "datum": "2026-05-12",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=64948242"
+  },
+  {
+   "bank": "cs",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Slavomír Seemann",
+   "datum": "2026-05-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45244782"
+  },
+  {
+   "bank": "kb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Bruno Delas",
+   "datum": "2026-04-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "kb",
+   "typ": "prisel",
+   "organ": "dozorčí rady",
+   "jmeno": "Pierre Villeroy De Galhau",
+   "datum": "2026-04-29",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "rb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Kamila Makhmudova",
+   "datum": "2026-02-04",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "rb",
+   "typ": "prisel",
+   "organ": "představenstva",
+   "jmeno": "Sabine Abfalter",
+   "datum": "2026-02-04",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
+  },
+  {
+   "bank": "kb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Marie Doucet",
+   "datum": "2026-01-01",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "kb",
+   "typ": "odesel",
+   "organ": "dozorčí rady",
+   "jmeno": "Ondřej Kudrna",
+   "datum": "2025-12-18",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "kb",
+   "typ": "odesel",
+   "organ": "představenstva",
+   "jmeno": "Anne Laure Veronique De Kouchkovsky",
+   "datum": "2025-11-05",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  },
+  {
+   "bank": "kb",
+   "typ": "prisel",
+   "organ": "představenstva",
+   "jmeno": "Anne Laure Véronique De Kouchkovsky",
+   "datum": "2025-11-05",
+   "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=45317054"
+  }
+ ]
 };
