@@ -11,13 +11,15 @@ const SAMPLE = { zaznamy: [{ primarniZaznam: true, datumAktualizace: "2026-10-01
     os("Petr", "Nový", "2026-08-01", null),
     os("Jan", "Novák", "2016-01-01", "2020-01-01"),
     os("Ida", "Předsedová", "2018-01-01", "2026-05-01"), os("Ida", "Předsedová", "2026-05-01", null),
-  ] }],
+    os("Anne", "Veronique", "2020-01-01", "2026-09-01"), os("Anne", "Véronique", "2026-09-01", null),
+    os("Pavel", "Prokurista", "2026-09-01", null, { typAngazma: "PROKURISTA", nazevAngazma: "Prokurista" }),
+  ] }, { nazevOrganu: "Prokura", typOrganu: "PROKURA", clenoveOrganu: [os("Olga", "Prokuristová", "2026-09-01", null)] }],
   ostatniOrgany: [{ typOrganu: "DOZORCI_RADA", clenoveOrganu: [os("Karel", "Dozor", "2026-06-17", null)] }],
 }] };
 
 test("parseVedeni: jen jména a data, žádné osobní údaje", () => {
   const v = parseVedeni(SAMPLE);
-  assert.deepEqual(platni(v.predstavenstvo), ["Ida Předsedová", "Jan Novák", "Petr Nový"]);
+  assert.deepEqual(platni(v.predstavenstvo), ["Anne Véronique", "Ida Předsedová", "Jan Novák", "Petr Nový"]);
   assert.deepEqual(platni(v.dozorci_rada), ["Karel Dozor"]);
   assert.ok(!JSON.stringify(v).includes("1970"));
 });

@@ -7,38 +7,46 @@ const EVENT_DAYS = 365;
 
 const cap = (s) => String(s || "").toLowerCase().replace(/(^|[\s-])(\p{L})/gu, (_, a, b) => a + b.toUpperCase());
 const jmeno = (o) => { const f = o.fyzickaOsoba; return f ? `${cap(f.jmeno)} ${cap(f.prijmeni)}`.trim() : (o.pravnickaOsoba?.obchodniJmeno || "").trim(); };
+const key = (n) => String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim();
+// prokura a prokuristé nejsou členové představenstva
+const PROKURA = /prokur/i;
+const isProkura = (x) => PROKURA.test(`${x.nazevOrganu || ""} ${x.typOrganu || ""} ${x.typAngazma || ""} ${x.nazevAngazma || ""}`);
 const funkce = (o) => o.clenstvi?.funkce?.nazev || o.funkce?.nazev || o.nazevAngazma || "";
 
 // Z odpovědi ARES vytáhne členy představenstva a dozorčí rady (platné i vymazané).
 export function parseVedeni(j) {
   const z = (j.zaznamy || []).find((x) => x.primarniZaznam) || (j.zaznamy || [])[0];
   if (!z) return null;
-  const pick = (organy) => (organy || []).flatMap((org) => (org.datumVymazu ? [] : (org.clenoveOrganu || []))).map((m) => ({
+  const pick = (organy) => (organy || []).filter((org) => !isProkura(org)).flatMap((org) => (org.datumVymazu ? [] : (org.clenoveOrganu || []))).filter((m) => !isProkura(m)).map((m) => ({
     jmeno: jmeno(m), funkce: funkce(m), od: m.datumZapisu || null, do: m.datumVymazu || null,
   })).filter((m) => m.jmeno);
   const rada = (z.ostatniOrgany || []).filter((o) => o.typOrganu === "DOZORCI_RADA" || /dozorčí/i.test(o.nazevOrganu || ""));
   return { predstavenstvo: pick(z.statutarniOrgany), dozorci_rada: pick(rada), aktualizace_or: z.datumAktualizace || null };
 }
 
-export const platni = (list) => [...new Set(list.filter((m) => !m.do).map((m) => m.jmeno))].sort((a, b) => a.localeCompare(b, "cs"));
+export const platni = (list) => {
+  const m = new Map();
+  for (const x of list.filter((y) => !y.do).sort((a, b) => String(a.od).localeCompare(String(b.od)))) m.set(key(x.jmeno), x.jmeno);
+  return [...m.values()].sort((a, b) => a.localeCompare(b, "cs"));
+};
 
 // Změny podle dat zápisu/výmazu v rejstříku za posledních EVENT_DAYS dní.
 export function zmeny(bank, ico, v, now = Date.now()) {
   const out = [];
   const limit = new Date(now - EVENT_DAYS * 864e5).toISOString().slice(0, 10);
   for (const [organ, label] of [["predstavenstvo", "představenstva"], ["dozorci_rada", "dozorčí rady"]]) {
-    const cur = new Set(platni(v[organ]));
+    const cur = new Set(platni(v[organ]).map(key));
     for (const m of v[organ]) {
       // přišel: nový zápis osoby, která předtím v orgánu nebyla (ne jen přepis funkce)
-      if (m.od && m.od >= limit && !m.do && !v[organ].some((x) => x.jmeno === m.jmeno && x.do && x.do <= m.od && x.od < m.od))
+      if (m.od && m.od >= limit && !m.do && !v[organ].some((x) => key(x.jmeno) === key(m.jmeno) && x.do && x.do <= m.od && x.od < m.od))
         out.push({ bank, typ: "prisel", organ: label, jmeno: m.jmeno, datum: m.od, url: orUrl(ico) });
       // odešel: výmaz osoby, která už v orgánu není
-      if (m.do && m.do >= limit && !cur.has(m.jmeno))
+      if (m.do && m.do >= limit && !cur.has(key(m.jmeno)))
         out.push({ bank, typ: "odesel", organ: label, jmeno: m.jmeno, datum: m.do, url: orUrl(ico) });
     }
   }
   const seen = new Set();
-  return out.filter((e) => { const k = `${e.typ}|${e.organ}|${e.jmeno}`; if (seen.has(k)) return false; seen.add(k); return true; });
+  return out.filter((e) => { const k = `${e.typ}|${e.organ}|${key(e.jmeno)}`; if (seen.has(k)) return false; seen.add(k); return true; });
 }
 
 // Rozdíl proti minulému dni (záloha, kdyby rejstřík data zápisu neuváděl).
@@ -46,9 +54,9 @@ export function diff(bank, ico, prev, cur, day) {
   const out = [];
   if (!prev) return out;
   for (const [organ, label] of [["predstavenstvo", "představenstva"], ["dozorci_rada", "dozorčí rady"]]) {
-    const a = new Set(prev[organ] || []), b = new Set(cur[organ] || []);
-    for (const n of b) if (!a.has(n)) out.push({ bank, typ: "prisel", organ: label, jmeno: n, datum: day, url: orUrl(ico) });
-    for (const n of a) if (!b.has(n)) out.push({ bank, typ: "odesel", organ: label, jmeno: n, datum: day, url: orUrl(ico) });
+    const a = new Map((prev[organ] || []).map((n) => [key(n), n])), b = new Map((cur[organ] || []).map((n) => [key(n), n]));
+    for (const [k, n] of b) if (!a.has(k)) out.push({ bank, typ: "prisel", organ: label, jmeno: n, datum: day, url: orUrl(ico), rozdil: true });
+    for (const [k, n] of a) if (!b.has(k)) out.push({ bank, typ: "odesel", organ: label, jmeno: n, datum: day, url: orUrl(ico), rozdil: true });
   }
   return out;
 }
@@ -75,9 +83,9 @@ export async function loadVedeni(old = {}, oldEvents = [], now = new Date()) {
       console.warn(`vedeni ${bank}: CHYBA ${e.message}, ponechána stará data`);
     }
   }
-  // starší zachycené změny (z rozdílu) se drží, dokud nejsou starší než rok
+  // změny zachycené jen rozdílem proti minulému dni se drží rok (ostatní se každý den znovu počítají z rejstříku)
   const limit = new Date(now.getTime() - EVENT_DAYS * 864e5).toISOString().slice(0, 10);
-  for (const e of oldEvents) if (e.datum >= limit && !events.some((x) => x.bank === e.bank && x.typ === e.typ && x.jmeno === e.jmeno && x.organ === e.organ)) events.push(e);
+  for (const e of oldEvents) if (e.rozdil && e.datum >= limit && !events.some((x) => x.bank === e.bank && x.typ === e.typ && x.jmeno === e.jmeno && x.organ === e.organ)) events.push(e);
   events.sort((a, b) => b.datum.localeCompare(a.datum) || a.bank.localeCompare(b.bank));
   return { vedeni, zmeny: events, ok };
 }
