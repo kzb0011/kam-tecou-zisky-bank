@@ -40,6 +40,7 @@ for (const pass of PASSES) for (const w0 of WIDTHS) {
       const cards = await page.evaluate(() => ({ news: document.querySelectorAll("ul.news li").length, txt: document.body.innerText }));
       if (!cards.news) problems.push(`[${w}px #${r}] karta zpráv je prázdná`);
       if (r === "prehled" && !/Hodnocení bankovních aplikací/.test(cards.txt)) problems.push(`[${w}px #${r}] chybí karta aplikací`);
+      if (!/Hot news|Změny ve vedení/.test(cards.txt) || !/Testovací Osoba B/.test(cards.txt)) problems.push(`[${w}px #${r}] chybí hot news / změny ve vedení`);
     }
     const res = await page.evaluate(() => {
       const t = document.body.innerText;

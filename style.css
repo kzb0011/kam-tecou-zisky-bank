@@ -251,3 +251,4 @@ a.name:hover { color: var(--home); }
 .news li:last-child { border-bottom: 0; }
 .news a { color: var(--ink); text-decoration: none; font-weight: 500; line-height: 1.35; }
 .news a:hover { color: var(--home); }
+.card h3.sub-h { margin: 20px 0 2px; }

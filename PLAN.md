@@ -17,6 +17,9 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
 4. ✅ Denní úloha: filtrované titulky z Google News RSS (odvolán, rezignace, odchází, nový člen představenstva, generální ředitel, propouštění, pokuta, ČNB).
    - V `scripts/update.mjs`: pro každou banku jeden dotaz „banka + (klíčová slova) za 30 dní“, výstup `LIVE_DATA.hot` (max. 40).
    - Rozhodnutí: titulek musí jmenovat banku i obsahovat některé klíčové slovo (kontrola i na straně skriptu), aby se nebraly obecné zprávy o sazbách ČNB.
-5. ⬜ Homepage: sekce „Hot news“ pod hlavními kartami (max. 8, zdroj a datum). Detail banky: její zprávy u tabulky odměn vedení.
+5. ✅ Homepage: sekce „Hot news“ pod hlavními kartami (max. 8, zdroj a datum). Detail banky: její zprávy u tabulky odměn vedení.
+   - Homepage: karta „Hot news“ hned pod 4 hlavními kartami. Detail banky: v kartě „Odměny vedení“ aktuální představenstvo z rejstříku a „Změny ve vedení a zprávy“ (max. 6).
+   - Rozhodnutí: texty změn jsou rodově neutrální („Nově v představenstvu: …“, „Už není v dozorčí radě: …“), aby se neodhadoval rod podle jména.
+   - Metodika doplněna. Test v prohlížeči kontroluje i tyto karty (1280 a 390 px).
 6. ⬜ Testy, commit, push, ruční spuštění GitHub Action a ověření zeleného běhu.
 7. ⬜ Shrnutí: co funguje, co ne, co je potřeba.

@@ -301,6 +301,32 @@
       <p class="note">Průměrné hodnocení v českém App Store, denně. Trend se počítá z historie posledních až 90 dní.</p></section>`;
   }
 
+  /* ---------- hot news: změny ve vedení (obchodní rejstřík) + vybrané titulky ---------- */
+  const ORGAN_LOK = { "představenstva": "představenstvu", "dozorčí rady": "dozorčí radě" };
+  const czDate = (iso) => { const d = new Date(iso + "T12:00:00"); return isNaN(d) ? "" : d.toLocaleDateString("cs-CZ"); };
+  function hotItems(bankId) {
+    const ev = (L.zmeny_vedeni || []).filter((e) => !bankId || e.bank === bankId).map((e) => ({
+      bank: e.bank, date: e.datum + "T12:00:00Z", url: e.url, or: true,
+      title: `${e.typ === "prisel" ? "Nově v " + (ORGAN_LOK[e.organ] || e.organ) : "Už není v " + (ORGAN_LOK[e.organ] || e.organ)}: ${e.jmeno}`,
+      meta: `zapsáno ${czDate(e.datum)}`,
+    }));
+    const nw = (L.hot || []).filter((x) => !bankId || x.bank === bankId).map((x) => ({ ...x, meta: `${x.source || ""} · ${ago(x.date)}` }));
+    return ev.concat(nw).sort((a, c) => c.date.localeCompare(a.date));
+  }
+  function hotList(items, n) {
+    if (!items.length) return `<p class="note">Za posledních 30 dní žádné změny ve vedení ani zprávy o odchodech, propouštění či pokutách. ${liveStamp()}.</p>`;
+    return `<ul class="news">${items.slice(0, n).map((x) => { const b = bankById[x.bank]; return `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${x.or ? '<span class="chip mix">Rejstřík</span> ' : ""}${esc(x.meta)}</span></li>`; }).join("")}</ul>`;
+  }
+  function hotCard() {
+    return `<section class="card"><div class="card-head"><h2>Hot news</h2><span class="dim">${liveStamp()}</span></div>${hotList(hotItems(), 8)}
+      <p class="note">Změny v představenstvech a dozorčích radách podle obchodního rejstříku (datum zápisu) a titulky z českých médií o odchodech z vedení, propouštění, pokutách a ČNB. Odkazy vedou na zdroj.</p></section>`;
+  }
+  function boardNow(b) {
+    const v = (L.vedeni || {})[b.id];
+    if (!v || !v.predstavenstvo || !v.predstavenstvo.length) return "";
+    return `<p class="note">Představenstvo podle obchodního rejstříku: ${v.predstavenstvo.map(esc).join(", ")}. <a href="${esc(v.url)}" target="_blank" rel="noopener">Rejstřík</a></p>`;
+  }
+
   /* ---------- pohledy ---------- */
   const views = {};
   const afterRender = [];
@@ -420,6 +446,7 @@
       </div>
     </section>
     <div class="kpis" id="kpi">${kpiHtml("all")}</div>
+    ${hotCard()}
 
     <div class="hero">
       <div class="counter"><span class="eyebrow">Zisk všech bank od 1. 1. 2026</span><span class="big" data-rate="${rateSector}">0<small>Kč</small></span><span class="sub">Tempo roku 2025 (${mld(rateSector)} mld. Kč za rok, ČNB)</span></div>
@@ -568,7 +595,7 @@
       <section class="card"><h2>Aplikace v App Store</h2>${a ? `<div class="kv">${f2.format(a.rating)}<small>★ z 5</small></div><span class="dim">${esc(a.name)} · ${f0.format(a.count)} hodnocení · <a href="${esc(a.url)}" target="_blank" rel="noopener">App Store</a></span>` : `<p class="note">${liveStamp()}.</p>`}</section></div>`; })()}
     ${costHtml}
     ${(() => { const L = D.propousteni.filter((x) => x.banka === b.id); return L.length ? `<section class="card"><div class="card-head"><h2>Propouštění</h2><a class="cta" href="#propousteni">Všechny banky →</a></div><ul class="meth">${L.map((x) => `<li><b>${esc(x.datum)}: ${esc(x.kolik)}.</b> ${esc(x.proc)} <a href="${esc(x.zdroj)}" target="_blank" rel="noopener">Zdroj</a></li>`).join("")}</ul></section>` : ""; })()}
-    <section class="card"><h2>Odměny vedení</h2>${boardHtml}</section>
+    <section class="card"><h2>Odměny vedení</h2>${boardHtml}${boardNow(b)}<h3 class="sub-h">Změny ve vedení a zprávy</h3>${hotList(hotItems(b.id), 6)}</section>
     <section class="card">
       <h2>Všechny dohledané výplaty dividend</h2>
       <div class="tw"><table>
@@ -798,6 +825,7 @@
       <li><b>Hodnocení aplikací</b>: průměrné hodnocení hlavní mobilní aplikace banky v českém App Store (veřejné rozhraní iTunes Search API), každý den. Aplikace je pevně určená (ověřeno podle prodejce), firemní a vedlejší aplikace (klíče, pojištění) se nepočítají. Trend je rozdíl proti nejstaršímu uloženému dni, nejvýš 90 dní zpět. Hodnocení v Google Play nemá veřejné rozhraní, proto chybí.</li>
       <li><b>Repo sazba ČNB</b>: denně z veřejného přehledu vývoje 2T repo sazby na webu ČNB.</li>
       <li><b>Úrokové sazby a index férovosti</b>: jednou měsíčně z databáze ČNB ARAD (úrokové sazby měnových finančních institucí, nové obchody domácností). Sazby konkrétních spořicích účtů se doplňují ručně ze srovnávače.</li>
+      <li><b>Hot news a změny ve vedení</b>: složení představenstev a dozorčích rad každý den z obchodního rejstříku (veřejné rozhraní ARES Ministerstva financí). Datum u změny je datum zápisu do rejstříku, ne datum rozhodnutí banky. K tomu titulky z Google News, které jmenují banku a týkají se odchodů z vedení, propouštění, pokut nebo ČNB. Web neukládá žádné osobní údaje kromě jmen členů orgánů zapsaných ve veřejném rejstříku.</li>
       <li>Když některý zdroj nefunguje, zůstanou na webu poslední platná data s datem aktualizace.</li>
     </ul></section>
     <section class="card"><h2>Co chybí</h2><ul class="meth">
