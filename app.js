@@ -269,16 +269,6 @@
       ${(() => { const tb = D.banky.filter((x) => x.dan["2025"] != null), tx = sum(tb.map((x) => x.dan["2025"])), pr = sum(tb.map((x) => x.zisk["2025"])); return `<a class="stat" href="#dane"><span class="lab">Daň z příjmů bank 2025</span><span class="val">${mld(tx, 1)} mld.</span><span class="sub">${f0.format((tx / pr) * 100)} % z čistého zisku ${tb.length} bank →</span></a>`; })()}
     </div>`;
   }
-  function howBlock() {
-    const S = D.sektor.sazby, U = D.sektor.uroky_h1_2025, cb = D.sektor.ferovost.cz_banka;
-    const cur = S.vklady[0][1], dep = S.vklady[1][1], mort = S.uvery[0][1], card = S.uvery[3][1];
-    return `<div class="how">
-        <div class="how-step home"><span class="n">1</span><p><b>Vy půjčujete bance.</b> Peníze na účtu banka používá. Na běžném účtu za ně dostanete průměrně <b>${f2.format(cur)} %</b> ročně, na spořicích a dalších vkladech na požádání ${f2.format(dep)} %.</p></div>
-        <div class="how-step"><span class="n">2</span><p><b>Banka půjčuje vám.</b> Za novou hypotéku platíte průměrně <b>${f2.format(mort)} %</b>, za kreditní kartu ${f2.format(card)} %. Volné peníze může banka uložit u ČNB za ${f2.format(cb)} %.</p></div>
-        <div class="how-step tax"><span class="n">3</span><p><b>Rozdíl je zisk banky.</b> V 1. pololetí 2025 banky vybraly na úrocích ${f0.format(U.vynosy)} mld. Kč. Po zaplacení úroků vkladatelům a věřitelům jim zůstalo <b>${f0.format(U.zisk)} mld. Kč</b>.</p></div>
-      </div>
-      <p class="note">Příklad: milion na běžném účtu vám za rok vynese ${f0.format(1e6 * cur / 100)} Kč, milion hypotéky vás v prvním roce stojí asi ${f0.format(1e6 * mort / 100)} Kč na úrocích. Průměrné sazby ČNB za ${esc(S.obdobi)}. <a href="#sazby">Jsou tyhle sazby férové? →</a></p>`;
-  }
 
   /* ---------- živá data (denně z GitHub Actions) ---------- */
   const L = window.LIVE_DATA || { zpravy: [], aplikace: {} };
@@ -287,10 +277,6 @@
   function newsList(items, n) {
     if (!items.length) return `<p class="note">Zatím žádné zprávy. ${liveStamp()}.</p>`;
     return `<ul class="news">${items.slice(0, n).map((x) => { const b = bankById[x.bank]; return `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${esc(x.source || "")} · ${ago(x.date)}</span></li>`; }).join("")}</ul>`;
-  }
-  function newsCard() {
-    return `<section class="card"><div class="card-head"><h2>Zprávy o bankách</h2><span class="dim">${liveStamp()}</span></div>${newsList(L.zpravy || [], 8)}
-      <p class="note">Automatický výběr titulků z českých médií přes Google News, každý den. Odkazy vedou na původní články.</p></section>`;
   }
   function appsCard() {
     const A = L.aplikace || {};
@@ -317,16 +303,18 @@
     if (!items.length) return `<p class="note">Za posledních 30 dní žádné změny ve vedení ani zprávy o odchodech, propouštění či pokutách. ${liveStamp()}.</p>`;
     return `<ul class="news">${items.slice(0, n).map((x) => { const b = bankById[x.bank]; return `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${x.or ? '<span class="chip mix">Rejstřík</span> ' : ""}${esc(x.meta)}</span></li>`; }).join("")}</ul>`;
   }
-  function hotCard() {
+  // karta v horní řadě: 5 nejnovějších zpráv za 14 dní (změny ve vedení + filtrované titulky)
+  function hotKpi(bankId) {
     const lim = Date.now() - 14 * 864e5;
-    const it = hotItems().filter((x) => new Date(x.date) >= lim);
-    const chips = (x) => { const b = bankById[x.bank]; return `${b ? `<span class="chip ${b.kapital === "zahraniční" ? "out" : "home"}">${esc(b.zkratka)}</span> ` : ""}${x.or ? '<span class="chip mix">Rejstřík</span> ' : ""}`; };
-    const body = !it.length ? `<p class="note">Za posledních 14 dní žádné změny ve vedení bank.</p>`
-      : `<a class="hot-lead" href="${esc(it[0].url)}" target="_blank" rel="noopener">${esc(it[0].title)}</a><span class="dim hot-meta">${chips(it[0])}${esc(it[0].meta)}</span>
-        ${it.length > 1 ? `<ul class="news">${it.slice(1, 5).map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="dim">${chips(x)}${esc(x.meta)}</span></li>`).join("")}</ul>` : ""}`;
-    return `<section class="card hot"><div class="card-head"><h2>Hot news</h2><span class="dim">${liveStamp()}</span></div>${body}
-      <p class="note">Posledních 14 dní: změny v představenstvech a dozorčích radách podle obchodního rejstříku (datum zápisu) a titulky z českých médií o odchodech z vedení, propouštění, pokutách a ČNB. Odkazy vedou na zdroj.</p></section>`;
+    const it = hotItems(bankId).filter((x) => new Date(x.date) >= lim).slice(0, 5);
+    const d = (x) => new Date(x.date).toLocaleDateString("cs-CZ", { day: "numeric", month: "numeric" });
+    const meta = (x) => { const b = bankById[x.bank]; return `<span class="hm">${b ? `<i style="background:${colorFor(b)}"></i>${esc(b.zkratka)} · ` : ""}${d(x)} · ${x.or ? "obchodní rejstřík" : esc(x.source || "")}</span>`; };
+    const body = !it.length ? `<p class="note">Za posledních 14 dní žádné novinky.</p>`
+      : `<a class="hk-lead" href="${esc(it[0].url)}" target="_blank" rel="noopener" title="${esc(it[0].title)}">${esc(it[0].title)}</a>${meta(it[0])}
+        <ul class="hk">${it.slice(1).map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener" title="${esc(x.title)}">${esc(x.title)}</a>${meta(x)}</li>`).join("")}</ul>`;
+    return `<div class="kpi hot-kpi"><div class="kh">Hot news · 14 dní</div>${body}<span class="kf">Obchodní rejstřík a česká média, odkazy vedou na zdroj</span></div>`;
   }
+
   function boardNow(b) {
     const v = (L.vedeni || {})[b.id];
     if (!v || !v.predstavenstvo || !v.predstavenstvo.length) return "";
@@ -353,34 +341,6 @@
     const max = Math.max(...items.map((x) => x.v), 0.0001), base = opt.base || 0;
     return `<div class="mbars">${items.map((x) => `<div class="mb" title="${esc(x.k)}: ${opt.fmt ? opt.fmt(x.v) : mld(x.v, 1) + " mld. Kč"}"><span style="height:${Math.max(4, ((x.v - base) / (max - base)) * 100)}%;background:${x.c}"></span><em>${esc(x.k)}</em></div>`).join("")}</div>`;
   }
-  function fairTop() {
-    const F = D.sektor.ferovost, T = F.nabidky_pasma, dep = D.sektor.index.rady.slice(-1)[0][2];
-    const ID = { "Česká spořitelna": "cs", "ČSOB": "csob", "Komerční banka": "kb", "UniCredit Bank": "ucb", "Raiffeisenbank": "rb", "MONETA": "moneta", "Fio banka": "fio" };
-    const rows = Object.entries(T).map(([k, r]) => ({ k, r, v: Math.round(((r[0] + r[1] + r[2]) / 3) * 100) / 100, b: bankById[ID[k]] })).sort((a, c) => c.v - a.v || c.r[0] - a.r[0]);
-    // pořadí se shodami: stejná sazba = stejné místo
-    let place = 0, prevV = null; rows.forEach((x, i) => { if (x.v !== prevV) { place = i + 1; prevV = x.v; } x.place = place; });
-    const why = (x) => {
-      const same = x.r[0] === x.r[2];
-      return same ? "stejná sazba na celou částku do 500 tis." : `${f2.format(x.r[0])} % jen do ${x.r[1] === x.r[0] ? "300" : "150"} tis., pak ${f2.format(x.r[2])} %`;
-    };
-    return { rows, why, top: rows.filter((x) => x.place <= 3) };
-  }
-  function fairCard(b) {
-    const IX = D.sektor.index.rady, last = IX[IX.length - 1], prev = IX[IX.length - 2], F = D.sektor.ferovost;
-    const g = last[1] - last[2], dg = g - (prev[1] - prev[2]);
-    const { rows, why, top } = fairTop();
-    const head = `<div class="kh">Index férovosti vkladů · ${esc(F.obdobi)}</div><div class="kv out">${f2.format(g)}<small>p. b.</small> <span class="delta ${dg > 0 ? "down" : "up"}" style="font-size:.7rem;letter-spacing:0;vertical-align:middle">${dg > 0 ? "▲ o " + f2.format(dg) + " horší" : dg < 0 ? "▼ o " + f2.format(-dg) + " lepší" : "beze změny"}</span></div>
-      <span class="dim">O tolik méně dostanete na vkladech (${f2.format(last[2])} %), než dává ČNB bankám (${f2.format(last[1])} %).</span>`;
-    if (!b) {
-      return `<div class="kpi">${head}<div class="kh" style="margin-top:8px">3 nejférovější banky pro spořicí účet</div>
-        <div class="ceo-list">${top.map((x) => `<div class="ceo-row"><span class="rk">${x.place}</span><span class="cn"><b>${esc(x.k)}</b><span class="dim">${why(x)}</span></span><span class="cv" style="color:var(--tax)">${f2.format(x.v)} %</span></div>`).join("")}</div>
-        <a class="kf" href="#sazby" style="text-decoration:none">Průměr sazby při vkladu 150, 300 a 500 tis. Kč, ${esc(F.nabidky_datum)} · celý žebříček →</a></div>`;
-    }
-    const pos = rows.findIndex((x) => x.b && x.b.id === b.id);
-    const me = rows[pos];
-    return `<div class="kpi">${head}${me ? `<div class="kh" style="margin-top:8px">Spořicí účet ${esc(b.zkratka)}</div><div class="kv tax" style="font-size:1.8rem">${f2.format(me.v)}<small>% v průměru</small></div><span class="dim">${me.place}. místo z ${rows.length} velkých bank · ${why(me)}</span>` : '<span class="dim">Banka ve srovnání spořicích účtů není.</span>'}
-      <a class="kf" href="#sazby" style="text-decoration:none">Celý žebříček →</a></div>`;
-  }
   function kpiHtml(sel) {
     const s = D.sektor, all = sel === "all", b = all ? null : bankById[sel];
     const emp = s.mzda_finance_kc * 12;
@@ -399,7 +359,7 @@
       c3 = `<div class="kpi"><div class="kh">Nejlépe placení šéfové bank · ročně</div>
         <div class="ceo-list compact">${ranked.map(({ x }, k) => `<a class="ceo-row" href="#${x.id}">${avatar(x)}<span class="cn"><b>${esc(x.sef.jmeno)}</b><span class="dim">${k + 1}. ${esc(x.zkratka)}${x.board.typ === "odhad" ? ' · <span class="est">odhad</span>' : ""}</span></span><span class="cv">${range(x.board.ceo)}<small>mil. Kč</small></span></a>`).join("")}</div>
         <a class="kf" href="#mzdy" style="text-decoration:none">Všichni šéfové a představenstva →</a></div>`;
-      c4 = fairCard(null);
+      c4 = hotKpi(null);
     } else {
       const dv = payouts(b).filter((p) => p.mld > 0).sort((p, q) => String(p.vyplaceno).localeCompare(String(q.vyplaceno)));
       const byY = {}; dv.forEach((p) => { byY[p.vyplaceno] = (byY[p.vyplaceno] || 0) + p.mld; });
@@ -410,7 +370,7 @@
       const bd = b.board || {};
       c3 = `<div class="kpi"><div class="kh">Příjem šéfa banky · ročně</div><div class="who">${avatar(b)}<div><b>${esc(b.sef.jmeno)}</b>${b.sef.pozn ? `<br><span class="dim">${esc(b.sef.pozn)}</span>` : ""}</div></div>
         ${bd.ceo ? `<div class="kv">${range(bd.ceo)}<small>mil. Kč</small></div><span class="dim">${bd.typ === "odhad" ? '<span class="est">odhad</span>' : "zveřejněno"}${bd.total ? " · celé představenstvo " + range(bd.total, 1) + " mil. Kč" : ""}</span>` : `<div class="kv">–</div><span class="dim">${bd.total ? "celé vedení " + range(bd.total, 1) + " mil. Kč" : "odměnu nezveřejňuje"}</span>`}</div>`;
-      c4 = fairCard(b);
+      c4 = hotKpi(b.id);
     }
     return c1 + c2 + c3 + c4 + (all ? "" : `<a class="kpi-more" href="#${b.id}">Celý profil banky ${esc(b.nazev)} →</a>`);
   }
@@ -453,7 +413,6 @@
       </div>
     </section>
     <div class="kpis" id="kpi">${kpiHtml("all")}</div>
-    ${hotCard()}
 
     <div class="hero">
       <div class="counter"><span class="eyebrow">Zisk všech bank od 1. 1. 2026</span><span class="big" data-rate="${rateSector}">0<small>Kč</small></span><span class="sub">Tempo roku 2025 (${mld(rateSector)} mld. Kč za rok, ČNB)</span></div>
@@ -467,15 +426,14 @@
       ${csDiv ? `<div class="fact">Spořitelna poslala v roce ${csDiv.vyplaceno} rakouské Erste <b>${mld(csDiv.mld)} mld. Kč</b>. Na dani z příjmů zaplatila v roce ${csDiv.vyplaceno} <b>${mld(cs.dan[csDiv.vyplaceno], 1)} mld. Kč</b>.</div>` : ""}
     </div>
 
-    <div class="grid2">${newsCard()}${appsCard()}</div>
+    ${appsCard()}
     <section class="card">
       <div class="card-head"><h2>Žebříček bank</h2><a class="cta" href="#banky">Všechny banky →</a></div>
       ${leaderboard()}
       <p class="note">Daň = daň z příjmů právnických osob uhrazená v roce 2025 podle Finanční správy, u Monety a Fio z výkazu peněžních toků ve výroční zprávě. Šéf banky: u KB a Monety zveřejněno, u ostatních <span class="est">odhad</span> (viz Metodika). UniCredit zahrnuje i Slovensko.</p>
     </section>
 
-    <div class="grid2">
-      <section class="card"><h2>Jak banky vydělávají na úrocích</h2>${howBlock()}</section>
+    <div>
       <section class="card"><h2>Komu patří české bankovnictví</h2>${ownershipBlock()}
         <h3 style="margin-top:14px">Zisk na jednoho klienta</h3>
         <div class="tw"><table><thead><tr><th>Banka</th><th class="n">Klienti</th><th class="n">Zisk na klienta / rok</th></tr></thead>

@@ -37,10 +37,10 @@ for (const pass of PASSES) for (const w0 of WIDTHS) {
     await page.evaluate((h) => { location.hash = h; }, r);
     await page.waitForTimeout(150);
     if (pass.live && (r === "prehled" || r === "kb")) {
-      const cards = await page.evaluate(() => ({ news: document.querySelectorAll("ul.news li").length, txt: document.body.innerText }));
+      const cards = await page.evaluate((r) => ({ news: document.querySelectorAll(r === "prehled" ? ".hot-kpi .hk-lead, .hot-kpi .hk li" : "ul.news li").length, txt: document.body.innerText }), r);
       if (!cards.news) problems.push(`[${w}px #${r}] karta zpráv je prázdná`);
       if (r === "prehled" && !/Hodnocení bankovních aplikací/.test(cards.txt)) problems.push(`[${w}px #${r}] chybí karta aplikací`);
-      if (!/Hot news|Změny ve vedení/.test(cards.txt) || (r === "kb" && !/Testovací Osoba B/.test(cards.txt))) problems.push(`[${w}px #${r}] chybí hot news / změny ve vedení`);
+      if (!/Hot news|Změny ve vedení/.test(cards.txt) || (r === "prehled" && /Index férovosti|Jak banky vydělávají na úrocích/.test(cards.txt)) || (r === "kb" && !/Testovací Osoba B/.test(cards.txt))) problems.push(`[${w}px #${r}] chybí hot news / změny ve vedení`);
     }
     const res = await page.evaluate(() => {
       const t = document.body.innerText;

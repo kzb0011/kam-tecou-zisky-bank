@@ -275,3 +275,13 @@ a.name:hover { color: var(--home); }
 .t5 .v small { color: var(--muted); margin-left: 3px; font-size: .72rem; }
 .t5 .delta { font-size: .68rem; padding: 1px 6px; min-width: 64px; text-align: center; }
 @media (max-width: 600px) { .kpi .waffle { grid-template-columns: repeat(auto-fill, 5px); gap: 2px; } .kpi .waffle i { width: 5px; height: 5px; } }
+/* Hot news v horní řadě karet */
+.hot-kpi { gap: 4px; }
+.hot-kpi .hk-lead { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.25; color: var(--ink); text-decoration: none; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-top: 2px; }
+.hot-kpi .hm { display: flex; align-items: center; gap: 5px; font-size: .74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hot-kpi .hm i { width: 7px; height: 7px; border-radius: 2px; flex: none; }
+.hot-kpi .hk { list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.hot-kpi .hk li { padding: 5px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.hot-kpi .hk li:last-child { border-bottom: 0; }
+.hot-kpi .hk a { display: block; font-size: .84rem; color: var(--ink); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hot-kpi a:hover { text-decoration: underline; }

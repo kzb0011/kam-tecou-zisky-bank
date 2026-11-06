@@ -32,11 +32,14 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Opraveno po prvním ostrém běhu: prokuristé se nepočítají do představenstva (ČS měla 8 místo 6); jména se porovnávají bez diakritiky (falešná změna u KB). Dvě falešné změny vzniklé při opravě (ČS, prokuristé) ručně odstraněny z data-live.js.
 7. ✅ Shrnutí: co funguje, co ne, co je potřeba.
 
-8. ⬜ Úpravu provést až v pátek 6. 11. 2026 ve 14 hodin. Homepage Hot news:
+8. ✅ Úpravu provést až v pátek 6. 11. 2026 ve 14 hodin. Homepage Hot news:
    1. V horní řadě 4 karet nahradit kartu „Index férovosti vkladů“ kartou „Hot news“: nejnovějších 5 zpráv (změny ve vedení z rejstříku + filtrované titulky), u každé banka, datum a odkaz na zdroj; nejnovější větším písmem; když za 14 dní nic není: „Za posledních 14 dní žádné novinky.“; karta nesmí být vyšší než ostatní, dlouhé titulky zkrátit třemi tečkami.
    2. Samostatnou sekci „Zprávy o bankách“ / široký pruh se zprávami z homepage odstranit.
    3. Index férovosti a sazby z homepage pryč, nechat jen na stránce Férové sazby a tam nahoře uvést, ke kterému měsíci data jsou.
    4. Testy desktop + mobil, commit, push.
+   - Hotovo 6. 11. 2026: karta „Hot news · 14 dní“ je 4. kartou horní řady (5 zpráv, nejnovější větší, titulky zkrácené třemi tečkami). Při výběru banky ukazuje jen její zprávy. Široký pruh Hot news, karta „Zprávy o bankách“, index férovosti a blok „Jak banky vydělávají na úrocích“ z homepage odstraněny. Karta aplikací zůstala.
+   - Stránka Férové sazby už nahoře uvádí „data za {měsíc}“ (teď srpen 2026), beze změny.
+   - Výšky na 390 px: s 5 zprávami 329 px, ostatní karty 206–363 px. Dnes je karta prázdná: poslední zpráva 22. 10., poslední změna ve vedení 14. 10.
 
 ## Shrnutí (3. 11. 2026)
 
