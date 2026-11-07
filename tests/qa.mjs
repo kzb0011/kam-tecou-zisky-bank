@@ -54,6 +54,19 @@ for (const pass of PASSES) for (const w0 of WIDTHS) {
   }
   await ctx.close();
 }
+// Měření návštěvnosti: bez souhlasu žádný požadavek ven (kontrolují průchody výše), se souhlasem jen GoatCounter
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  await ctx.addInitScript(() => { try { localStorage.setItem("kzb-consent", "all"); } catch (e) {} });
+  const page = await ctx.newPage();
+  const ext = [];
+  await page.route(/^https?:\/\/(?!127\.0\.0\.1)/, (r) => { ext.push(r.request().url()); r.abort(); });
+  await page.goto(srv.url + "#prehled", { waitUntil: "load" });
+  await page.waitForTimeout(300);
+  if (!ext.some((u) => u.startsWith("https://gc.zgo.at/count.js"))) problems.push("[souhlas] měření návštěvnosti se po souhlasu nenačetlo");
+  for (const u of ext) if (!u.startsWith("https://gc.zgo.at/")) problems.push(`[souhlas] požadavek mimo web: ${u}`);
+  await ctx.close();
+}
 await browser.close();
 srv.close();
 if (problems.length) { console.error(problems.join("\n")); console.error(`\n✗ ${problems.length} problémů`); process.exit(1); }

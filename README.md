@@ -104,6 +104,12 @@ Zatím se doplňují ručně ze srovnávače. Možnosti automatizace bez poruše
 - **dohoda se srovnávačem** (např. datový export nebo souhlas se stahováním),
 - scraping srovnávačů bez jejich souhlasu ne.
 
+## Měření návštěvnosti
+
+`analytics.js` načte GoatCounter (https://kamtecou.goatcounter.com, bez cookies) **jen po kliknutí na „Přijmout“** v cookie liště. Počítá i jednotlivé sekce (`/#sazby`, `/#kb`…) a odkud lidé přišli. Bez souhlasu se nic nenačte ani neodešle, test `tests/qa.mjs` to kontroluje.
+
+Odkazy, které sdílíš, můžeš označit zdrojem, např. `https://kamtecou.cz/?utm_source=facebook#dividendy`. GoatCounter je pak zobrazí v přehledu zdrojů.
+
 ## Kontrola kvality
 
 ```sh

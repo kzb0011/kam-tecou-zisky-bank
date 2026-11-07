@@ -745,13 +745,14 @@
     </div>`;
 
   views.soukromi = () => `
-    <section><h1>Ochrana soukromí</h1><p class="lead">Krátce: nesbíráme o vás žádné osobní údaje.</p></section>
+    <section><h1>Ochrana soukromí</h1><p class="lead">Krátce: nesbíráme o vás žádné osobní údaje. Návštěvnost měříme anonymně a jen s vaším souhlasem.</p></section>
     <section class="card"><ul class="meth">
       <li><b>Žádné účty, formuláře ani newsletter.</b> Web po vás nic nechce a nic si o vás neukládá.</li>
-      <li><b>Žádné sledovací cookies ani analytika.</b> Nepoužíváme Google Analytics, Facebook Pixel ani podobné nástroje. Pokud bychom v budoucnu měření návštěvnosti přidali, spustí se jen po vašem souhlasu v cookie liště.</li>
+      <li><b>Žádné sledovací ani reklamní cookies.</b> Nepoužíváme Google Analytics, Facebook Pixel ani podobné nástroje.</li>
+      <li><b>Měření návštěvnosti jen se souhlasem.</b> Když v cookie liště kliknete na „Přijmout“, načte se služba GoatCounter (goatcounter.com). Ta nepoužívá cookies, neukládá IP adresy a nesleduje vás napříč weby. Zaznamená jen zobrazenou stránku, odkud jste přišli (odkazující web), typ prohlížeče a zařízení, velikost obrazovky a zemi. Slouží nám jen ke zjištění, které části webu lidé čtou. Když kliknete na „Odmítnout“, nic se nenačte ani neodešle. Souhlas můžete kdykoli změnit odkazem „Nastavení cookies“ v patičce.</li>
       <li><b>Cookie lišta.</b> Vaši volbu (přijmout / odmítnout) si pamatujeme v úložišti vašeho prohlížeče, abychom se neptali znovu. Změnit ji můžete kdykoli odkazem „Nastavení cookies“ v patičce.</li>
       <li><b>Hosting.</b> Poskytovatel hostingu může jako každý webový server krátkodobě zaznamenávat technické údaje (IP adresa, čas, prohlížeč) kvůli bezpečnosti a provozu. My je nevyhodnocujeme.</li>
-      <li><b>Žádné služby třetích stran.</b> Písma i všechny soubory se načítají přímo z tohoto webu, nic se neposílá Googlu ani jiným firmám.</li>
+      <li><b>Žádné další služby třetích stran.</b> Písma i všechny soubory se načítají přímo z tohoto webu. Kromě měření návštěvnosti po vašem souhlasu se nic neposílá Googlu ani jiným firmám.</li>
       <li><b>Osoby na webu.</b> Jména a odměny členů vedení bank pocházejí z dokumentů, které banky musí zveřejňovat (zprávy o odměňování, výroční zprávy, obchodní rejstřík). Fotografie nepoužíváme. Pokud se vás údaj týká a je nepřesný, opravíme ho.</li>
       <li><b>Kontakt:</b> ${contact()}.</li>
     </ul><p class="note">Platné od ${esc(D.aktualizace)}.</p></section>`;

@@ -41,6 +41,8 @@ Stav: ⬜ čeká · 🔄 rozpracováno · ✅ hotovo · ❌ nejde
    - Stránka Férové sazby už nahoře uvádí „data za {měsíc}“ (teď srpen 2026), beze změny.
    - Výšky na 390 px: s 5 zprávami 329 px, ostatní karty 206–363 px. Dnes je karta prázdná: poslední zpráva 22. 10., poslední změna ve vedení 14. 10.
 
+9. ✅ Měření návštěvnosti (GoatCounter, kamtecou.goatcounter.com): načte se jen po souhlasu v cookie liště, počítá i sekce s #. Upravena cookie lišta, Ochrana soukromí a README; test v prohlížeči hlídá, že bez souhlasu nejde nic ven.
+
 ## Shrnutí (3. 11. 2026)
 
 **Funguje**
