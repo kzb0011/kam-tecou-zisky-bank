@@ -1,6 +1,27 @@
 window.LIVE_DATA = {
- "aktualizace": "2026-11-12T13:45:53.626Z",
+ "aktualizace": "2026-11-13T13:06:34.781Z",
  "zpravy": [
+  {
+   "bank": "ucb",
+   "title": "UniCredit vypne bankovnictví téměř na celý den. Odstávku chystá i Raiffeisenbank a J&T Banka",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNVWZCd0hWNGNYZkRPWFI3ZkVkTEdqRlcwakVrbzZORTNfYUFlUFBPWXRlSzJjLURzeklwOFVTMDV6XzZ3RExGXzA5eG5qSy1WbWhHNXIxYmpIenlLclpNRkRxaExBYlpjQnUycFVNLWtldVJjOWYwaTA4STVycThWMldwOEc2d19uaG9zX0Jad2NiQUZvVE1aYndURkpVdHAtRFVIaVl4UFhjbEh6cU9GcmlzVC1hS0tfUktfRnRUSk1NRGVZcGc0ekQ1ZmFxcFk?oc=5",
+   "source": "Seznam",
+   "date": "2026-11-12T14:54:05.000Z"
+  },
+  {
+   "bank": "kb",
+   "title": "Komerční banka extraliga juniorů",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB0WFVKYkJsQUlOb01UdTljdXFmQU9aTjhraXRIbEVXdGRaRHF6Z1A1NzI3RW9ZelVSVjBMWVNEeC1uV1dmYjFaVmQ1ak9rRTRjOW53cUFn?oc=5",
+   "source": "Český hokej",
+   "date": "2026-11-12T14:35:17.000Z"
+  },
+  {
+   "bank": "csob",
+   "title": "Hypotéky táhnou ČSOB. Banka vydělala za devět měsíců téměř 16 miliard",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSzBkc2tYRExIZ25LZXRrdFNYMDNqVGRSRVBXT3pEN2JlZ0Y2Q0hVdmd2YWZDMWVZMElmVHMyMVEwZE1lRmJTeVh6bVVEQmJjVzl4Y3VHVlVqQ2REVXVGYUYyRXZ1ZDdZVElQN0M1SWJfRUwySHI1MXowSURHNDFkc19xZWpSVTROMUpIaXdVNnAzTzVYcWMwN0tFeXBMQV9YWnZnMmE5SHlnSlRtdlpn?oc=5",
+   "source": "Seznam",
+   "date": "2026-11-12T12:38:58.000Z"
+  },
   {
    "bank": "rb",
    "title": "Raiffeisenbank o víkendu znovu vypne mobilní a internetové bankovnictví. Odstávka zasáhne tisíce klientů",
@@ -9,25 +30,18 @@ window.LIVE_DATA = {
    "date": "2026-11-12T11:10:00.000Z"
   },
   {
-   "bank": "ucb",
-   "title": "UniCredit vypne bankovnictví téměř na celý den. Odstávku chystá i Raiffeisenbank a J&T Banka",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPeFFOanBjUDBXWFljbm51aEp2NXE1cGtDdnE4bUlJSlZ4djVjUGhrWndERXJoZ3pQY1FXTnFEbFJlNHhBUWdNLXJLVy14eVZueGpRQVNXSkdEdzlMSThvSHJYTEtQNFBTbTU1bjhPTi1xdExBbDAyVDN5anlsSTN2VGdzaGh0cU9hZWUxcGxXdl82UV9HRGhIRTVocDhGT284VGlDZW5KWl81dDIzM0g2eG9vMWpOalpTaTVUY0o3eWI?oc=5",
-   "source": "Měšec.cz",
-   "date": "2026-11-12T10:52:04.000Z"
+   "bank": "csob",
+   "title": "ČSOB za tři čtvrtletí vydělala 16 miliard. Přibylo vkladů, úvěrů i klientů",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPbFkxWTNNSDhYTHpMU3NrbXAzSGdaTjNFM1VoVmNtN1Y1Z2lKRmJQN2REN3B6NkRNR1J4MVcwZmFKd01xMDk5cEkyT2ZPZmxvMmIxcEx2cmRLOWRXVXlPX2w4U3lGYjFodnJwaHAydHUtRUhLTDF0dFFYUzlmc283UFRtbzZfRVljR2cxMUJUa0NvTkNmLVVfMzNzQnhJX0lJZWw5UVNrLXdvdjlEVVlFVUlPSGhuNWgtM3lqMmZ6bjhyZXY3SXhNeQ?oc=5",
+   "source": "E15.cz",
+   "date": "2026-11-12T09:16:00.000Z"
   },
   {
-   "bank": "csob",
-   "title": "Hypotéky táhnou ČSOB. Banka vydělala za devět měsíců téměř 16 miliard",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOb2NzazdYTW0wUE5EbGZpZXdGOEFIQ1JmTzVzZzNrYnJHQk95M1dRX3lxdWxOYVZjMmJDNlNFRDN5NXYzWVB1dlZmWmZiNk1CNm5KRFlyQ0ZDT0VuaHZUVTREMG5DdXN3Z3MtVFVVajlFRlMxbG1XMWVhZWJaRjNXdWpZOW15VnN5dEwwZS1uMzE1OHZyY1p5anlYQU1lc3BaS2xqWVhXc2phRGg4?oc=5",
-   "source": "Newstream",
-   "date": "2026-11-12T09:40:02.000Z"
-  },
-  {
-   "bank": "csob",
-   "title": "Čistý zisk ČSOB za tři čtvrtletí stoupl meziročně o osm procent na 15,9 mld. Kč",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPV0NwYTN1dTluWVVHQUhNUVFUYXI2SEZrc3VUTkhpQzRhOVFjVl92eWx1Zk1odUFBd2dYakxmdUFLTmthR0lFa21NTVUxSVhwV3BSanFQLUhOUTdpUXZ6cjV4ZFpUZHhNVkRscGkxdkN1SGxGRHZKMzVFYlEzTjI3djl3SUFBeG5WWGx2MjgtbENvcjczUkV6SHJ1VW5QVy00NVdjcFdzNl81cWRkNTM2NTZpZ18xLWhKS3Rn?oc=5",
-   "source": "České noviny",
-   "date": "2026-11-12T09:26:00.000Z"
+   "bank": "moneta",
+   "title": "MONETA fondy slaví první rok. Klienti do nich investovali 5,6 miliardy korun",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPd0ZrWjVRbGdBMDFjbWh0ZGNBQ3diOURTZmVTWnljZ0dPTkhuYlZzLTlRSXlfSU1LY3dYR2sxeXZfWF9xODZmc2NUNkpnMVFla1dDRVl5WUlrRk43VjBYOVl0UDJUUjJKTXBORmx2N01SYlBqOHNZU3BnY3F3OFRuMm81YWVnSXdyQVZ5UW0wcVNhMEs0MUlwQlB4cjFldmdlbm9hQ053ZDlFaC1JNVM0VU5NNmxaWjRWTUV4eERUa0ZpSFNieC1qcE5oX0JkSmU5NVJV?oc=5",
+   "source": "Metro.cz",
+   "date": "2026-11-12T08:02:00.000Z"
   },
   {
    "bank": "rb",
@@ -42,20 +56,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE92bkYxMXllYXZRWGh0Y25EejhDNUtXLU9FaG8xbkY3MThNRWFuUlltWlR2Wm9hXzl0dnZkeFgwbUo3UGJqTzdOTjFLcDg1S1h5b3k0?oc=5",
    "source": "České noviny",
    "date": "2026-11-11T22:13:00.000Z"
-  },
-  {
-   "bank": "kb",
-   "title": "Komerční banka extraliga juniorů",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ISWpLVk1SN3J1b3JrTHFmeDhKTHVXMkliN0o4VXNsZVhJTmJuWFlfUXpFZWJWb0tCMDItUWU0Uno5T2hKcEhOc0ZEX2Q0QVlERl8zc3NR?oc=5",
-   "source": "Český hokej",
-   "date": "2026-11-11T22:11:32.000Z"
-  },
-  {
-   "bank": "moneta",
-   "title": "MONETA fondy slaví první rok. Klienti do nich investovali 5,6 miliardy korun",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE13SUNTVm02WEhUZDBtdFZvWnF4RzFyZWNtMkJJRE4zT09NM3IyRDhYdmJmWTZGSFB6YU1zeXlfYkxuZENOejNnN1lob3dfYzJwZFJkQnlMZmlDWjkzRFE?oc=5",
-   "source": "FXstreet.cz",
-   "date": "2026-11-11T17:39:00.000Z"
   },
   {
    "bank": "rb",
@@ -73,10 +73,24 @@ window.LIVE_DATA = {
   },
   {
    "bank": "cs",
+   "title": "Kdo má nejblíž k Effie? Shortlistu vévodí Publicis Groupe, Česká spořitelna a O2",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbjFmWlR2Ql8ySzRuNFdyT0VyNk1WdWN6UnB4UVYwN1V0UDFKOWRia2hiM2RxLVBWN3RfdFhpd24zTTJ6VmsxU1k0cTVqQ3UtYjgxU3EzajRVVmtNQzRFb3d6NG51cEZ0S3ZQQ3B1a1otQ1NodlZmc25JYnhSV1B3a0doNVdlS0xxMUI0d2s1UFB2N0R5U3I3OFYwdG1nMEFEMVM2YlRUeXJlR29XSno2ZW52aGd0UmpOVkpDamNiLXdLNjBJVm9Hbw?oc=5",
+   "source": "www.mam.cz",
+   "date": "2026-11-10T17:42:29.000Z"
+  },
+  {
+   "bank": "moneta",
+   "title": "Pražská burza posílila, pomohlo jí hlavně zdražení akcií Erste, Monety a CSG",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE51MUFuWjFSVHV3X1JybmZCUjVFQ1ljdExLYlIwTFlMSFVEck5XTzQyZzkwSC0wOHpQVlJTSnN1SXlhazVLTjM3Z1daRDk1cTBURkk4?oc=5",
+   "source": "České noviny",
+   "date": "2026-11-10T15:40:00.000Z"
+  },
+  {
+   "bank": "cs",
    "title": "Shortlist Effie 2026: nejvíc nominací má Publicis, ze zadavatelů Česká spořitelna a O2",
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcy1pazhCclJ4VnNtM3dDNDA4bTFuaS1MXzJPQnpzTlJyRDNhQUpmZXl6YzNiZGR3dzYtV1dHdUgzUERTcUZnRlFnXzFRWnJHNFdES0twaEt5NVYtWFljNVJNS0dPdk1qUFZtNG9idjZuWW5HcS1oV3FubXFMV1NveHh3UTBUR0hXSTk3YkNjOEI2eWZySEJvSWRxbjJzS2NzWDBFR3lLbmQyZjQ?oc=5",
    "source": "Médiář",
-   "date": "2026-11-10T13:03:32.000Z"
+   "date": "2026-11-10T13:05:43.000Z"
   },
   {
    "bank": "cs",
@@ -101,17 +115,17 @@ window.LIVE_DATA = {
   },
   {
    "bank": "cs",
-   "title": "Investice v mobilu od stovky: Česká spořitelna spouští George Strategies založené na ETF fondech",
-   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNZWpnNG00UktIOEVXOTQ2VzVIMDlORUtoeE5RNDdOa0Z4S2RYVm1qU1RKQlhPQmpqUVhURktBbXRidEpYY2pJd015aThRVUJ0NEJtNjByWlJDZnd1SW5MVmZ5c28xWHlkSW5xWlN0S1pTWUFjSmJCTzI0c2JXM2hiRUw2Y0txTlg3NVBxX1huOV9JRVBsVFRZa3dQS0UxZDIyUnBTcDA5el9PS1NxVDhqT1ZUaEZxVXpiNzFRb3A3MHY3aVdleVZ0NE5FaThWMDJ0N2tMLTNweGVTYjlBb1V0ZjFJcVc0cmFkMmhYZmdJVnM?oc=5",
-   "source": "E15.cz",
-   "date": "2026-11-10T04:26:51.000Z"
-  },
-  {
-   "bank": "cs",
    "title": "Česká spořitelna zjednoduší investice pro začátečníky. Přináší základ už od 100 korun",
    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLUI0XzM3VXpEVTFFd20wVHAzMEw5WUhoS1c0TzZlcFNodXFSY0p6b3RDN2dOQ0VvT0xGSW5jd0FTS3dMXzhzUi1ONThjWEZsejdxQUd0Y1c3eUp0ZXQyUGRCY1VyRjZxR01vNU5kdWlXeGM2RnVEZ1h5bXV2NjF1a2NBXzQxRmNHUUFfcHdocS1sRDJXdkg1Vl9Ib1ppYmRJSzNyQmpGQ0hRTktmU0hFV2MtRHk0c05mUjc5bnl4M2tHSmx5M0tJ?oc=5",
    "source": "Penize.cz",
    "date": "2026-11-09T13:00:00.000Z"
+  },
+  {
+   "bank": "cs",
+   "title": "Investice v mobilu od stovky: Česká spořitelna spouští George Strategies založené na ETF fondech",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQ3UteDZoUEJ0a0Q2UTFTaFFfX2ZkcE40NVJ3S2d2WHhya3cwaGREVnJkNnVpc3hZeXcxanVPdWtMZUtFZ00xWnMxSTZLcXhsb0l1VVpobUphemR1S0ZXMW1nVEpCT25UcjQxSnBuQkxjY09EUm9ySkQtblNySlc0bGhCTzg5ZzhaSFhERWRmRGxZT290cG5ad3dJby1qMGFMM2hURlZraURJUzNYZHUteG0xNVZfRGlPT2g5REVxMTJ4UjB3SW9OS0F1NmlZOWRrdHNsWnVIbFpDUGhpSUE?oc=5",
+   "source": "E15.cz",
+   "date": "2026-11-09T11:51:00.000Z"
   },
   {
    "bank": "ucb",
@@ -163,20 +177,6 @@ window.LIVE_DATA = {
    "date": "2026-11-06T07:59:00.000Z"
   },
   {
-   "bank": "kb",
-   "title": "Komerční banka od listopadu zvyšuje úročení spořicího účtu až na 4,2 % ročně",
-   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPNVJoTy1yUlZnem40U1pfV0VMOGNwaXRteVlhdDlhc0ZjaXZBRWxwZEZ4aWxMYlR2S1g4V1loTDZKOVRqYU1vTlllTWZINkVLTHRRN21IU2VZQWtMbEpHclRMX1U3LVM1WkhqcjJNVm1jaFBNSDUwTlJCdU5RbV83M1pwOFdUbXdTcFN2RXRoNVJ6Y0VUSUhGT29OZWM0akJSMXZNeGczQVlDeHYxTFVjZzNkWUdsTS0yMXJUTWZxeHRiZ0owR1BJLTNMZkNIYko2Mnc?oc=5",
-   "source": "Metro.cz",
-   "date": "2026-11-05T08:07:00.000Z"
-  },
-  {
-   "bank": "fio",
-   "title": "Majitelé skupiny Fio si vyplatili miliardovou dividendu",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeHh2cUs0alNHRW11WUNRZ2ZLTFkxVng0OVlUd1BGbmlHVXFIaHpQSGlEUFBzSnh2c19tUFhyUXZQYU9xTmJaemhYeUVpb0NDQmJsaVRFQkZpMVIwUUlWSUhMaDA5dk9PbEVBdzFTX19LbUlFQW02UE1Xbkh5SjFvU3NPaVNJOHlSUXJZejJZWU9fVzg0eU9HQnBmY00wTWZGcHB3Y1AySmNIeDlweVVJTUItdTdRMEpMa0Z1MjVOWWg?oc=5",
-   "source": "Seznam Zprávy",
-   "date": "2026-11-04T13:45:00.000Z"
-  },
-  {
    "bank": "cs",
    "title": "Česká spořitelna: Dividenda bude 75 korun",
    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQcVdNV2RmcnN0cEltaFZWZ3FXaGxaWWtYNzVSd3BTdks3cFdPMnlLTHhqX3ZYMU9ONHZUMG1tZjRmcTJ5bm5YSjByM1FrZktmb0hsOHMyaFRRV21iYWZJcGRwNDV4UGRnWFF4UEZfS1dNMDU0QW5Wa1QxcGltTjBkZnRKeEZVcm9DRUE?oc=5",
@@ -198,18 +198,11 @@ window.LIVE_DATA = {
    "date": "2026-11-04T08:00:00.000Z"
   },
   {
-   "bank": "kb",
-   "title": "Komerční banka, a.s.: Informační povinnost",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPclloMENoSVNkaGxYS2hDMGFwNGlxX3AxdThObHo0cXF1Sno4cmFxTUFzX0tqM0g4ZDNWbDZXZ2ROdkktdVBkR2dCSkFmZmZSa3hiaTB2VFhaUl85aXBFSE1BYWZnVkhJR3JxZFVSbkNsTGs1QTRKZGZ4VzRSbmszRElNcEphQUtpbnFXRHljWDQ?oc=5",
-   "source": "Patria.cz",
-   "date": "2026-11-04T07:48:00.000Z"
-  },
-  {
-   "bank": "kb",
-   "title": "Komerční banka zvýšila úročení spořicího účtu až na 4,2 % ročně. Jaké jsou podmínky?",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUlRaOTcxVHBJTFJRaXdPa2VsMTF0NVFOdnlKVGlMaG81bVZ6aElKc1ZvRlN2bjdVeHVBVWNCeEtuZUJYVlVwT0M5MTFmS1p2OHljSHFsY0lnRVluSFNBLVNmMzIzb2hNTk5fYnZrQWd5OWFDakhpdWpiMG42OU5xdXljSjAwVndtcVAwWmZqS2pvLTF3dmVmamZJSEpTSTNfVmJ0ck9oYVE3VzZOMEdCQmstbXU?oc=5",
-   "source": "Finance.cz",
-   "date": "2026-11-03T10:06:01.000Z"
+   "bank": "fio",
+   "title": "Majitelé skupiny Fio si vyplatili miliardovou dividendu",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeHh2cUs0alNHRW11WUNRZ2ZLTFkxVng0OVlUd1BGbmlHVXFIaHpQSGlEUFBzSnh2c19tUFhyUXZQYU9xTmJaemhYeUVpb0NDQmJsaVRFQkZpMVIwUUlWSUhMaDA5dk9PbEVBdzFTX19LbUlFQW02UE1Xbkh5SjFvU3NPaVNJOHlSUXJZejJZWU9fVzg0eU9HQnBmY00wTWZGcHB3Y1AySmNIeDlweVVJTUItdTdRMEpMa0Z1MjVOWWg?oc=5",
+   "source": "Seznam Zprávy",
+   "date": "2026-11-04T08:00:00.000Z"
   },
   {
    "bank": "rb",
@@ -255,16 +248,16 @@ window.LIVE_DATA = {
   },
   {
    "bank": "cs",
-   "title": "Česká spořitelna hlásí hypoteční boom. Data ukazují nový trend",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZVVKWHZkZUF0TlM0ZzNvbDBjY293X2NERjJZOVVLam1sSVdEQ1BBZ1Z6MEJMZVhpQzZSWU5PenpETlgzU3ZlT2xfanFBY21mdEo3UzNmejZpemxLOEd5bjFZOFRPM3FhWmRtbWdfaUFnNFctdVhqSXJLZWhNZV9EX1VhS1hxblVBSVdjUFktMTR4UVVjZ2lZa3d3M3ZFaUR4RnpHcW9hb1hSeDNjeTEyeg?oc=5",
-   "source": "E15.cz",
+   "title": "Česká spořitelna dál roste. Zisk za tři čtvrtletí stoupl na 22,2 miliardy korun",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVDdiTFpBc1JCM2pyVUtUdTBINzRaTGhRTUFyV1EtZDF1VEVsY2M4d0VTaHhvcEZVMURCbmFfZHNWQVhORW93MFFrWlFnSk5LSEpfZW84NW5YMjMwUnE0MFYzTURWX05NY1M5ZVFsQTRwSldGVXQ3MWJPZjJ4ajZaWnZuZmhTcmhjSDZVZ0UyQUxhZDV0MWhTUlFaZ2J1T1J0WGtiMkZxR3JfZ0o5TEdWVHJWNGFOd3VuR3NVZS14NlpYNDdhUHRMUzgwd01BQUFEOG1iemo1YnRDNTNZMTZlcGo0UElRQQ?oc=5",
+   "source": "Aktuálně.cz",
    "date": "2026-10-30T07:00:00.000Z"
   },
   {
    "bank": "cs",
-   "title": "Česká spořitelna dál roste. Zisk za tři čtvrtletí stoupl na 22,2 miliardy korun",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVDdiTFpBc1JCM2pyVUtUdTBINzRaTGhRTUFyV1EtZDF1VEVsY2M4d0VTaHhvcEZVMURCbmFfZHNWQVhORW93MFFrWlFnSk5LSEpfZW84NW5YMjMwUnE0MFYzTURWX05NY1M5ZVFsQTRwSldGVXQ3MWJPZjJ4ajZaWnZuZmhTcmhjSDZVZ0UyQUxhZDV0MWhTUlFaZ2J1T1J0WGtiMkZxR3JfZ0o5TEdWVHJWNGFOd3VuR3NVZS14NlpYNDdhUHRMUzgwd01BQUFEOG1iemo1YnRDNTNZMTZlcGo0UElRQQ?oc=5",
-   "source": "Aktuálně.cz",
+   "title": "Česká spořitelna hlásí hypoteční boom. Data ukazují nový trend",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZVVKWHZkZUF0TlM0ZzNvbDBjY293X2NERjJZOVVLam1sSVdEQ1BBZ1Z6MEJMZVhpQzZSWU5PenpETlgzU3ZlT2xfanFBY21mdEo3UzNmejZpemxLOEd5bjFZOFRPM3FhWmRtbWdfaUFnNFctdVhqSXJLZWhNZV9EX1VhS1hxblVBSVdjUFktMTR4UVVjZ2lZa3d3M3ZFaUR4RnpHcW9hb1hSeDNjeTEyeg?oc=5",
+   "source": "E15.cz",
    "date": "2026-10-30T07:00:00.000Z"
   },
   {
@@ -324,6 +317,13 @@ window.LIVE_DATA = {
    "date": "2026-10-29T07:00:00.000Z"
   },
   {
+   "bank": "kb",
+   "title": "Komerční banka za 9M26 vykázala silný obchodní růst a odolnou finanční výkonnost a představila aktualizovanou strategii do roku 2029",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOS3Q5ZzgtQlcwcTdiRjA3NVdLWFM1WVlmZlJlRDFFUFhhZzY1Tkc2TVZ0ZHVHZ1EtX2ZWX2tPMmhNM2k2RjFOdWxqSWZHazJSUE1vMXBnY0piQ2xueUMwb2dYQWEtSGVIN3BIMXRPcnNvVGtvRElheVVKVFpoZFRXdGF1MUJFMzdRbTNUbXJ2Q2s5QUhxOVg2ejRfTVlWVFBjMW9QaHFzYmo4aF9KanNqZ21EV3I5SDcxNVJJMEEzY3FVcXY3?oc=5",
+   "source": "Zprávy Kurzy.cz",
+   "date": "2026-10-29T07:00:00.000Z"
+  },
+  {
    "bank": "cs",
    "title": "Česká spořitelna v Pacově uzavírá pobočku, šlo o poslední banku ve městě. Zůstane jen bankomat",
    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOX3BPc3RkNllPaHE2OGZqNFk1X3laODJZemI0b1Nra00zeDlkUTI4YS1hLUFpN0hVVE5RQTFkODhMZW1ybFRqVlU4MTlycFZUNjg2bWkwY2xoeUVYdzNQR3JlUEVuYmUtLWRJcjZDU1lZNVJhRWJMVHNsZ1JEcldud3RQWS1WRlhPQ3FKT0lpLWdtdkNaNk5heFhEWmxQNUdKdExuLWhrWXhMUFlKQWlUOFVzbE1YaXhoYWNPOXNBdEVtdWJ1N1lPejBrYw?oc=5",
@@ -359,6 +359,20 @@ window.LIVE_DATA = {
    "date": "2026-10-26T07:00:00.000Z"
   },
   {
+   "bank": "kb",
+   "title": "Komerční banka zlevnila půjčky. Konkurence nabízí sazbu i pod 4 % p.a.",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWEtWMlU5SDl6ZkZPdll6QVJrUDhKYjAzaDBqRjFrLWx5Ti16TnVWeURucWdBSVJMcGJEdUw5X3FVc1VyUGx5MGx2eXdQZ2Q5eE9sdHNrQlEzclVXQkNGb29TRlpHUTFlLURaWFBtWVI2TC1vTDRYS1dhSVBLeE1nNTVGMTdlSXlUUEFfeHAzSEhEN19xeWY3aGJJUUVqblk?oc=5",
+   "source": "Měšec.cz",
+   "date": "2026-10-23T07:00:00.000Z"
+  },
+  {
+   "bank": "kb",
+   "title": "Komerční banka snížila úrok u Osobní půjčky. Sazba začíná na 4,69 % p. a.",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbWMtTUppaF93eDQ1S0lSWGljNlM2VHBnV2k1cEROVkZ3Q1BCWWhtMW5MTzdxTDBpTXdlcXZ3YktHSjB0Z21LY1J5Mk5tRW5xejhPOTVqMnAzamJJd1BtazJfdUxBQ1V0N2ZXaHlEcFBJU014SndqVk1ZWDdTeGJMMEk3V1hWbXRqLUVUTzB0eHNUNW1aRGVYZjJTbFI1NldDYS01U1Z6WVozSGozdHgxWC1R?oc=5",
+   "source": "České noviny",
+   "date": "2026-10-23T07:00:00.000Z"
+  },
+  {
    "bank": "rb",
    "title": "Raiffeisenbank končí s Mastercard. Všechny karty vymění za Visu, některým klientům omezí výhody",
    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQM05zUDdnTmpKbWNLTVI1bEFrbXFvMHhKZkdTdDYxYzZNNWRnbXFnS3JwZ2NvYkN5eHlvdXhmdkcxS25IZVZUT1prbzdnX2dXaFlFVXQxWkwwZzk3TjFwa3JqV09odHFWN3Z2UzNCWWxBSHFKZ2JiMzV6TUlMaGhLdjViVFUxMFB5WHl0QTNxVHlLY013LTUxMzV4N0pPX1RpN0diYjBRYVdDLVhhZWY3T1l4VjVoWkxOTXEtcjdQOA?oc=5",
@@ -388,8 +402,8 @@ window.LIVE_DATA = {
   },
   {
    "bank": "moneta",
-   "title": "Moneta reportovala výsledky za 3Q26",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1vTmctNU9vLUhuR1BTSl9XT3JpZWdGOEN4YW9MWVk3YUNKaEl3TGlud1ZvTnBJSzdPU0tGQmxoaVMtYXNlSXlUdTlkNkNFWkdtamlHQ2lUN1ZQQjlDWVZWTExCbDRTS1ZSVGxZSVNLUXJJNkRPUEE?oc=5",
+   "title": "Čistý zisk skupiny MONETA vzrostl o 12,7 % na 5,5 miliardy Kč",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcjV3SlViN0FwVkc1Y2R5TjVnMF92aWxId3h3RWNYUXE3SENLQkZWTTljT1FLNUxhd3lGWU1xR2FtY2R1cVlWSVAtWHl2czRLcnZqcTRRTFo4VGxtREpDeGVHM1JtLWlYaXhPMnQxVTlSVkRvVmVtRktsbnI0LWd5aHVkdUltMU1UZzhoaEtraGdvbW1URnhr?oc=5",
    "source": "Zprávy Kurzy.cz",
    "date": "2026-10-23T07:00:00.000Z"
   },
@@ -398,6 +412,13 @@ window.LIVE_DATA = {
    "title": "Čistý zisk Monety Money Bank vzrostl",
    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSGJUY1pzbjhIQUp1eU9oSGQ5cjduanF4d3VZWTd3azJPOUNDaERBcUt5dHlPY3F6dnQ5eXZGQlpmYWpGMkRoQ25EaUJFRXNUajFKdjNyYkZwS3dnNUNKSUR3OXNCdzkwNXVZdDVsWUJ1RC0yTHZWNEFXc3RkeFhzeWY2X3QxZw?oc=5",
    "source": "Novinky",
+   "date": "2026-10-23T07:00:00.000Z"
+  },
+  {
+   "bank": "moneta",
+   "title": "Moneta Money Bank za 3Q 2026 dosáhla čistého zisku 2,2 mld. Kč a navyšuje celoroční výhled",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNM1N5SFJhWVMyQjRaQWRqX3BMSlZScXQ3UWF4VENEQ1ZLMG9ETEdEY0VJaVotQ0VLX2VHdGw0dXdHU2M0SHhXTjh0andKaVlWdlQ2aVA4VDJpMUpheFBrTkNkMFhCbW9zU0dIclJ1YUw1TXhnRUtyUExjVGVpYmhJeWNZeURrclNmVW96MU1OMXFIOWMyRUFuRjVFQnlINzZHTDF0UHJDQnA3X2lxZXh5Ukg4NWQ0NDRNYmQyQXpMNUJKbFVPcWo2TGQ1elpVQ3ZvLTljRHU3NkRYak9q?oc=5",
+   "source": "Fio",
    "date": "2026-10-23T07:00:00.000Z"
   },
   {
@@ -416,16 +437,9 @@ window.LIVE_DATA = {
   },
   {
    "bank": "moneta",
-   "title": "Čistý zisk skupiny MONETA vzrostl o 12,7 % na 5,5 miliardy Kč",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcjV3SlViN0FwVkc1Y2R5TjVnMF92aWxId3h3RWNYUXE3SENLQkZWTTljT1FLNUxhd3lGWU1xR2FtY2R1cVlWSVAtWHl2czRLcnZqcTRRTFo4VGxtREpDeGVHM1JtLWlYaXhPMnQxVTlSVkRvVmVtRktsbnI0LWd5aHVkdUltMU1UZzhoaEtraGdvbW1URnhr?oc=5",
+   "title": "Moneta reportovala výsledky za 3Q26",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1vTmctNU9vLUhuR1BTSl9XT3JpZWdGOEN4YW9MWVk3YUNKaEl3TGlud1ZvTnBJSzdPU0tGQmxoaVMtYXNlSXlUdTlkNkNFWkdtamlHQ2lUN1ZQQjlDWVZWTExCbDRTS1ZSVGxZSVNLUXJJNkRPUEE?oc=5",
    "source": "Zprávy Kurzy.cz",
-   "date": "2026-10-23T07:00:00.000Z"
-  },
-  {
-   "bank": "moneta",
-   "title": "Moneta Money Bank za 3Q 2026 dosáhla čistého zisku 2,2 mld. Kč a navyšuje celoroční výhled",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNM1N5SFJhWVMyQjRaQWRqX3BMSlZScXQ3UWF4VENEQ1ZLMG9ETEdEY0VJaVotQ0VLX2VHdGw0dXdHU2M0SHhXTjh0andKaVlWdlQ2aVA4VDJpMUpheFBrTkNkMFhCbW9zU0dIclJ1YUw1TXhnRUtyUExjVGVpYmhJeWNZeURrclNmVW96MU1OMXFIOWMyRUFuRjVFQnlINzZHTDF0UHJDQnA3X2lxZXh5Ukg4NWQ0NDRNYmQyQXpMNUJKbFVPcWo2TGQ1elpVQ3ZvLTljRHU3NkRYak9q?oc=5",
-   "source": "Fio",
    "date": "2026-10-23T07:00:00.000Z"
   },
   {
@@ -437,16 +451,16 @@ window.LIVE_DATA = {
   },
   {
    "bank": "moneta",
-   "title": "Projekce hospodaření Moneta Money Bank za 3Q 2026",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOd3FzTHZRY2RqdWxKeldyeVozX0MtZFNObkJzY1JVQnF4UTNaUGdiZ0pXbU5aektlc0ZBWTI5YUVPbl9xOG42RWkxX2NJUVlTNmI3VlJVSXpId0gtN3k0cFhzanFJdFJPeDduUXFHeC04X2dKd1NpU2pSVTNIYzUzanptT2diUmFUSTV3NXRoN3VCaWJRb1NqSVJlQTlvWVp2VjZrNFYwUQ?oc=5",
-   "source": "Fio",
+   "title": "Preview: MONETA může překvapit dividendou. Analytik čeká růst zisku i silné úrokové výnosy",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZDdZbjlGakN4TTRDVWhLenNuSEVoVkpTWEFkeUhjN1BXYjYxX1NXbUt2NUJKZDFSWFdNNENkek52X2JwelA2QWZiWlhSU2RQQlR4OTNzNGNWUW1pa1dCSFo4bkRLNVUtbjY5NjROQlExZk5ZNDMyN2FqRDVqMVVHZm5RZ1pkUy1ZTjA1M1JsV0FrZkl5NXdCOE41TG5XRGNSaDZSR3NxbUJmUXdpTURvMkpzTGlaUU10N3pqVERrTktjeUpKYkNRczlrOWxLbXktZkhn?oc=5",
+   "source": "Patria.cz",
    "date": "2026-10-22T07:00:00.000Z"
   },
   {
    "bank": "moneta",
-   "title": "Preview: MONETA může překvapit dividendou. Analytik čeká růst zisku i silné úrokové výnosy",
-   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZDdZbjlGakN4TTRDVWhLenNuSEVoVkpTWEFkeUhjN1BXYjYxX1NXbUt2NUJKZDFSWFdNNENkek52X2JwelA2QWZiWlhSU2RQQlR4OTNzNGNWUW1pa1dCSFo4bkRLNVUtbjY5NjROQlExZk5ZNDMyN2FqRDVqMVVHZm5RZ1pkUy1ZTjA1M1JsV0FrZkl5NXdCOE41TG5XRGNSaDZSR3NxbUJmUXdpTURvMkpzTGlaUU10N3pqVERrTktjeUpKYkNRczlrOWxLbXktZkhn?oc=5",
-   "source": "Patria.cz",
+   "title": "Projekce hospodaření Moneta Money Bank za 3Q 2026",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOd3FzTHZRY2RqdWxKeldyeVozX0MtZFNObkJzY1JVQnF4UTNaUGdiZ0pXbU5aektlc0ZBWTI5YUVPbl9xOG42RWkxX2NJUVlTNmI3VlJVSXpId0gtN3k0cFhzanFJdFJPeDduUXFHeC04X2dKd1NpU2pSVTNIYzUzanptT2diUmFUSTV3NXRoN3VCaWJRb1NqSVJlQTlvWVp2VjZrNFYwUQ?oc=5",
+   "source": "Fio",
    "date": "2026-10-22T07:00:00.000Z"
   },
   {
@@ -458,10 +472,10 @@ window.LIVE_DATA = {
   },
   {
    "bank": "cs",
-   "title": "Česká spořitelna nasazuje nový formát, uvádí mikroseriál Blue Heat",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQaGhpaW12bm9kZ0p1YUFKYWtHUjZkRWFUMk5jM1I3bkpOczVvMUZFTWZEaGpWOW1DUTZBVGVvdzg3c1dDcTY1RXE3MjdWU251SGhCX1RhU2wtejYwOU1BbHBGX3NYaXZjSmJVTFNwT281RlRnSU1PYWI2eUN4VEhNNi1PdXVyMElURzVIRUJ0NW9DMk8z?oc=5",
-   "source": "MediaGuru",
-   "date": "2026-10-21T07:00:00.000Z"
+   "title": "Česká spořitelna ve Znojmě vyhrála Bank Branch of the Year za třetí kvartál 2026",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNcW5pT0lfbm0wcXVNWHBET0JldHhXUjNDOEZ4V0FlbXBKY0tIbHJEQk1oOUxjZmUxc1hLQVI4a1JSc000dDdha1Azblg0d2pSYW5uRWlUTXlucFNMcXpBTDFhWkFpa0VYN1B1eTNjbUNpWnB2WmgxbFJPOVF6ZnJ4dVhpX3MxUHFnWkpxanVvN0w3MXJvR0wzVWNyQnI3cG1ISmpuWnFmSFpSQVl5TXdKZWpJM2x6enE2LVU5WWRQMHVaMHNVbGhzeWdYMTU0Wk0tTDcwQV9lV3RwQQ?oc=5",
+   "source": "Metro.cz",
+   "date": "2026-10-19T07:00:00.000Z"
   },
   {
    "bank": "csob",
@@ -475,13 +489,6 @@ window.LIVE_DATA = {
    "title": "ČSOB už nabízí bezúročné úvěry z Nové zelené úsporám. Zatím jen majitelům rodinných domů",
    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPai1MMVN6dDZHVEtrOHBTU18wSk02N0FHcHNiUkZfWGtRUTQxdHZvdWJkbFlXRjdxU1Q4WjF4NTJuWmlkY3QxVC02U1hrX0RHdTJqMGFzc3JhdzBfN0RUQWtnaS04TmtFeENlbVRmV2FJNVg4Z00tMElNZnNxN0QyWlFKT0gxNXNOME5HbzlfYWEwRFVMak9wSXR6Tkt5bVFKN0hNemNVUmJOc1ljeWdwWkcwZmp4N2p0MFo0?oc=5",
    "source": "Měšec.cz",
-   "date": "2026-10-19T07:00:00.000Z"
-  },
-  {
-   "bank": "moneta",
-   "title": "Očekávané výsledky světových firem v týdnu od 19. října: Netflix, Tesla, Meta, SAP, MONETA Money Bank",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdkFtWnNDV2hZZ0JWVlJPUWpMbE90ZDJPaF9La2RBcGtmaW1Iem1BMV9QbnVvNk85VF85QU1TUVV6bzJnVUs4TnMtVlQzMnJ1TEs3WHpCUTVxQWdoRVR3QzhoWmZtSklZZ21tbVl3VE05Um9pZ3NpcVR3WEk3LWhWWVlES29BOGRCU2plTTVWZ1ZEendDZ0VndVRSMWVpd05fZVlJ?oc=5",
-   "source": "Investiční web",
    "date": "2026-10-19T07:00:00.000Z"
   },
   {
@@ -511,13 +518,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNcFZzMVdTZjdKamJrajhUZjlDYV9WV2lqT013T2pENXppc1RNbVpDMFczWDNyRXNHMm16eEtHb1ZfY2phalE1X1NCQTQ3Z3RZc2pRZGJQYlMwdmhXUkpUbWZyS2dseWtJdmRBTi1xb2xIZkVBVTVsb2lqbmUxZTdiOExidjdTV1pwNmlMWWo2RjhCb1Rva3BZSHJPLWwzZ1k2eWF1MHZPd0FCbzlmNFY5ZkxwSlBNZ1Q0Z3dCYkNfVWF0dVhOdFhXaXM0VnotVTZKRUctOWtoRGZNV1Y3WW9SSTJ3?oc=5",
    "source": "České noviny",
    "date": "2026-10-15T07:00:00.000Z"
-  },
-  {
-   "bank": "csob",
-   "title": "Jediný trest za „Fialovu“ kampeličku: Třicetimilionová pokuta pro ČSOB",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcGhaQkhGaURER1BxOXgxWVo4WWNuMEFWUEJVQ1JfY1N5U2taclpyZ0VLYUZiOVhKa21VTkE1UjdMU3FGQWNXcFNLWUQzd2dOWTFoUWNWRnBqWjFKcXk5NXFEYnRfSXVEdFA1dUhZcGlrUm84ZDRjaEJtLW9DUGNsd1dRUmRfclc0dEdQNUhaOE9wUjIwYkhrT1pNV3B3Um1TRlg2Vmt6XzZpTzNBcTFNQzBKbUZuMGQ0N0tLWjRieXI?oc=5",
-   "source": "Seznam Zprávy",
-   "date": "2026-10-14T07:00:00.000Z"
   }
  ],
  "aplikace": {
@@ -525,7 +525,7 @@ window.LIVE_DATA = {
    "name": "ČSOB Smart",
    "seller": "Ceskoslovenska obchodni banka, a.s.",
    "rating": 4.77,
-   "count": 147225,
+   "count": 147271,
    "url": "https://apps.apple.com/cz/app/%C4%8Dsob-smart/id1528483245?uo=4",
    "id": 1528483245,
    "historie": [
@@ -578,6 +578,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.77,
      "n": 147225
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.77,
+     "n": 147271
     }
    ]
   },
@@ -585,7 +590,7 @@ window.LIVE_DATA = {
    "name": "KB+",
    "seller": "Komercni banka a.s.",
    "rating": 4.42,
-   "count": 55793,
+   "count": 55832,
    "url": "https://apps.apple.com/cz/app/kb/id1585485232?uo=4",
    "id": 1585485232,
    "historie": [
@@ -638,6 +643,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.42,
      "n": 55793
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.42,
+     "n": 55832
     }
    ]
   },
@@ -645,7 +655,7 @@ window.LIVE_DATA = {
    "name": "Smart Banking",
    "seller": "UniCredit Bank Czech Republic and Slovakia, a.s.",
    "rating": 4.41,
-   "count": 46462,
+   "count": 46471,
    "url": "https://apps.apple.com/cz/app/smart-banking/id468057018?uo=4",
    "id": 468057018,
    "historie": [
@@ -698,6 +708,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.41,
      "n": 46462
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.41,
+     "n": 46471
     }
    ]
   },
@@ -705,7 +720,7 @@ window.LIVE_DATA = {
    "name": "Raiffeisen bankovnictví",
    "seller": "Raiffeisenbank, a.s.",
    "rating": 4.76,
-   "count": 90404,
+   "count": 90412,
    "url": "https://apps.apple.com/cz/app/raiffeisen-bankovnictv%C3%AD/id538751727?uo=4",
    "id": 538751727,
    "historie": [
@@ -758,6 +773,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.76,
      "n": 90404
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.76,
+     "n": 90412
     }
    ]
   },
@@ -765,7 +785,7 @@ window.LIVE_DATA = {
    "name": "MONETA Smart Banka",
    "seller": "MONETA Money Bank, a.s",
    "rating": 4.76,
-   "count": 133543,
+   "count": 133570,
    "url": "https://apps.apple.com/cz/app/moneta-smart-banka/id1122443334?uo=4",
    "id": 1122443334,
    "historie": [
@@ -818,6 +838,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.76,
      "n": 133543
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.76,
+     "n": 133570
     }
    ]
   },
@@ -878,6 +903,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.24,
      "n": 6490
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.24,
+     "n": 6490
     }
    ]
   },
@@ -885,7 +915,7 @@ window.LIVE_DATA = {
    "name": "George Česko",
    "seller": "Ceska sporitelna, a.s.",
    "rating": 4.78,
-   "count": 319082,
+   "count": 319134,
    "url": "https://apps.apple.com/cz/app/george-%C4%8Desko/id1163368801?uo=4",
    "id": 1163368801,
    "historie": [
@@ -938,6 +968,11 @@ window.LIVE_DATA = {
      "d": "2026-11-12",
      "r": 4.78,
      "n": 319082
+    },
+    {
+     "d": "2026-11-13",
+     "r": 4.78,
+     "n": 319134
     }
    ]
   }
@@ -953,15 +988,7 @@ window.LIVE_DATA = {
   "hot": "7/7",
   "vedeni": "7/7"
  },
- "hot": [
-  {
-   "bank": "csob",
-   "title": "Jediný trest za „Fialovu“ kampeličku: Třicetimilionová pokuta pro ČSOB",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcGhaQkhGaURER1BxOXgxWVo4WWNuMEFWUEJVQ1JfY1N5U2taclpyZ0VLYUZiOVhKa21VTkE1UjdMU3FGQWNXcFNLWUQzd2dOWTFoUWNWRnBqWjFKcXk5NXFEYnRfSXVEdFA1dUhZcGlrUm84ZDRjaEJtLW9DUGNsd1dRUmRfclc0dEdQNUhaOE9wUjIwYkhrT1pNV3B3Um1TRlg2Vmt6XzZpTzNBcTFNQzBKbUZuMGQ0N0tLWjRieXI?oc=5",
-   "source": "Seznam Zprávy",
-   "date": "2026-10-14T07:00:00.000Z"
-  }
- ],
+ "hot": [],
  "vedeni": {
   "cs": {
    "predstavenstvo": [
@@ -1080,7 +1107,7 @@ window.LIVE_DATA = {
     "Roman Ermantraut",
     "Taťána Le Moigne"
    ],
-   "aktualizace_or": "2026-09-05",
+   "aktualizace_or": "2026-11-12",
    "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=49240901"
   },
   "moneta": {
