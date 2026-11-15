@@ -1,0 +1,27 @@
+# Nastavení hlídače levné elektřiny.
+# Po změně stačí uložit (na GitHubu tlačítko „Commit changes“). Projeví se při dalším spuštění.
+
+# Hranice pro ALERT v Kč za kWh. Když cena klesne pod ni, přijde upozornění.
+hranice_kc_kwh = 1.0
+
+# Má se hranice porovnávat s cenou včetně DPH (true) nebo bez DPH (false)?
+hranice_s_dph = true
+
+# Sazba DPH v procentech.
+dph_procenta = 21
+
+# Kolik nejdražších hodin vypsat ve zprávě.
+pocet_drahych_hodin = 3
+
+# Délky souvislých oken (v hodinách), pro která se hledá nejlevnější čas.
+# Např. 1 h pračka, 2 h myčka, 3 h nabíjení.
+okna_hodiny = [1, 2, 3]
+
+# Popisky k oknům (stejné pořadí jako okna_hodiny).
+okna_popisky = ["pračka", "myčka", "nabíjení"]
+
+# Přidat do zprávy přehled všech 24 hodin? (true = ano, false = ne)
+ukazat_vsechny_hodiny = true
+
+# Záložní kurz EUR/CZK, kdyby nefungovala stránka ČNB.
+zalozni_kurz_eur = 24.5

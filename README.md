@@ -21,6 +21,7 @@ Je to čistě statický web (HTML + CSS + JavaScript), bez serveru, bez databáz
 | `scripts/og-image.mjs` | Znovu vygeneruje `og.png` a ikonu z homepage |
 | `scripts/set-domain.mjs` | Nastaví adresu webu (CNAME, sitemap, robots, OG odkazy) |
 | `tests/` | Kontroly kvality |
+| `elektrina/` | Samostatný hlídač levné elektřiny (Telegram), návod v [`elektrina/README.md`](elektrina/README.md) |
 
 ## Jak spustit lokálně
 

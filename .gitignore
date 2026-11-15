@@ -10,3 +10,4 @@ playwright-report/
 # podklady (výroční zprávy apod.) se do repozitáře nenahrávají
 podklady/
 *.pdf
+__pycache__/
