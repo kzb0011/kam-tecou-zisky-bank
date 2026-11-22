@@ -120,7 +120,9 @@ const cache = {
   set(k, d){ try{ localStorage.setItem('pd:'+k, JSON.stringify({t:Date.now(), d})); }catch(e){} }
 };
 const DAY = 864e5;
-const tfetch = (u, ms, o) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms); return fetch(u, {...o, signal:c.signal}).finally(() => clearTimeout(t)); };
+const SVC = {'nominatim.openstreetmap.org':'Nominatim (adresa)','query.wikidata.org':'Wikidata','cs.wikipedia.org':'Wikipedie','overpass':'Overpass'};
+const tfetch = (u, ms, o) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms); const name = Object.keys(SVC).find(k => u.includes(k)) ? SVC[Object.keys(SVC).find(k => u.includes(k))] : 'Služba';
+  return fetch(u, {...o, signal:c.signal}).catch(e => { throw new Error(name + ': ' + (e.name === 'AbortError' ? 'neodpověděla včas' : 'spojení se nepodařilo (síť, blokátor reklam nebo CORS)')); }).finally(() => clearTimeout(t)); };
 
 /* ======= 1) Geokódování – Nominatim, max 1 dotaz/s, cache ======= */
 let lastNom = 0;
@@ -135,7 +137,7 @@ async function geocode(addr){
   const u = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&countrycodes=cz'
     + '&viewbox=14.22,50.18,14.71,49.94&bounded=1&accept-language=cs&q=' + encodeURIComponent(q);
   const r = await tfetch(u, 15000);
-  if (!r.ok) throw new Error('Geokódování selhalo (' + r.status + ')');
+  if (!r.ok) throw new Error('Nominatim: chyba ' + r.status + (r.status === 403 ? ' (blokuje dotazy bez referreru – otevřete stránku přes http, ne z disku)' : ''));
   const j = await r.json();
   const o = j[0] ? { lat:+j[0].lat, lon:+j[0].lon, name:j[0].display_name, a:j[0].address||{} } : { none:true };
   cache.set(key, o);
@@ -159,7 +161,7 @@ async function wikidata(lat, lon){
   const hit = cache.get(key, DAY);
   if (hit) return hit;
   const r = await tfetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql(lat, lon)), 30000);
-  if (!r.ok) throw new Error('Wikidata neodpovídá (' + r.status + ')');
+  if (!r.ok) throw new Error('Wikidata: chyba ' + r.status);
   const rows = (await r.json()).results.bindings;
   const m = new Map();
   for (const b of rows){
@@ -307,7 +309,7 @@ async function run(addr){
     bind(addr);
   }catch(err){
     st.textContent = '';
-    out.innerHTML = `<div class="card"><b>Něco se nepovedlo:</b> ${esc(err.name === 'AbortError' ? 'Služba neodpověděla včas' : err.message)}. Zkuste to prosím za chvíli.</div>` + noneCard(addr, '');
+    out.innerHTML = `<div class="card"><b>Něco se nepovedlo:</b> ${esc(err.message) + (location.protocol === 'file:' ? ' Tip: stránku otevřete přes http (např. python3 -m http.server) nebo z GitHub Pages, ne dvojklikem na soubor.' : '')}. Zkuste to prosím za chvíli.</div>` + noneCard(addr, '');
   }finally{ btn.disabled = false; }
 }
 
