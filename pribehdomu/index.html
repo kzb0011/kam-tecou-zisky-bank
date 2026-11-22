@@ -224,6 +224,23 @@ function osmCard(o){
   return `<div class="card"><span class="tag">OpenStreetMap</span><h2>Údaje o budově</h2><ul class="l">${rows.map(r => `<li>${r[0]}: <b>${esc(r[1])}</b></li>`).join('')}</ul>${o.desc ? `<div>${esc(o.desc)}</div>` : ''}<div class="src">Zapsali přispěvatelé OSM (ODbL), nemusí být úplné. <a href="https://www.openstreetmap.org/${esc(o.id)}" target="_blank" rel="noopener">Budova v OSM</a></div></div>`;
 }
 
+/* ======= Okolí: nejvýznamnější památky do 450 m (jen když o domě nic nevíme) ======= */
+async function okoli(lat, lon){
+  const key = 'ok:' + lat.toFixed(4) + ',' + lon.toFixed(4);
+  const hit = cache.get(key, DAY);
+  if (hit) return hit;
+  const q = `SELECT DISTINCT ?item ?itemLabel ?itemDescription ?dist ?sl WHERE {
+ SERVICE wikibase:around { ?item wdt:P625 ?loc . bd:serviceParam wikibase:center "Point(${lon} ${lat})"^^geo:wktLiteral . bd:serviceParam wikibase:radius "0.45" . bd:serviceParam wikibase:distance ?dist . }
+ ?item wdt:P762 ?c . ?art schema:about ?item ; schema:isPartOf <https://cs.wikipedia.org/> . ?item wikibase:sitelinks ?sl . FILTER(?sl >= 3)
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "cs,en" }
+} ORDER BY DESC(?sl) LIMIT 8`;
+  const r = await tfetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(q), 20000);
+  if (!r.ok) return [];
+  const out = (await r.json()).results.bindings.map(b => ({ id:b.item.value.split('/').pop(), label:b.itemLabel?.value||'', desc:b.itemDescription?.value||'', dist:Math.round(+b.dist.value*1000) }));
+  cache.set(key, out);
+  return out;
+}
+
 /* ======= zpracování adresy ======= */
 function parseAddr(a){
   const m = a.match(/^\s*(.+?)\s+(\d+[a-z]?)(?:\s*\/\s*(\d+[a-z]?))?\s*(?:,.*)?$/i);
@@ -282,15 +299,19 @@ async function run(addr){
     st.textContent = 'Čtu Wikipedii…';
     const wp = main && main.art ? await wikiSummary(main.art) : null;
 
+    const noHouse = !(h || main || osm || direct.length);
+    let around = [];
+    if (noHouse){ st.textContent = 'O domě nic nemáme, hledám zajímavosti v okolí…'; around = await okoli(geo.lat, geo.lon).catch(() => []); }
     let html = '';
     if (h) html += `<div class="card h"><span class="tag h">Ručně ověřeno · Dominius</span><h2>${esc(h.nazev || addr)}${h.rok ? ' <span class="src">(' + esc(h.rok) + ')</span>' : ''}</h2><div>${esc(h.text)}</div>${(h.osoby||[]).length ? '<h3>Osobnosti</h3><ul class="l">' + h.osoby.map(o => `<li>${esc(o)}</li>`).join('') + '</ul>' : ''}${h.zdroj ? `<div class="src">Zdroj: <a href="${esc(h.zdroj)}" target="_blank" rel="noopener">${esc(h.zdroj)}</a></div>` : ''}</div>`;
     if (main) html += `<div class="card"><span class="tag ok">Pravděpodobně tento dům</span><h2>${esc(main.label)}</h2>${main.desc ? `<div class="src">${esc(main.desc)}</div>` : ''}${wp ? `<blockquote>${esc(wp.text)}</blockquote><div class="src">Wikipedie (CC BY-SA) · <a href="${esc(wp.url)}" target="_blank" rel="noopener">celý článek</a></div>` : ''}</div>`;
     if (osm) html += osmCard(osm);
     if (direct.length) html += `<div class="card"><h2>Na adrese a těsně vedle</h2><ul class="l">${direct.map(itemHtml).join('')}</ul></div>`;
     if (people.length) html += `<div class="card"><h2>Lidé spojení s místem</h2><div class="src">Wikidata: bydliště nebo místo narození u objektů do ${RADIUS_KM*1000} m.</div><ul class="l">${people.slice(0,12).map(w => `<li><a href="${wdLink(w.id)}" target="_blank" rel="noopener">${esc(w.label)}</a>${w.desc ? ' <span class="src">– ' + esc(w.desc) + '</span>' : ''}</li>`).join('')}</ul></div>`;
+    if (around.length) html += `<div class="card"><span class="tag">Místo, ne dům</span><h2>Co je poblíž</h2><div class="src">O samotném domě nic nemáme. Tohle jsou nejznámější památky do 450 m, které k místu patří.</div><ul class="l">${around.map(a => `<li><b>${esc(a.label)}</b> <span class="src">· ${a.dist} m${a.desc ? ' · ' + esc(a.desc) : ''} · <a href="${wdLink(a.id)}" target="_blank" rel="noopener">Wikidata</a></span></li>`).join('')}</ul></div>`;
     if (near.length) html += `<div class="card"><h2>V okolí (do ${RADIUS_KM*1000} m)</h2><ul class="l">${near.slice(0,15).map(itemHtml).join('')}</ul>${near.length > 15 ? `<div class="src">…a dalších ${near.length-15}.</div>` : ''}</div>`;
 
-    const found = h || main || osm || direct.length || people.length || near.length;
+    const found = h || main || osm || around.length || direct.length || people.length || near.length;
     if (!found) html = noneCard(addr, 'Ve Wikidatech jsme do ' + RADIUS_KM*1000 + ' m od této adresy nic nenašli. Neznamená to, že dům příběh nemá, jen že není v otevřených datech.');
     else if (!h && !main && !osm) html = `<div class="card"><b>Přímo k tomuto domu jsme nic nenašli.</b> Níže je to, co se našlo v nejbližším okolí; nemusí se domu týkat.</div>` + html;
 
@@ -298,10 +319,11 @@ async function run(addr){
     if (h) facts.push('Ověřený údaj (Dominius): ' + [h.nazev, h.rok, h.text, ...(h.osoby||[])].filter(Boolean).join('; '));
     if (main) facts.push('Objekt: ' + main.label + (main.desc ? ' (' + main.desc + ')' : '') + ' – ' + main.kinds.map(k => KIND[k]).join(', '));
     if (osm) facts.push(...osmFacts(osm).map(f => 'OSM: ' + f));
+    around.forEach(a => facts.push('Poblíž (' + a.dist + ' m): ' + a.label + (a.desc ? ' – ' + a.desc : '')));
     if (wp) facts.push('Wikipedie: ' + wp.text);
     direct.filter(e => e !== main).forEach(e => facts.push(KIND[e.kinds[0]] + ': ' + e.label + (e.who.length ? ' – připomíná ' + e.who.map(w => w.label + (w.desc ? ' (' + w.desc + ')' : '')).join(', ') : '')));
     people.slice(0,6).forEach(w => facts.push('Osoba spojená s místem: ' + w.label + (w.desc ? ' (' + w.desc + ')' : '')));
-    lastFacts = { address: addr, facts };
+    lastFacts = { address: addr, facts, mode: noHouse ? 'okoli' : 'dum' };
 
     if (found) html += tools(addr, geo, !!facts.length, main);
     out.innerHTML = html;

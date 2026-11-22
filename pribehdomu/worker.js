@@ -23,7 +23,8 @@ export default {
     let b; try { b = await req.json(); } catch { return json({ error: 'Neplatný JSON.' }, 400); }
     const facts = (Array.isArray(b.facts) ? b.facts : []).slice(0, 25).map(f => String(f).slice(0, 700));
     if (!facts.length) return json({ error: 'Chybí fakta.' }, 400);
-    const prompt = `Adresa: ${String(b.address || '').slice(0, 120)}\nFakta:\n` + facts.map(f => '- ' + f).join('\n');
+    const prompt = `Adresa: ${String(b.address || '').slice(0, 120)}\nFakta:\n` + facts.map(f => '- ' + f).join('\n')
+    + (b.mode === 'okoli' ? '\nO samotném domě nejsou žádná data. Napiš krátký text o místě a okolí a hned v první větě řekni, že o domě samotném nic nevíme.' : '');
 
     const r = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
