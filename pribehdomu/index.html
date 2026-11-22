@@ -120,6 +120,7 @@ const cache = {
   set(k, d){ try{ localStorage.setItem('pd:'+k, JSON.stringify({t:Date.now(), d})); }catch(e){} }
 };
 const DAY = 864e5;
+const tfetch = (u, ms, o) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms); return fetch(u, {...o, signal:c.signal}).finally(() => clearTimeout(t)); };
 
 /* ======= 1) Geokódování – Nominatim, max 1 dotaz/s, cache ======= */
 let lastNom = 0;
@@ -133,7 +134,7 @@ async function geocode(addr){
   const q = /prah/i.test(addr) ? addr : addr + ', Praha';
   const u = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&countrycodes=cz'
     + '&viewbox=14.22,50.18,14.71,49.94&bounded=1&accept-language=cs&q=' + encodeURIComponent(q);
-  const r = await fetch(u);
+  const r = await tfetch(u, 15000);
   if (!r.ok) throw new Error('Geokódování selhalo (' + r.status + ')');
   const j = await r.json();
   const o = j[0] ? { lat:+j[0].lat, lon:+j[0].lon, name:j[0].display_name, a:j[0].address||{} } : { none:true };
@@ -157,7 +158,7 @@ async function wikidata(lat, lon){
   const key = 'wd:' + lat.toFixed(5) + ',' + lon.toFixed(5);
   const hit = cache.get(key, DAY);
   if (hit) return hit;
-  const r = await fetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql(lat, lon)));
+  const r = await tfetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql(lat, lon)), 30000);
   if (!r.ok) throw new Error('Wikidata neodpovídá (' + r.status + ')');
   const rows = (await r.json()).results.bindings;
   const m = new Map();
@@ -181,7 +182,7 @@ async function wikiSummary(artUrl){
   const hit = cache.get(key, 7*DAY);
   if (hit) return hit;
   try{
-    const r = await fetch('https://cs.wikipedia.org/api/rest_v1/page/summary/' + title);
+    const r = await tfetch('https://cs.wikipedia.org/api/rest_v1/page/summary/' + title, 8000);
     if (!r.ok) return null;
     const j = await r.json();
     if (!j.extract) return null;
@@ -201,7 +202,7 @@ async function osmBuilding(lat, lon, p){
   const data = `[out:json][timeout:15];(way(around:15,${lat},${lon})[building];relation(around:15,${lat},${lon})[building];);out tags center 12;`;
   let els = null;
   for (const base of OVERPASS){
-    try{ const r = await fetch(base + '?data=' + encodeURIComponent(data)); if (r.ok){ els = (await r.json()).elements || []; break; } }catch(e){}
+    try{ const r = await tfetch(base + '?data=' + encodeURIComponent(data), 6000); if (r.ok){ els = (await r.json()).elements || []; break; } }catch(e){}
   }
   if (!els) return null; // nedostupné: nic neukládáme, stránka běží dál bez této vrstvy
   const useful = ['name','start_date','architect','building:architecture','heritage','wikipedia','wikidata','description','historic','ref:czmk','building:levels','alt_name','old_name'];
@@ -269,12 +270,14 @@ async function run(addr){
     setSigns(p, geo);
     st.textContent = 'Čtu Wikidata a Wikipedii…';
     const items = await wikidata(geo.lat, geo.lon);
+    st.textContent = 'Čtu údaje o budově z OpenStreetMap…';
     const osm = await osmBuilding(geo.lat, geo.lon, p).catch(() => null);
     const { direct, near } = split(items.filter(e => !e.kinds.every(k => k === 'osoba')), p);
     const people = items.filter(e => e.kinds.includes('osoba')).flatMap(e => e.who.map(w => ({...w, place:e.label}))).filter((w,i,a) => a.findIndex(x => x.id === w.id) === i);
     const hk = norm(p.street + ' ' + (p.n1 || ''));
     const h = H[hk] || (p.n2 && H[norm(p.street + ' ' + p.n2)]) || null;
     const main = direct.find(e => e.kinds.includes('pamatka')) || direct[0] || null;
+    st.textContent = 'Čtu Wikipedii…';
     const wp = main && main.art ? await wikiSummary(main.art) : null;
 
     let html = '';
@@ -304,7 +307,7 @@ async function run(addr){
     bind(addr);
   }catch(err){
     st.textContent = '';
-    out.innerHTML = `<div class="card"><b>Něco se nepovedlo:</b> ${esc(err.message)}. Zkuste to prosím za chvíli.</div>` + noneCard(addr, '');
+    out.innerHTML = `<div class="card"><b>Něco se nepovedlo:</b> ${esc(err.name === 'AbortError' ? 'Služba neodpověděla včas' : err.message)}. Zkuste to prosím za chvíli.</div>` + noneCard(addr, '');
   }finally{ btn.disabled = false; }
 }
 
@@ -336,7 +339,7 @@ async function story(){
   if (hit){ box.innerHTML = '<p>' + esc(hit) + '</p><div class="src">Text napsala AI jen z výše uvedených faktů. Může obsahovat chyby.</div>'; return; }
   b.disabled = true; box.textContent = 'Píšu…';
   try{
-    const r = await fetch(WORKER_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lastFacts) });
+    const r = await tfetch(WORKER_URL, 30000, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lastFacts) });
     const j = await r.json().catch(() => ({}));
     if (r.status === 429) throw new Error('Příliš časté dotazy, zkuste to za pár sekund.');
     if (!r.ok || !j.text) throw new Error(j.error || 'AI příběh se nepodařilo vytvořit.');
