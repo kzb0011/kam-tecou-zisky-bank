@@ -93,7 +93,7 @@ a{color:var(--blue)}
 
 <footer class="wrap">
   <p><b>Dominius reality</b> · <a href="https://dominius.cz">dominius.cz</a> · info@dominius.cz</p>
-  <p>Data: © přispěvatelé OpenStreetMap (ODbL, geokódování), Wikidata (CC0), Wikipedie (CC BY-SA). Údaje z Wikidaty jsou komunitní a mohou být neúplné či nepřesné; adresa se hledá podle polohy bodu (±60 m), proto může jít o sousední dům. Texty „AI příběh“ vznikají jen z dodaných faktů a mohou obsahovat chyby. Hledaná adresa se odesílá službě Nominatim a poloha službě Wikidata; AI příběh se zpracovává přes Anthropic API.</p>
+  <p>Data: © přispěvatelé OpenStreetMap (ODbL, geokódování), Wikidata (CC0), Wikipedie (CC BY-SA), data budov z OSM přes Overpass API. Údaje z Wikidaty jsou komunitní a mohou být neúplné či nepřesné; adresa se hledá podle polohy bodu (±60 m), proto může jít o sousední dům. Texty „AI příběh“ vznikají jen z dodaných faktů a mohou obsahovat chyby. Hledaná adresa se odesílá službě Nominatim a poloha službám Wikidata a Overpass; AI příběh se zpracovává přes Anthropic API.</p>
 </footer>
 
 <script>
@@ -191,6 +191,36 @@ async function wikiSummary(artUrl){
   }catch(e){ return null; }
 }
 
+/* ======= OpenStreetMap budovy (Overpass), tichý fallback na zrcadlo ======= */
+const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
+const STYLY = {baroque:'baroko',gothic:'gotika',renaissance:'renesance',classicism:'klasicismus',neoclassicism:'klasicismus',art_nouveau:'secese',art_deco:'art deco',modern:'moderna',functionalism:'funkcionalismus',cubism:'kubismus',neo_renaissance:'novorenesance',neo_gothic:'novogotika',historicism:'historismus',romanesque:'románský sloh',rococo:'rokoko',empire:'empír'};
+async function osmBuilding(lat, lon, p){
+  const key = 'osm:' + lat.toFixed(5) + ',' + lon.toFixed(5);
+  const hit = cache.get(key, 7*DAY);
+  if (hit !== null) return hit.none ? null : hit;
+  const data = `[out:json][timeout:15];(way(around:15,${lat},${lon})[building];relation(around:15,${lat},${lon})[building];);out tags center 12;`;
+  let els = null;
+  for (const base of OVERPASS){
+    try{ const r = await fetch(base + '?data=' + encodeURIComponent(data)); if (r.ok){ els = (await r.json()).elements || []; break; } }catch(e){}
+  }
+  if (!els) return null; // nedostupné: nic neukládáme, stránka běží dál bez této vrstvy
+  const useful = ['name','start_date','architect','building:architecture','heritage','wikipedia','wikidata','description','historic','ref:czmk','building:levels','alt_name','old_name'];
+  const score = t => (hasNum(t['addr:housenumber']||'', p.n1) || hasNum(t['addr:housenumber']||'', p.n2) ? 5 : 0) + useful.filter(k => t[k]).length;
+  const best = els.filter(e => e.tags).sort((a, b) => score(b.tags) - score(a.tags))[0];
+  const t = best && best.tags;
+  if (!t || !useful.some(k => t[k] && k !== 'building:levels')){ cache.set(key, {none:true}); return null; }
+  const o = { id:best.type + '/' + best.id, name:t.name||t.alt_name||'', old:t.old_name||'', year:t.start_date||'', architect:t.architect||'', style:STYLY[t['building:architecture']]||t['building:architecture']||'', heritage:t.heritage||t['ref:czmk']||'', levels:t['building:levels']||'', desc:t.description||'', wp:t.wikipedia||'', wd:t.wikidata||'' };
+  cache.set(key, o);
+  return o;
+}
+function osmFacts(o){
+  return [o.name && 'název ' + o.name, o.old && 'dřívější název ' + o.old, o.year && 'rok výstavby (OSM) ' + o.year, o.architect && 'architekt ' + o.architect, o.style && 'sloh ' + o.style, o.heritage && 'památková ochrana (OSM)', o.levels && o.levels + ' podlaží', o.desc].filter(Boolean);
+}
+function osmCard(o){
+  const rows = [['Název',o.name],['Dřívější název',o.old],['Rok výstavby',o.year],['Architekt',o.architect],['Sloh',o.style],['Památková ochrana',o.heritage ? 'ano (podle OSM)' : ''],['Podlaží',o.levels]].filter(r => r[1]);
+  return `<div class="card"><span class="tag">OpenStreetMap</span><h2>Údaje o budově</h2><ul class="l">${rows.map(r => `<li>${r[0]}: <b>${esc(r[1])}</b></li>`).join('')}</ul>${o.desc ? `<div>${esc(o.desc)}</div>` : ''}<div class="src">Zapsali přispěvatelé OSM (ODbL), nemusí být úplné. <a href="https://www.openstreetmap.org/${esc(o.id)}" target="_blank" rel="noopener">Budova v OSM</a></div></div>`;
+}
+
 /* ======= zpracování adresy ======= */
 function parseAddr(a){
   const m = a.match(/^\s*(.+?)\s+(\d+[a-z]?)(?:\s*\/\s*(\d+[a-z]?))?\s*(?:,.*)?$/i);
@@ -239,6 +269,7 @@ async function run(addr){
     setSigns(p, geo);
     st.textContent = 'Čtu Wikidata a Wikipedii…';
     const items = await wikidata(geo.lat, geo.lon);
+    const osm = await osmBuilding(geo.lat, geo.lon, p).catch(() => null);
     const { direct, near } = split(items.filter(e => !e.kinds.every(k => k === 'osoba')), p);
     const people = items.filter(e => e.kinds.includes('osoba')).flatMap(e => e.who.map(w => ({...w, place:e.label}))).filter((w,i,a) => a.findIndex(x => x.id === w.id) === i);
     const hk = norm(p.street + ' ' + (p.n1 || ''));
@@ -249,17 +280,19 @@ async function run(addr){
     let html = '';
     if (h) html += `<div class="card h"><span class="tag h">Ručně ověřeno · Dominius</span><h2>${esc(h.nazev || addr)}${h.rok ? ' <span class="src">(' + esc(h.rok) + ')</span>' : ''}</h2><div>${esc(h.text)}</div>${(h.osoby||[]).length ? '<h3>Osobnosti</h3><ul class="l">' + h.osoby.map(o => `<li>${esc(o)}</li>`).join('') + '</ul>' : ''}${h.zdroj ? `<div class="src">Zdroj: <a href="${esc(h.zdroj)}" target="_blank" rel="noopener">${esc(h.zdroj)}</a></div>` : ''}</div>`;
     if (main) html += `<div class="card"><span class="tag ok">Pravděpodobně tento dům</span><h2>${esc(main.label)}</h2>${main.desc ? `<div class="src">${esc(main.desc)}</div>` : ''}${wp ? `<blockquote>${esc(wp.text)}</blockquote><div class="src">Wikipedie (CC BY-SA) · <a href="${esc(wp.url)}" target="_blank" rel="noopener">celý článek</a></div>` : ''}</div>`;
+    if (osm) html += osmCard(osm);
     if (direct.length) html += `<div class="card"><h2>Na adrese a těsně vedle</h2><ul class="l">${direct.map(itemHtml).join('')}</ul></div>`;
     if (people.length) html += `<div class="card"><h2>Lidé spojení s místem</h2><div class="src">Wikidata: bydliště nebo místo narození u objektů do ${RADIUS_KM*1000} m.</div><ul class="l">${people.slice(0,12).map(w => `<li><a href="${wdLink(w.id)}" target="_blank" rel="noopener">${esc(w.label)}</a>${w.desc ? ' <span class="src">– ' + esc(w.desc) + '</span>' : ''}</li>`).join('')}</ul></div>`;
     if (near.length) html += `<div class="card"><h2>V okolí (do ${RADIUS_KM*1000} m)</h2><ul class="l">${near.slice(0,15).map(itemHtml).join('')}</ul>${near.length > 15 ? `<div class="src">…a dalších ${near.length-15}.</div>` : ''}</div>`;
 
-    const found = h || main || direct.length || people.length || near.length;
+    const found = h || main || osm || direct.length || people.length || near.length;
     if (!found) html = noneCard(addr, 'Ve Wikidatech jsme do ' + RADIUS_KM*1000 + ' m od této adresy nic nenašli. Neznamená to, že dům příběh nemá, jen že není v otevřených datech.');
-    else if (!h && !main) html = `<div class="card"><b>Přímo k tomuto domu jsme nic nenašli.</b> Níže je to, co se našlo v nejbližším okolí; nemusí se domu týkat.</div>` + html;
+    else if (!h && !main && !osm) html = `<div class="card"><b>Přímo k tomuto domu jsme nic nenašli.</b> Níže je to, co se našlo v nejbližším okolí; nemusí se domu týkat.</div>` + html;
 
     const facts = [];
     if (h) facts.push('Ověřený údaj (Dominius): ' + [h.nazev, h.rok, h.text, ...(h.osoby||[])].filter(Boolean).join('; '));
     if (main) facts.push('Objekt: ' + main.label + (main.desc ? ' (' + main.desc + ')' : '') + ' – ' + main.kinds.map(k => KIND[k]).join(', '));
+    if (osm) facts.push(...osmFacts(osm).map(f => 'OSM: ' + f));
     if (wp) facts.push('Wikipedie: ' + wp.text);
     direct.filter(e => e !== main).forEach(e => facts.push(KIND[e.kinds[0]] + ': ' + e.label + (e.who.length ? ' – připomíná ' + e.who.map(w => w.label + (w.desc ? ' (' + w.desc + ')' : '')).join(', ') : '')));
     people.slice(0,6).forEach(w => facts.push('Osoba spojená s místem: ' + w.label + (w.desc ? ' (' + w.desc + ')' : '')));
