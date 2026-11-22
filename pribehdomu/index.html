@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Příběh domu – Praha | Dominius reality</title>
+<meta name="description" content="Zadejte adresu v Praze a zjistěte, co o domě víme z veřejných zdrojů: památková ochrana, pamětní desky, významní obyvatelé. Dominius reality – dominius.cz.">
+<meta name="theme-color" content="#2b2118">
+<meta property="og:title" content="Příběh domu – Praha">
+<meta property="og:description" content="Co o vašem domě víme z veřejných zdrojů. Dominius reality.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<link rel="canonical" href="https://pribehdomu.dominius.cz/">
+<style>
+:root{--wall:#e9dcc3;--wall2:#dccdae;--ink:#2b2118;--mut:#6b5d4a;--blue:#1d4a8a;--red:#a52a20;--gold:#b8893a;--card:#fffaf0}
+*{box-sizing:border-box}
+body{margin:0;font:17px/1.55 Georgia,"Times New Roman",serif;color:var(--ink);background:#cdbf9f}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+header.top{background:var(--ink);color:#f3e9d2;font:600 14px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+header.top a{color:#f3e9d2;text-decoration:none}
+.facade{position:relative;background:
+ repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 6px),
+ linear-gradient(var(--wall),var(--wall2));border-bottom:10px solid #8d7a58;padding:28px 0 36px;box-shadow:inset 0 -18px 30px -18px rgba(0,0,0,.35)}
+.facade:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:linear-gradient(#b9a67f,#e9dcc3)}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:8px 0 6px}
+.lead{color:var(--mut);margin:0 0 20px;max-width:56ch}
+.signs{display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;margin:0 0 22px}
+.enamel{font:700 15px/1.2 system-ui,sans-serif;border-radius:6px;padding:9px 14px;color:#fff;border:3px solid #fff;outline:2px solid currentColor;box-shadow:0 2px 5px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.4);min-width:90px;text-align:center}
+.enamel.street{background:var(--blue);outline-color:var(--blue);flex:1;min-width:200px;text-align:left;font-size:20px;display:flex;flex-direction:column;justify-content:center}
+.enamel.street small{font-weight:500;font-size:12px;opacity:.85;letter-spacing:.05em}
+.enamel.cp{background:#fff;color:var(--red);outline-color:var(--red);font-size:26px;border-color:var(--red)}
+.enamel.co{background:var(--blue);outline-color:var(--blue);font-size:26px}
+.enamel small{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;opacity:.8}
+form.search{display:flex;gap:8px;flex-wrap:wrap}
+input[type=text]{flex:1;min-width:220px;font:inherit;padding:13px 14px;border:2px solid #8d7a58;border-radius:6px;background:#fffdf7}
+button,.btn{font:600 15px/1 system-ui,sans-serif;padding:13px 18px;border-radius:6px;border:2px solid var(--ink);background:var(--ink);color:#f3e9d2;cursor:pointer;text-decoration:none;display:inline-block}
+button.ghost,.btn.ghost{background:transparent;color:var(--ink)}
+button:disabled{opacity:.5;cursor:wait}
+.hint{font-size:14px;color:var(--mut);margin:8px 0 0}
+main{padding:22px 0 10px}
+.card{background:var(--card);border:1px solid #cdbf9f;border-left:6px solid var(--gold);border-radius:6px;padding:16px 18px;margin:0 0 16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card.h{border-left-color:var(--red)}
+.card h2{font-size:20px;margin:0 0 6px}
+.card h3{font-size:16px;margin:14px 0 4px}
+.tag{font:600 11px/1 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;background:#efe3c8;color:var(--mut);padding:4px 7px;border-radius:3px;margin-right:6px}
+.tag.ok{background:#dfeedd;color:#2d5a2a}.tag.h{background:#f4d9d5;color:var(--red)}
+ul.l{padding-left:20px;margin:6px 0}ul.l li{margin:4px 0}
+.src{font:13px/1.4 system-ui,sans-serif;color:var(--mut)}
+.story{white-space:pre-wrap}
+.status{font:15px/1.4 system-ui,sans-serif;color:var(--mut);padding:10px 0}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.links .btn{font-size:14px;padding:10px 13px}
+blockquote{margin:8px 0;padding:0 0 0 12px;border-left:3px solid #cdbf9f;color:#4a3f31}
+section.ask{background:var(--ink);color:#f3e9d2;padding:26px 0;margin-top:20px}
+section.ask h2{margin:0 0 6px}
+section.ask p{margin:0 0 14px;color:#d8ccb2}
+section.ask .btn{background:#f3e9d2;color:var(--ink);border-color:#f3e9d2}
+footer{padding:20px 0 40px;font:13px/1.5 system-ui,sans-serif;color:#4a3f31}
+footer a{color:var(--blue)}
+a{color:var(--blue)}
+.brand b{color:var(--gold)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="https://dominius.cz"><b>Dominius</b> reality</a><a href="https://dominius.cz">dominius.cz</a></div></header>
+
+<div class="facade"><div class="wrap">
+  <h1>Příběh domu</h1>
+  <p class="lead">Zadejte adresu kdekoli v Praze. Z veřejných zdrojů (OpenStreetMap, Wikidata, Wikipedie) složíme, co se o domě a jeho okolí ví. Co nenajdeme, nevymýšlíme si.</p>
+  <div class="signs" id="signs" aria-live="polite">
+    <div class="enamel street"><small>ULICE</small><span id="sStreet">Nerudova</span></div>
+    <div class="enamel cp"><small>č. p.</small><span id="sCp">233</span></div>
+    <div class="enamel co"><small>č. o.</small><span id="sCo">47</span></div>
+  </div>
+  <form class="search" id="f" autocomplete="off">
+    <input type="text" id="q" placeholder="např. Nerudova 47, Praha" aria-label="Adresa v Praze" required maxlength="120">
+    <button id="go" type="submit">Zjistit příběh</button>
+  </form>
+  <p class="hint">Zkuste: <a href="#Nerudova 47" data-ex>Nerudova 47</a> · <a href="#Celetná 3" data-ex>Celetná 3</a> · <a href="#Vinohradská 100" data-ex>Vinohradská 100</a></p>
+</div></div>
+
+<main class="wrap">
+  <div class="status" id="status"></div>
+  <div id="out"></div>
+</main>
+
+<section class="ask"><div class="wrap">
+  <h2>Znáte příběh svého domu?</h2>
+  <p>Pamětníci, historie rodiny, staré fotografie, zajímavosti ze sousedství. Napište nám a po ověření příběh přidáme.</p>
+  <a class="btn" id="mail" href="mailto:info@dominius.cz?subject=Příběh domu">Napsat na info@dominius.cz</a>
+</div></section>
+
+<footer class="wrap">
+  <p><b>Dominius reality</b> · <a href="https://dominius.cz">dominius.cz</a> · info@dominius.cz</p>
+  <p>Data: © přispěvatelé OpenStreetMap (ODbL, geokódování), Wikidata (CC0), Wikipedie (CC BY-SA). Údaje z Wikidaty jsou komunitní a mohou být neúplné či nepřesné; adresa se hledá podle polohy bodu (±60 m), proto může jít o sousední dům. Texty „AI příběh“ vznikají jen z dodaných faktů a mohou obsahovat chyby. Hledaná adresa se odesílá službě Nominatim a poloha službě Wikidata; AI příběh se zpracovává přes Anthropic API.</p>
+</footer>
+
+<script>
+'use strict';
+/* ======= NASTAVENÍ ======= */
+const WORKER_URL = 'https://pribehdomu-worker.CHANGE-ME.workers.dev'; // viz README
+const RADIUS_KM = 0.06;
+
+/* ======= H: ručně ověřená data (prioritní vrstva) =======
+   Klíč: "ulice číslo" bez diakritiky, malá písmena (např. "nerudova 47").
+   Pole: nazev, rok, text, zdroj (URL), osoby[] (volitelně).
+   Sem vložte svá stávající ověřená data. */
+const H = {
+  // "nerudova 47": { nazev:"Dům U Dvou slunců", rok:"…", text:"…", zdroj:"https://…", osoby:["…"] },
+};
+
+/* ======= pomocné ======= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9\/ ]+/g,' ').replace(/\s+/g,' ').trim();
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const cache = {
+  get(k, ttl){ try{ const v = JSON.parse(localStorage.getItem('pd:'+k)); if(v && Date.now()-v.t < ttl) return v.d; }catch(e){} return null; },
+  set(k, d){ try{ localStorage.setItem('pd:'+k, JSON.stringify({t:Date.now(), d})); }catch(e){} }
+};
+const DAY = 864e5;
+
+/* ======= 1) Geokódování – Nominatim, max 1 dotaz/s, cache ======= */
+let lastNom = 0;
+async function geocode(addr){
+  const key = 'geo:' + norm(addr);
+  const hit = cache.get(key, 30*DAY);
+  if (hit) return hit;
+  const wait = lastNom + 1100 - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastNom = Date.now();
+  const q = /prah/i.test(addr) ? addr : addr + ', Praha';
+  const u = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&countrycodes=cz'
+    + '&viewbox=14.22,50.18,14.71,49.94&bounded=1&accept-language=cs&q=' + encodeURIComponent(q);
+  const r = await fetch(u);
+  if (!r.ok) throw new Error('Geokódování selhalo (' + r.status + ')');
+  const j = await r.json();
+  const o = j[0] ? { lat:+j[0].lat, lon:+j[0].lon, name:j[0].display_name, a:j[0].address||{} } : { none:true };
+  cache.set(key, o);
+  return o;
+}
+
+/* ======= 2) Wikidata – jeden SPARQL dotaz ======= */
+function sparql(lat, lon){
+  return `SELECT ?item ?itemLabel ?itemDescription ?kind ?who ?whoLabel ?whoDescription ?art ?dist WHERE {
+ SERVICE wikibase:around { ?item wdt:P625 ?loc . bd:serviceParam wikibase:center "Point(${lon} ${lat})"^^geo:wktLiteral . bd:serviceParam wikibase:radius "${RADIUS_KM}" . bd:serviceParam wikibase:distance ?dist . }
+ { ?item wdt:P762 ?c . BIND("pamatka" AS ?kind) }
+ UNION { ?item wdt:P31 wd:Q721747 . BIND("deska" AS ?kind) OPTIONAL { ?item wdt:P547 ?who } }
+ UNION { ?item wdt:P31 wd:Q26703203 . BIND("stolperstein" AS ?kind) OPTIONAL { ?item wdt:P547 ?who } }
+ UNION { ?who wdt:P551|wdt:P19 ?item . BIND("osoba" AS ?kind) }
+ OPTIONAL { ?art schema:about ?item ; schema:isPartOf <https://cs.wikipedia.org/> }
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "cs,en" }
+} ORDER BY ?dist LIMIT 60`;
+}
+async function wikidata(lat, lon){
+  const key = 'wd:' + lat.toFixed(5) + ',' + lon.toFixed(5);
+  const hit = cache.get(key, DAY);
+  if (hit) return hit;
+  const r = await fetch('https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql(lat, lon)));
+  if (!r.ok) throw new Error('Wikidata neodpovídá (' + r.status + ')');
+  const rows = (await r.json()).results.bindings;
+  const m = new Map();
+  for (const b of rows){
+    const id = b.item.value.split('/').pop();
+    let e = m.get(id);
+    if (!e) m.set(id, e = { id, label:b.itemLabel?.value||id, desc:b.itemDescription?.value||'', kinds:new Set(), dist:+b.dist.value, art:b.art?.value||'', who:new Map() });
+    e.kinds.add(b.kind.value);
+    if (b.who){ const wid = b.who.value.split('/').pop(); e.who.set(wid, { id:wid, label:b.whoLabel?.value||wid, desc:b.whoDescription?.value||'' }); }
+  }
+  const out = [...m.values()].map(e => ({...e, kinds:[...e.kinds], who:[...e.who.values()]}));
+  cache.set(key, out);
+  return out;
+}
+
+/* ======= 3) Wikipedie – krátký úryvek ======= */
+async function wikiSummary(artUrl){
+  if (!artUrl.startsWith('https://cs.wikipedia.org/wiki/')) return null;
+  const title = artUrl.slice('https://cs.wikipedia.org/wiki/'.length);
+  const key = 'wp:' + title;
+  const hit = cache.get(key, 7*DAY);
+  if (hit) return hit;
+  try{
+    const r = await fetch('https://cs.wikipedia.org/api/rest_v1/page/summary/' + title);
+    if (!r.ok) return null;
+    const j = await r.json();
+    if (!j.extract) return null;
+    const o = { text:j.extract.length > 600 ? j.extract.slice(0, 600).replace(/\s\S*$/, '') + '…' : j.extract, url:j.content_urls?.desktop?.page || artUrl };
+    cache.set(key, o);
+    return o;
+  }catch(e){ return null; }
+}
+
+/* ======= zpracování adresy ======= */
+function parseAddr(a){
+  const m = a.match(/^\s*(.+?)\s+(\d+[a-z]?)(?:\s*\/\s*(\d+[a-z]?))?\s*(?:,.*)?$/i);
+  return m ? { street:m[1].trim(), n1:m[2], n2:m[3]||'' } : { street:a.trim(), n1:'', n2:'' };
+}
+function setSigns(p, geo){
+  const road = geo?.a?.road || p.street;
+  $('#sStreet').textContent = road;
+  // Zadáno „č.p./č.o.“ → obě cedule; jedno číslo = orientační (OSM často vede obě v housenumber)
+  const hn = geo?.a?.house_number || '';
+  const [cp, co] = hn.includes('/') ? hn.split('/') : [p.n2 ? p.n1 : '–', p.n2 || p.n1 || '–'];
+  $('#sCp').textContent = cp; $('#sCo').textContent = co;
+}
+const hasNum = (label, n) => !!n && new RegExp('(^|[\\s/,])' + n + '(?![0-9])', 'i').test(label);
+
+function split(items, p){
+  const direct = [], near = [];
+  for (const e of items){
+    (e.dist <= 0.01 || hasNum(e.label, p.n1) || hasNum(e.label, p.n2) ? direct : near).push(e);
+  }
+  return { direct, near };
+}
+const KIND = { pamatka:'Kulturní památka', deska:'Pamětní deska', stolperstein:'Stolperstein', osoba:'Spojení s místem' };
+const wdLink = id => `https://www.wikidata.org/wiki/${encodeURIComponent(id)}`;
+function itemHtml(e){
+  const tags = e.kinds.map(k => `<span class="tag">${KIND[k]}</span>`).join('');
+  const who = e.who.length ? `<div>Připomíná / spojeno s: ${e.who.map(w => `<a href="${wdLink(w.id)}" target="_blank" rel="noopener">${esc(w.label)}</a>${w.desc ? ' <span class="src">(' + esc(w.desc) + ')</span>' : ''}`).join(', ')}</div>` : '';
+  return `<li>${tags}<b>${esc(e.label)}</b> <span class="src">· ${Math.round(e.dist*1000)} m · <a href="${wdLink(e.id)}" target="_blank" rel="noopener">Wikidata</a></span>${who}</li>`;
+}
+
+let lastFacts = null;
+async function run(addr){
+  addr = addr.trim().slice(0, 120);
+  if (!addr) return;
+  $('#q').value = addr;
+  history.replaceState(null, '', '#' + encodeURIComponent(addr));
+  $('#mail').href = 'mailto:info@dominius.cz?subject=' + encodeURIComponent('Příběh domu: ' + addr) + '&body=' + encodeURIComponent('Adresa: ' + addr + '\n\nCo víme o domě:\n');
+  const st = $('#status'), out = $('#out'), btn = $('#go');
+  out.innerHTML = ''; btn.disabled = true; lastFacts = null;
+  const p = parseAddr(addr);
+  setSigns(p, null);
+  try{
+    st.textContent = 'Hledám adresu…';
+    const geo = await geocode(addr);
+    if (geo.none){ out.innerHTML = noneCard(addr, 'Adresu se nepodařilo najít v Praze. Zkuste ji napsat jako „ulice číslo“.'); st.textContent = ''; return; }
+    setSigns(p, geo);
+    st.textContent = 'Čtu Wikidata a Wikipedii…';
+    const items = await wikidata(geo.lat, geo.lon);
+    const { direct, near } = split(items.filter(e => !e.kinds.every(k => k === 'osoba')), p);
+    const people = items.filter(e => e.kinds.includes('osoba')).flatMap(e => e.who.map(w => ({...w, place:e.label}))).filter((w,i,a) => a.findIndex(x => x.id === w.id) === i);
+    const hk = norm(p.street + ' ' + (p.n1 || ''));
+    const h = H[hk] || (p.n2 && H[norm(p.street + ' ' + p.n2)]) || null;
+    const main = direct.find(e => e.kinds.includes('pamatka')) || direct[0] || null;
+    const wp = main && main.art ? await wikiSummary(main.art) : null;
+
+    let html = '';
+    if (h) html += `<div class="card h"><span class="tag h">Ručně ověřeno · Dominius</span><h2>${esc(h.nazev || addr)}${h.rok ? ' <span class="src">(' + esc(h.rok) + ')</span>' : ''}</h2><div>${esc(h.text)}</div>${(h.osoby||[]).length ? '<h3>Osobnosti</h3><ul class="l">' + h.osoby.map(o => `<li>${esc(o)}</li>`).join('') + '</ul>' : ''}${h.zdroj ? `<div class="src">Zdroj: <a href="${esc(h.zdroj)}" target="_blank" rel="noopener">${esc(h.zdroj)}</a></div>` : ''}</div>`;
+    if (main) html += `<div class="card"><span class="tag ok">Pravděpodobně tento dům</span><h2>${esc(main.label)}</h2>${main.desc ? `<div class="src">${esc(main.desc)}</div>` : ''}${wp ? `<blockquote>${esc(wp.text)}</blockquote><div class="src">Wikipedie (CC BY-SA) · <a href="${esc(wp.url)}" target="_blank" rel="noopener">celý článek</a></div>` : ''}</div>`;
+    if (direct.length) html += `<div class="card"><h2>Na adrese a těsně vedle</h2><ul class="l">${direct.map(itemHtml).join('')}</ul></div>`;
+    if (people.length) html += `<div class="card"><h2>Lidé spojení s místem</h2><div class="src">Wikidata: bydliště nebo místo narození u objektů do ${RADIUS_KM*1000} m.</div><ul class="l">${people.slice(0,12).map(w => `<li><a href="${wdLink(w.id)}" target="_blank" rel="noopener">${esc(w.label)}</a>${w.desc ? ' <span class="src">– ' + esc(w.desc) + '</span>' : ''}</li>`).join('')}</ul></div>`;
+    if (near.length) html += `<div class="card"><h2>V okolí (do ${RADIUS_KM*1000} m)</h2><ul class="l">${near.slice(0,15).map(itemHtml).join('')}</ul>${near.length > 15 ? `<div class="src">…a dalších ${near.length-15}.</div>` : ''}</div>`;
+
+    const found = h || main || direct.length || people.length || near.length;
+    if (!found) html = noneCard(addr, 'Ve Wikidatech jsme do ' + RADIUS_KM*1000 + ' m od této adresy nic nenašli. Neznamená to, že dům příběh nemá, jen že není v otevřených datech.');
+    else if (!h && !main) html = `<div class="card"><b>Přímo k tomuto domu jsme nic nenašli.</b> Níže je to, co se našlo v nejbližším okolí; nemusí se domu týkat.</div>` + html;
+
+    const facts = [];
+    if (h) facts.push('Ověřený údaj (Dominius): ' + [h.nazev, h.rok, h.text, ...(h.osoby||[])].filter(Boolean).join('; '));
+    if (main) facts.push('Objekt: ' + main.label + (main.desc ? ' (' + main.desc + ')' : '') + ' – ' + main.kinds.map(k => KIND[k]).join(', '));
+    if (wp) facts.push('Wikipedie: ' + wp.text);
+    direct.filter(e => e !== main).forEach(e => facts.push(KIND[e.kinds[0]] + ': ' + e.label + (e.who.length ? ' – připomíná ' + e.who.map(w => w.label + (w.desc ? ' (' + w.desc + ')' : '')).join(', ') : '')));
+    people.slice(0,6).forEach(w => facts.push('Osoba spojená s místem: ' + w.label + (w.desc ? ' (' + w.desc + ')' : '')));
+    lastFacts = { address: addr, facts };
+
+    if (found) html += tools(addr, geo, !!facts.length, main);
+    out.innerHTML = html;
+    st.textContent = '';
+    bind(addr);
+  }catch(err){
+    st.textContent = '';
+    out.innerHTML = `<div class="card"><b>Něco se nepovedlo:</b> ${esc(err.message)}. Zkuste to prosím za chvíli.</div>` + noneCard(addr, '');
+  }finally{ btn.disabled = false; }
+}
+
+/* ======= 5) Nic nenalezeno – poctivě + Památkový katalog ======= */
+function noneCard(addr, msg){
+  return `<div class="card"><h2>Nic jsme nenašli</h2>${msg ? `<p>${esc(msg)}</p>` : ''}<p>Zkuste Památkový katalog (NPÚ) nebo mapy IPR Praha, případně nám napište, co o domě víte.</p><div class="links"><a class="btn ghost" target="_blank" rel="noopener" href="https://pamatkovykatalog.cz/">Památkový katalog</a><a class="btn ghost" target="_blank" rel="noopener" href="https://mapy.iprpraha.cz/">Mapy IPR Praha</a></div></div>`;
+}
+function tools(addr, geo, canStory, main){
+  const z = `https://www.openstreetmap.org/?mlat=${geo.lat}&mlon=${geo.lon}#map=19/${geo.lat}/${geo.lon}`;
+  return `<div class="card"><h2>Dál</h2>
+  ${canStory ? `<button id="ai" type="button">Napsat příběh domu (AI)</button> <span class="src">Vznikne jen z faktů výše.</span><div id="story" class="story"></div>` : ''}
+  <div class="links"><a class="btn ghost" target="_blank" rel="noopener" href="https://pamatkovykatalog.cz/">Památkový katalog</a><a class="btn ghost" target="_blank" rel="noopener" href="https://mapy.iprpraha.cz/">Mapy IPR Praha</a><a class="btn ghost" target="_blank" rel="noopener" href="${z}">Mapa (OSM)</a><button class="ghost" id="share" type="button">Sdílet</button></div></div>`;
+}
+function bind(addr){
+  $('#share')?.addEventListener('click', async () => {
+    const url = location.origin + location.pathname + '#' + encodeURIComponent(addr);
+    const data = { title:'Příběh domu – ' + addr, text:'Příběh domu: ' + addr + ' (Dominius reality)', url };
+    try{ if (navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(url); $('#share').textContent = 'Odkaz zkopírován'; } }catch(e){}
+  });
+  $('#ai')?.addEventListener('click', story);
+}
+
+/* ======= 4) AI příběh přes Cloudflare Worker ======= */
+async function story(){
+  const b = $('#ai'), box = $('#story');
+  if (!lastFacts) return;
+  const ck = 'st:' + norm(lastFacts.address) + ':' + lastFacts.facts.join('|').length;
+  const hit = cache.get(ck, 7*DAY);
+  if (hit){ box.innerHTML = '<p>' + esc(hit) + '</p><div class="src">Text napsala AI jen z výše uvedených faktů. Může obsahovat chyby.</div>'; return; }
+  b.disabled = true; box.textContent = 'Píšu…';
+  try{
+    const r = await fetch(WORKER_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lastFacts) });
+    const j = await r.json().catch(() => ({}));
+    if (r.status === 429) throw new Error('Příliš časté dotazy, zkuste to za pár sekund.');
+    if (!r.ok || !j.text) throw new Error(j.error || 'AI příběh se nepodařilo vytvořit.');
+    cache.set(ck, j.text);
+    box.innerHTML = '<p>' + esc(j.text) + '</p><div class="src">Text napsala AI jen z výše uvedených faktů. Může obsahovat chyby.</div>';
+  }catch(e){ box.textContent = e.message; }
+  finally{ b.disabled = false; }
+}
+
+/* ======= start ======= */
+$('#f').addEventListener('submit', e => { e.preventDefault(); run($('#q').value); });
+document.querySelectorAll('[data-ex]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); run(a.getAttribute('href').slice(1)); }));
+const fromHash = () => { if (location.hash.length > 1){ try{ const a = decodeURIComponent(location.hash.slice(1)); if (a !== $('#q').value.trim()) run(a); }catch(e){} } };
+window.addEventListener('hashchange', fromHash); fromHash();
+</script>
+</body>
+</html>
