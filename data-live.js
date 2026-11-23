@@ -1,6 +1,27 @@
 window.LIVE_DATA = {
- "aktualizace": "2026-11-22T13:20:59.750Z",
+ "aktualizace": "2026-11-23T15:58:03.051Z",
  "zpravy": [
+  {
+   "bank": "moneta",
+   "title": "MONETA představuje nový spořicí účet s úrokovou sazbou až 4,5 % ročně",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9aa2RKQjR5ZXFBakZ4aXE1THB3ejB4ekR5SmZvVkhDT2JTWi0zYlpqUVpQUlRWY2N4VE5vNzZCSEZWclBQU3dTelY5aFJ4YnV2SU8wOTdDX2daNUl4WWc?oc=5",
+   "source": "FXstreet.cz",
+   "date": "2026-11-23T11:07:00.000Z"
+  },
+  {
+   "bank": "ucb",
+   "title": "UniCredit Bank zvyšuje sazbu na účtech na spoření až na 4,60 % ročně",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5RdFREZ2Z3ZWVEV3NnUGZkS3hiVTlNZ1QyMnB3N1FPRkdvODQ5aXFSbnVtRUlkaGtibDRObTNRTmROQ3JoSnZqUDJGaTJrUTFkS2ZXWnBLSEhJRGl3Tnc?oc=5",
+   "source": "FXstreet.cz",
+   "date": "2026-11-23T09:28:00.000Z"
+  },
+  {
+   "bank": "csob",
+   "title": "ČSOB zvedá úroky a limity na spořicím účtu. Na kolik dosáhnou aktivní klienti?",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPUG14R0l4d3dMMkVQOXJhUnBjb2R3V0h2LWRidlhLd3V3LS1IT1VuZmswa3B3bU14czdXQjhySHlmNTBKR1hjUnRqUFcwLUVROFZWMHdTOG4yWnhUYlpqdVpMT2t6RmhLLUdjY3VyVkx5R1Q2OUQzNmlaWk04ektGWUFXVFlGY3d0SnZ3aG9YU01DOFB4aWhIYzk3UDBhdVVNeVczenpZVEdTU01iaGEwRTNKMC1PLVlHaWpLNnJFZlQ5cDhf?oc=5",
+   "source": "E15.cz",
+   "date": "2026-11-23T08:30:00.000Z"
+  },
   {
    "bank": "ucb",
    "title": "Majitel mBank míří pod UniCredit. Převzetí schválila Evropská komise",
@@ -73,13 +94,6 @@ window.LIVE_DATA = {
   },
   {
    "bank": "csob",
-   "title": "ČSOB varuje před novým podvodem. Nejprve přijde SMS, pak zavolá falešný bankéř",
-   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBiMWhZeDdmLXhPVFpicEZ1d3ExUmZpZ2R0emM5d3F4U08tVzZQRlBhV2lBb2hrSnJWcVBBRk5jWF9EN1FBVEw1R0lhUTJtQ3RpRHd3NEhieDd5YTM4dlI4QVRhUDlDUkR0eEkzWGI3RzJINWti?oc=5",
-   "source": "Svět Androida",
-   "date": "2026-11-18T11:00:00.000Z"
-  },
-  {
-   "bank": "csob",
    "title": "Tisíce klientů ČSOB mohou získat KateCoiny a lístky do kina. Stačí požádat virtuální asistentku",
    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPSVhmcVFIbG9DTFRHRHk5dTNhZVhRZWRnV08yZzBKblBYbVd2NzFhOGJfc3hoZlN1bHltUzhNblh2YWZWQjJ6M1cxcWJxMTNkQTl1QUVPdk8zVGQ2S3ZCUm1RdnkxTmIxRFRpSzF3aXotbm9YT0R5azVoaG80bXFyUGFFRW5OYXpXdWNWRThaQkMySjNzZTlkU3Z6QWlTNllUb2J3RGRGcHpsZ0Z6eVFVeFpKZjNLNUJfOGRMVFM4MlEyX094aFlLakE5REJvUl94NTlhOGZ2cDNYMTFv?oc=5",
    "source": "E15.cz",
@@ -122,10 +136,10 @@ window.LIVE_DATA = {
   },
   {
    "bank": "ucb",
-   "title": "Brusel schválil převzetí Commerzbank italskou UniCredit",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPV3daa0x1c1lacFVGS2staURqTEVPeXpXOTA4VFJpNklDRlhjdW56cUNWSFZBalBHQ0VRUklOUm9Wd08zWlhfOWxaTHV6c2s3RV9NbmhBVzgxcGVOQlpNMHFtNUcxU1FjbUg4TFA4TzdHdEFwdF9hVkJkT3FNNURTSW9xX0xONzNqMkdIZWpRTUZRVXpuQkVOZjVkR1FQcl80ZDAzeGM5UQ?oc=5",
-   "source": "Novinky",
-   "date": "2026-11-16T10:46:45.000Z"
+   "title": "Brusel schválil italské bance UniCredit záměr převzít německou Commerzbank",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SaU84TEhTakdvNFRGazhrSnVXX1lnUmdXaU9EX3QwYXprZmJVTVdQYVE4MGVqa1dTUVBCd1h6TFluT3RsZlh6Wml5eVMyYTlJQ2Z3?oc=5",
+   "source": "České noviny",
+   "date": "2026-11-16T08:00:00.000Z"
   },
   {
    "bank": "cs",
@@ -268,6 +282,13 @@ window.LIVE_DATA = {
    "date": "2026-11-09T08:00:00.000Z"
   },
   {
+   "bank": "cs",
+   "title": "Investice v mobilu od stovky: Česká spořitelna spouští George Strategies založené na ETF fondech",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPQ3UteDZoUEJ0a0Q2UTFTaFFfX2ZkcE40NVJ3S2d2WHhya3cwaGREVnJkNnVpc3hZeXcxanVPdWtMZUtFZ00xWnMxSTZLcXhsb0l1VVpobUphemR1S0ZXMW1nVEpCT25UcjQxSnBuQkxjY09EUm9ySkQtblNySlc0bGhCTzg5ZzhaSFhERWRmRGxZT290cG5ad3dJby1qMGFMM2hURlZraURJUzNYZHUteG0xNVZfRGlPT2g5REVxMTJ4UjB3SW9OS0F1NmlZOWRrdHNsWnVIbFpDUGhpSUE?oc=5",
+   "source": "E15.cz",
+   "date": "2026-11-09T08:00:00.000Z"
+  },
+  {
    "bank": "ucb",
    "title": "UniCredit Bank zvýšila zisky o šestinu",
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWDlTMFhUZ2dsM1huSW82QkVTVEFBcjlfb0hRSWtseV9mQ29kc0htQjFRODY5UnVWQ29wU21kZV9uMi1kV0dVSDVMbmYxWXZ6WnkwdUdxdzNwUDZraW9CeUZ1aXpmS0JrZ1A4OWJFUGE1REJqN0FmVG90bmVza1pyM1k1X1lSYXMwUHVsdkpNS2s?oc=5",
@@ -394,13 +415,6 @@ window.LIVE_DATA = {
    "date": "2026-10-30T07:00:00.000Z"
   },
   {
-   "bank": "cs",
-   "title": "Česká spořitelna dál roste. Zisk za tři čtvrtletí stoupl na 22,2 miliardy korun",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNVDdiTFpBc1JCM2pyVUtUdTBINzRaTGhRTUFyV1EtZDF1VEVsY2M4d0VTaHhvcEZVMURCbmFfZHNWQVhORW93MFFrWlFnSk5LSEpfZW84NW5YMjMwUnE0MFYzTURWX05NY1M5ZVFsQTRwSldGVXQ3MWJPZjJ4ajZaWnZuZmhTcmhjSDZVZ0UyQUxhZDV0MWhTUlFaZ2J1T1J0WGtiMkZxR3JfZ0o5TEdWVHJWNGFOd3VuR3NVZS14NlpYNDdhUHRMUzgwd01BQUFEOG1iemo1YnRDNTNZMTZlcGo0UElRQQ?oc=5",
-   "source": "Aktuálně.cz",
-   "date": "2026-10-30T07:00:00.000Z"
-  },
-  {
    "bank": "rb",
    "title": "PR manažerkou Raiffeisenbank je Štěpánka Gregorová, banka spolupracuje s MSL",
    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc0U3SUJqWVBCdzdxZ3M2Z1NISGM3TEZWMUNoRjVTbjc3Rl9vYlVfOGVJZlJXN05FTEtqU2FGZTFCSjAybEcyWjhYVG9JQjloYmJta0tnYlM0RGxaVGJaOWlkaUxUeUZmbEx1Y0J1c2FVcGYyQ2Z0SE5lMWF5V19vUzJRS2xiRXZUSlFYUlRuSzF2ZDhnWGdZUm5aNjdlYWcyb1E?oc=5",
@@ -462,13 +476,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSlRfRjJLamlSSWNNZVI1MUlVWVVORU1tY0JjYmM3UlZINHZSejBUWXc0ajFyQnRLcmlYQ2I5LTZ4eUFCOEFMYTVTWl9zdm9rdU1lSVlDZTJycVNaS1c3OGdPWWkyRW11M0JmemRxd3BndkpMYnVKYURuTFN2ZkRvR2tfT0ZSeUQtaVAxbzFFcFRZM2k0WHg4Zzc5T24xLTM0RUtwMEhHYTBobnBXaktYeC0xa2FNalR0QUFRRFM5Qmw5YkhhTkE5U1JKUHlpcndMcTlLQVV1Y0lRcGRX?oc=5",
    "source": "Fio",
    "date": "2026-10-26T07:00:00.000Z"
-  },
-  {
-   "bank": "moneta",
-   "title": "Moneta zklamala dividendové investory. Ve hře jsou přitom miliardy korun",
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNmwwd1FjZmdoQjVMWUpsT3YyTjliRExQaE9xNHRqSVJ0NWVwWjg1SzlmUFd5aW9ob0FwTXlSS3FfZHdGQ19RWjVYaTdsUm9CeVE5ZS03WGFaTHNyQWI1X2hKcXB4cDBVVDl5SHhKWjBBZFRPWTd5Z01tMWE4d1pNbVVoMzVMNFdCQWJQWTlqN0FZaGM?oc=5",
-   "source": "Finex.cz",
-   "date": "2026-10-24T07:00:00.000Z"
   }
  ],
  "aplikace": {
@@ -476,7 +483,7 @@ window.LIVE_DATA = {
    "name": "ČSOB Smart",
    "seller": "Ceskoslovenska obchodni banka, a.s.",
    "rating": 4.77,
-   "count": 147894,
+   "count": 147951,
    "url": "https://apps.apple.com/cz/app/%C4%8Dsob-smart/id1528483245?uo=4",
    "id": 1528483245,
    "historie": [
@@ -579,6 +586,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.77,
      "n": 147894
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.77,
+     "n": 147951
     }
    ]
   },
@@ -586,7 +598,7 @@ window.LIVE_DATA = {
    "name": "KB+",
    "seller": "Komercni banka a.s.",
    "rating": 4.42,
-   "count": 56467,
+   "count": 56518,
    "url": "https://apps.apple.com/cz/app/kb/id1585485232?uo=4",
    "id": 1585485232,
    "historie": [
@@ -689,6 +701,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.42,
      "n": 56467
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.42,
+     "n": 56518
     }
    ]
   },
@@ -696,7 +713,7 @@ window.LIVE_DATA = {
    "name": "Smart Banking",
    "seller": "UniCredit Bank Czech Republic and Slovakia, a.s.",
    "rating": 4.41,
-   "count": 46574,
+   "count": 46584,
    "url": "https://apps.apple.com/cz/app/smart-banking/id468057018?uo=4",
    "id": 468057018,
    "historie": [
@@ -799,6 +816,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.41,
      "n": 46574
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.41,
+     "n": 46584
     }
    ]
   },
@@ -806,7 +828,7 @@ window.LIVE_DATA = {
    "name": "Raiffeisen bankovnictví",
    "seller": "Raiffeisenbank, a.s.",
    "rating": 4.76,
-   "count": 90571,
+   "count": 90580,
    "url": "https://apps.apple.com/cz/app/raiffeisen-bankovnictv%C3%AD/id538751727?uo=4",
    "id": 538751727,
    "historie": [
@@ -909,6 +931,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.76,
      "n": 90571
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.76,
+     "n": 90580
     }
    ]
   },
@@ -916,7 +943,7 @@ window.LIVE_DATA = {
    "name": "MONETA Smart Banka",
    "seller": "MONETA Money Bank, a.s",
    "rating": 4.76,
-   "count": 134054,
+   "count": 134074,
    "url": "https://apps.apple.com/cz/app/moneta-smart-banka/id1122443334?uo=4",
    "id": 1122443334,
    "historie": [
@@ -1019,6 +1046,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.76,
      "n": 134054
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.76,
+     "n": 134074
     }
    ]
   },
@@ -1026,7 +1058,7 @@ window.LIVE_DATA = {
    "name": "Fio Smartbanking CZ",
    "seller": "Fio banka, a.s.",
    "rating": 4.24,
-   "count": 6542,
+   "count": 6541,
    "url": "https://apps.apple.com/cz/app/fio-smartbanking-cz/id1451236597?uo=4",
    "id": 1451236597,
    "historie": [
@@ -1129,6 +1161,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.24,
      "n": 6542
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.24,
+     "n": 6541
     }
    ]
   },
@@ -1136,7 +1173,7 @@ window.LIVE_DATA = {
    "name": "George Česko",
    "seller": "Ceska sporitelna, a.s.",
    "rating": 4.78,
-   "count": 319780,
+   "count": 319841,
    "url": "https://apps.apple.com/cz/app/george-%C4%8Desko/id1163368801?uo=4",
    "id": 1163368801,
    "historie": [
@@ -1239,6 +1276,11 @@ window.LIVE_DATA = {
      "d": "2026-11-22",
      "r": 4.78,
      "n": 319780
+    },
+    {
+     "d": "2026-11-23",
+     "r": 4.78,
+     "n": 319841
     }
    ]
   }
