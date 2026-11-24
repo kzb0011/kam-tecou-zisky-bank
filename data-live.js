@@ -1,12 +1,26 @@
 window.LIVE_DATA = {
- "aktualizace": "2026-11-23T15:58:03.051Z",
+ "aktualizace": "2026-11-24T15:52:38.669Z",
  "zpravy": [
+  {
+   "bank": "csob",
+   "title": "ČSOB mění podobu Radlického údolí. Hrubá stavba nového vstupu do metra je hotová",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWWVDYXBnbnNZMzg1cG1RSW1Mc1pQZnVPeDJ0MTR1MUlGbUlMVGZncEN1VXc3Q0w0LVlITGNrRWhxaVd1aF9TaWQ4N3NaQVZjMnZ4WU45d0lXWkRnQnNGc2lXRjc1UVNfWXY2ckd1N0txUXdMcmZiRWFmUW15VWwyNGdPNmRLcDVMdEVtUlVTMy0xY042dDdBMUdWQWxGQW5adV94WDJreTVUUFNNUWc?oc=5",
+   "source": "FeedIT.cz",
+   "date": "2026-11-24T11:46:28.000Z"
+  },
+  {
+   "bank": "csob",
+   "title": "Stanice metra Radlická dostane nový vstup. Zlepší okolí sídla ČSOB",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVEY1SkprUTRMTDRhWVE3U2VhamFoZ2FRdDFMM29yV3lfT2ZyR2hhTXVHMHlRbkc3NnQweFdCY0ZFMkxKV296N3JueTI1YTQ1WDNpcThpQ3V1VHY5em82OW1NYkt6dnlHUk5xdVMzU1N5dXEzakxFVmt3YnBHSzRUdEVhV0QzREF0Q1dmSDZfbjBsWENGR2IxbVdYdzdLM2h1VHhYYg?oc=5",
+   "source": "Penize.cz",
+   "date": "2026-11-24T11:15:00.000Z"
+  },
   {
    "bank": "moneta",
    "title": "MONETA představuje nový spořicí účet s úrokovou sazbou až 4,5 % ročně",
-   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9aa2RKQjR5ZXFBakZ4aXE1THB3ejB4ekR5SmZvVkhDT2JTWi0zYlpqUVpQUlRWY2N4VE5vNzZCSEZWclBQU3dTelY5aFJ4YnV2SU8wOTdDX2daNUl4WWc?oc=5",
-   "source": "FXstreet.cz",
-   "date": "2026-11-23T11:07:00.000Z"
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMThibXBKRklsUGktSDZwYThJSDdQZEJ5cnhvN2FqaXRrdHhhZU9NS1V5d2ZtbGRDMTFRZkRDeURTa3Bqei1NQVdRSzNJQlpLQ0FNd2pVLUtYYUpRRG0tZmtQblNIdEdjQnJFY19NZ3Q4bDNRRkRJWmJVWXV0OHAyd2VaT1VTa2dnVW9wOVVGak92VkpUN1dJdE5fVmFad2VUQlBCMkhpd29DQ0tuQmxiY3BJenE5ekU?oc=5",
+   "source": "České noviny",
+   "date": "2026-11-24T08:58:00.000Z"
   },
   {
    "bank": "ucb",
@@ -32,16 +46,16 @@ window.LIVE_DATA = {
   {
    "bank": "kb",
    "title": "Komerční banka zlevňuje obchodování s akciemi a ETF",
-   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNa3BHU0dXOE91UllybmJDTUNWSlRoTEpPcWtXVFotZTJ6SkQ4UXRlcjJRRGpRLTFnbmRjR0llYXdhN2V3Q3lDMWJ5QTBJQUhQUnlIdGhZRmI2SERWaU5GOS1RUWljNUVQb3pzVFMzRnhRZDdoOXN3N1pvSEZVd1hwd3VBSHAwMHlud04xdVBYTG00NUliQ1c4ZGFBNDlzWkx0X3IwdFRwTzU4WUlsSU9TX2VfZGswc09qV3lha2o5eGpVaGpZ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9mTzIxcUl4WWVkbFJqX2ltbGRMeWRtVTdmSER1TXhDeHpaTFkzQldiVnJ5d3dkSWJMMHh1Y1dhZmFlMlR5VWZSc215QXlmZzV2S3Jn?oc=5",
    "source": "České noviny",
    "date": "2026-11-20T07:37:00.000Z"
   },
   {
    "bank": "kb",
    "title": "Komerční banka zlevňuje nákup akcií a ETF. Sleva na poplatcích pomůže hlavně drobným investorům",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRkplSTM2TVRiUUd5c254el8tZGt5X0dpWG9PRVYtZXRzTFVxZUhfZmVTazYtLVdrR015akttS1pFaFpIWjNOTk9QOUJrQ3dRWkR3MUR0a2VMaDZxbUIxeDZ5SVdaSWJKUGRoSW1WZl82LTMwczJNc3h5R2Jsay1CczBuZTYxczI5bUtmRGFqTVZTcXZxZWlBT0xwaUhwM09VVUt5aVFJMnkzMEJ2M29ralBKSmpTbzJWMnFJdGxycERsNmZqVFNpYXphR3EzZ3pRbUoxYWdrRy1ZVFZYd3F1WXZwdVl0dw?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPU3JRX3VNRDZuOTNjMEpRVnlySEczU244cHNzblNESzJkNTZwMG9jSXRzTW1YY1F1QkUxanY1OGY0dUFzTHcwTTdTN2pPaFdrVl84NW9PR0hMSHMzTElCeFl1eGR4NFZIYTVzcm9rOW1zWnFLZVF2MHRtTmdsQTRuU2FhTGhhYUlIVFpiT0pyb1NPTF9jblZMajFqQXZ4YWZ5ckVNODV3V3NUanF4X3l2TGdvVnVzbE9LakNGcnpCelZkQmhBUndnRXFZS2U0TE52ZTMtT3o2ZVlQdjU0?oc=5",
    "source": "E15.cz",
-   "date": "2026-11-19T14:12:52.000Z"
+   "date": "2026-11-19T13:27:00.000Z"
   },
   {
    "bank": "kb",
@@ -94,6 +108,13 @@ window.LIVE_DATA = {
   },
   {
    "bank": "csob",
+   "title": "ČSOB varuje před novým podvodem. Nejprve přijde SMS, pak zavolá falešný bankéř",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBiMWhZeDdmLXhPVFpicEZ1d3ExUmZpZ2R0emM5d3F4U08tVzZQRlBhV2lBb2hrSnJWcVBBRk5jWF9EN1FBVEw1R0lhUTJtQ3RpRHd3NEhieDd5YTM4dlI4QVRhUDlDUkR0eEkzWGI3RzJINWti?oc=5",
+   "source": "Svět Androida",
+   "date": "2026-11-18T11:00:00.000Z"
+  },
+  {
+   "bank": "csob",
    "title": "Tisíce klientů ČSOB mohou získat KateCoiny a lístky do kina. Stačí požádat virtuální asistentku",
    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPSVhmcVFIbG9DTFRHRHk5dTNhZVhRZWRnV08yZzBKblBYbVd2NzFhOGJfc3hoZlN1bHltUzhNblh2YWZWQjJ6M1cxcWJxMTNkQTl1QUVPdk8zVGQ2S3ZCUm1RdnkxTmIxRFRpSzF3aXotbm9YT0R5azVoaG80bXFyUGFFRW5OYXpXdWNWRThaQkMySjNzZTlkU3Z6QWlTNllUb2J3RGRGcHpsZ0Z6eVFVeFpKZjNLNUJfOGRMVFM4MlEyX094aFlLakE5REJvUl94NTlhOGZ2cDNYMTFv?oc=5",
    "source": "E15.cz",
@@ -128,17 +149,17 @@ window.LIVE_DATA = {
    "date": "2026-11-16T15:11:00.000Z"
   },
   {
+   "bank": "ucb",
+   "title": "Brusel schválil převzetí Commerzbank italskou UniCredit",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPV3daa0x1c1lacFVGS2staURqTEVPeXpXOTA4VFJpNklDRlhjdW56cUNWSFZBalBHQ0VRUklOUm9Wd08zWlhfOWxaTHV6c2s3RV9NbmhBVzgxcGVOQlpNMHFtNUcxU1FjbUg4TFA4TzdHdEFwdF9hVkJkT3FNNURTSW9xX0xONzNqMkdIZWpRTUZRVXpuQkVOZjVkR1FQcl80ZDAzeGM5UQ?oc=5",
+   "source": "Novinky",
+   "date": "2026-11-16T10:46:45.000Z"
+  },
+  {
    "bank": "csob",
    "title": "ČSOB varuje před novým podvodem. Nebezpečná kombinace, říká expert",
    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUHp5eFpQQ0dCZFRNeTY4UjVPMzJwZkxrTF96V3N0MFR5dWYxMktJaG1LbnBmTFVZZVRFZUE0TlVvTXh6eUpkbHNiQ3QzRGRENVQyZU1qZW14cGhMVmc2eG5VekljeE9vVE5HbEhRanM2WjFZVVN1VThQT24zclFaSmp6cEI0NHBDVlVFWnZnZWNmUy1ocHpYTDFyYkROeWVabWhRdHl3WEI?oc=5",
    "source": "Penize.cz",
-   "date": "2026-11-16T15:00:00.000Z"
-  },
-  {
-   "bank": "ucb",
-   "title": "Brusel schválil italské bance UniCredit záměr převzít německou Commerzbank",
-   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SaU84TEhTakdvNFRGazhrSnVXX1lnUmdXaU9EX3QwYXprZmJVTVdQYVE4MGVqa1dTUVBCd1h6TFluT3RsZlh6Wml5eVMyYTlJQ2Z3?oc=5",
-   "source": "České noviny",
    "date": "2026-11-16T08:00:00.000Z"
   },
   {
@@ -147,13 +168,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdXdEcUVaa0dKZi1PYm1tb29VeDlwbV9ud3BLbXVhUk8tVldicVNseTVFMjZWRzNCX09VZGtJR3p6ckRZSV9nTGp0aFZBOGNlMGNzeTB4VXBqMS1RRjM2UjF1QndFSHhtd1dfZnlsR2NSMHlkaGs2bjh2TDB5UHBmVHRXY1JwYUtXYVNOcTVGZlJwZ2hOcnBJRHVfajgzcU9Fb1FKTkRoaVRXMzhU?oc=5",
    "source": "Stream.cz",
    "date": "2026-11-16T03:10:23.000Z"
-  },
-  {
-   "bank": "fio",
-   "title": "Fio banka zvýší úroky na spoření až na 4,02 %. Zdraží ale hypotéky",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZHpSVUNkYjFrRUNSbUYzS2RFa3JzWHF5OF9oLW56RzlfVk10cm5wV0I0QlVyNV9aZjNmckFtLWdmd1VETFpjaklDNUk3VGRScU9CNEpMcGRSdE5XQ3BLcXBQT0JyZ254ajRNRjdxamYtZGU0MTViSEZfQjNYZHNLRm5LWDZjcGpOcUJzUGJkM3lJczBxcF9J?oc=5",
-   "source": "Měšec.cz",
-   "date": "2026-11-14T08:00:00.000Z"
   },
   {
    "bank": "kb",
@@ -223,6 +237,13 @@ window.LIVE_DATA = {
    "title": "Raiffeisenbank a Národní divadlo pokračují ve společném příběhu. Partnerství vstupuje do dalšího období",
    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaldfNm1VYmY2RVRkeWpjY2lXRDFsWVlmV1F6RjNDdy1CLXpZX2RtTWw1eFEzY3UySUFQWldmdG1JRG45anBnUUM5a2JmV0hVLVkxMzl6c0ttYTVWSjItdl9CWTAyV2UtYkstcFlhclZjMWRBSTM2dnBMY1ZwVWwtZmJsNzMyV0JNcGtvblpPZ3R1Tm1BaUF5Q0lobDFhcmpNSENGQVVwMXJvRHZ3SmIxd1dfYnBmSk5BcWJ1S0p3NkQtcDg?oc=5",
    "source": "Národní divadlo",
+   "date": "2026-11-11T08:00:00.000Z"
+  },
+  {
+   "bank": "moneta",
+   "title": "Creditas a Moneta dočasně vypnou elektronické bankovnictví",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcHBSYmRqaFJjNDJBNGltSEk5WDNqMDZqNU5iaDFXTWZBeHlIS0M0alBtam0zd1FXQjdkQkVQd2tSc1dWNnBMZHFNQ2Y3LWpENjdwX0c5SHFtVXdFbjB3Z183UHpHTkJCQ2t5VllHR19LNS1tSlVLb0l2cmRlN25HcTZFdEI3OXBHdkpmakIyckh1Y2pOSFRyczVCMkI?oc=5",
+   "source": "Penize.cz",
    "date": "2026-11-11T08:00:00.000Z"
   },
   {
@@ -329,13 +350,6 @@ window.LIVE_DATA = {
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdl9XRE9JdGtieFZQM3g4bWNpeExtSF9rdUQ2WjZmalEzSzFHRVNUQ0ExY3owcDgtSm9JMXBWblp4RDZKbi1sQ3dsYWdRWFhwLWpIV2pBZWVvQnI4aFpRdzZPMl9xVGFHZ1F1bXcxX3FMWkppTEJIcks3R1VxbVd0eDJkTlpFcXlGZm9FN05hcGRTaF85ZWVr?oc=5",
    "source": "Měšec.cz",
    "date": "2026-11-09T08:00:00.000Z"
-  },
-  {
-   "bank": "kb",
-   "title": "Komerční banka, a.s.: Oznámení Komerční banky, a.s. o minimální výši ukazatele kapitálového poměru od 1. ledna 2027",
-   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQXzJvUWE3ajJLbk5VbGVOeEhJd2NQQ2tuWUVJa2VzV2JUemdqc0hRT1lQZVZBQ0pjM212M2xUZnAzZHZuQklQbmlpdFpxcEhhSlBrNnRqa25rMDNpLVptZ2NieFBGQ0d2ek8zeTZZYjZUTW1HQ29QYnN4THJ4Q2QwTGd3Njk2THVZSFYwRkZCQVBWc0lxcUFzRGZEd0d2X3VhRWNtSjdxTEplc1JiVi1SYkl2WXZYa0VuQ1ZtQi1zb1JHbGZvUkh5a05kVGhwYkpPNWNydWFTU2VXZHAxdmhDZFVnMlZQNnlSTmFLSQ?oc=5",
-   "source": "Patria.cz",
-   "date": "2026-11-06T08:00:00.000Z"
   },
   {
    "bank": "rb",
@@ -450,6 +464,20 @@ window.LIVE_DATA = {
    "date": "2026-10-29T07:00:00.000Z"
   },
   {
+   "bank": "kb",
+   "title": "Makroekonomická prognóza KB: Motor běží, palivo zdražilo",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORkJfMGJzSnJwak1MWWc0bWlueVc1RmxXV1NEZGVxYk9oblZxUEVpU0FFRjFtZUxFdkRYQUpYS1J3d3FHeFJrcjNiWG1QVGF3R1JfSXhaVmY5eHNKTU1tMFFWaEJqdFRUS0NsM2stQk5CXzQycV9EekN0QmYxZzVRV1N6QTNVRFc5T2ZSTHRvcw?oc=5",
+   "source": "Zprávy Kurzy.cz",
+   "date": "2026-10-29T07:00:00.000Z"
+  },
+  {
+   "bank": "kb",
+   "title": "Pražská burza v úvodu: Index PX -0,24 %, Komerční banka po výsledcích -0,89 %, CTP po výsledcích -2",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQbmJnSV94RVJYRTRJb01ScFVmQlFqQ3NKLXVkR295VFVQeFNKUkZCSnBiNEpkbkpTS21rVms4TlFwWHNlbXRtSlVObzJNTWYwRnlacDFrWllBV3Y5SnNNWmtpLVB1WlNPTE9HMkJyUmwzSGVJT2ZpUGx6UlM0bjRVMlJRa1YycWhDYWNxTHVEcER0Nm1uenV4TVJiOXQxLWUyN2ZpME5oMHU1a0s3Rl9leFZ3YW55WHFURVRtdjdyMW42QndXVjRaMmJOQU1Udw?oc=5",
+   "source": "Investiční web",
+   "date": "2026-10-29T07:00:00.000Z"
+  },
+  {
    "bank": "cs",
    "title": "Česká spořitelna v Pacově uzavírá pobočku, šlo o poslední banku ve městě. Zůstane jen bankomat",
    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOX3BPc3RkNllPaHE2OGZqNFk1X3laODJZemI0b1Nra00zeDlkUTI4YS1hLUFpN0hVVE5RQTFkODhMZW1ybFRqVlU4MTlycFZUNjg2bWkwY2xoeUVYdzNQR3JlUEVuYmUtLWRJcjZDU1lZNVJhRWJMVHNsZ1JEcldud3RQWS1WRlhPQ3FKT0lpLWdtdkNaNk5heFhEWmxQNUdKdExuLWhrWXhMUFlKQWlUOFVzbE1YaXhoYWNPOXNBdEVtdWJ1N1lPejBrYw?oc=5",
@@ -472,10 +500,10 @@ window.LIVE_DATA = {
   },
   {
    "bank": "kb",
-   "title": "Firemní výsledky pro tento týden: Gen Digital, Komerční banka, CTP, Erste Group Bank, Alphabet",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSlRfRjJLamlSSWNNZVI1MUlVWVVORU1tY0JjYmM3UlZINHZSejBUWXc0ajFyQnRLcmlYQ2I5LTZ4eUFCOEFMYTVTWl9zdm9rdU1lSVlDZTJycVNaS1c3OGdPWWkyRW11M0JmemRxd3BndkpMYnVKYURuTFN2ZkRvR2tfT0ZSeUQtaVAxbzFFcFRZM2k0WHg4Zzc5T24xLTM0RUtwMEhHYTBobnBXaktYeC0xa2FNalR0QUFRRFM5Qmw5YkhhTkE5U1JKUHlpcndMcTlLQVV1Y0lRcGRX?oc=5",
-   "source": "Fio",
-   "date": "2026-10-26T07:00:00.000Z"
+   "title": "Komerční banka otevírá nový úpis Buy and Watch fondu",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTlMwdl9MVzB5Y0MzVndXUDZGM21vdHg4NmRYd2x2ZnQ1ZGhDbzlsUG1WRHYyemFjWnNpV2IyR01YYXBXU2E4bklIMlJXYmdfTzJjS1N2c1BNZGFnZ3Nid21lcmNmSkRkWVI5WmViMXhneWdROUR3aVp5TlRRV25GQ081WUJLVXh5ZXBENVFiSWZXRjhuVFRacjB3bEpfTTNJLVMzN1Jsc05lbWlHRFJPR184Ymk?oc=5",
+   "source": "Metro.cz",
+   "date": "2026-10-27T07:00:00.000Z"
   }
  ],
  "aplikace": {
@@ -589,6 +617,11 @@ window.LIVE_DATA = {
     },
     {
      "d": "2026-11-23",
+     "r": 4.77,
+     "n": 147951
+    },
+    {
+     "d": "2026-11-24",
      "r": 4.77,
      "n": 147951
     }
@@ -706,6 +739,11 @@ window.LIVE_DATA = {
      "d": "2026-11-23",
      "r": 4.42,
      "n": 56518
+    },
+    {
+     "d": "2026-11-24",
+     "r": 4.42,
+     "n": 56518
     }
    ]
   },
@@ -819,6 +857,11 @@ window.LIVE_DATA = {
     },
     {
      "d": "2026-11-23",
+     "r": 4.41,
+     "n": 46584
+    },
+    {
+     "d": "2026-11-24",
      "r": 4.41,
      "n": 46584
     }
@@ -936,6 +979,11 @@ window.LIVE_DATA = {
      "d": "2026-11-23",
      "r": 4.76,
      "n": 90580
+    },
+    {
+     "d": "2026-11-24",
+     "r": 4.76,
+     "n": 90580
     }
    ]
   },
@@ -1049,6 +1097,11 @@ window.LIVE_DATA = {
     },
     {
      "d": "2026-11-23",
+     "r": 4.76,
+     "n": 134074
+    },
+    {
+     "d": "2026-11-24",
      "r": 4.76,
      "n": 134074
     }
@@ -1166,6 +1219,11 @@ window.LIVE_DATA = {
      "d": "2026-11-23",
      "r": 4.24,
      "n": 6541
+    },
+    {
+     "d": "2026-11-24",
+     "r": 4.24,
+     "n": 6541
     }
    ]
   },
@@ -1279,6 +1337,11 @@ window.LIVE_DATA = {
     },
     {
      "d": "2026-11-23",
+     "r": 4.78,
+     "n": 319841
+    },
+    {
+     "d": "2026-11-24",
      "r": 4.78,
      "n": 319841
     }
